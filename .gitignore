@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Flask
+instance/
+.webassets-cache
+
+# SQLite database files
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Environment variables and secret keys
+.env
+.env.*
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Virtual environment
+venv/
+ENV/
+
+# Node modules (if any)
+node_modules/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Temp files
+tmp/
+*.tmp
+*.bak
+
+# Project specific
+sync.ffs_db
+stderr.log
+todo
+
+# Keep the docs and static folders but exclude them from Git
+docs/
+.Docs/
+migrat*
+YAWS/
+logs
+.htaccess*
+.well-known/
+*wsgi.py
+*_filter.py
+.hcflag
+.vscode/

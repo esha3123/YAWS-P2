@@ -1,0 +1,1165 @@
+/* ============================================
+   Jr College Frontend - Enhanced CSS
+   Beautiful, modern, and consistent styling
+============================================ */
+
+/* Enhanced Material 3 Color Variables for Jr College - Matching Website Theme */
+:root {
+    --jr-primary: var(--m3-primary);
+    --jr-primary-container: var(--m3-primary-container);
+    --jr-on-primary: var(--m3-on-primary);
+    --jr-on-primary-container: var(--m3-on-primary-container);
+    
+    --jr-secondary: var(--m3-secondary);
+    --jr-secondary-container: var(--m3-secondary-container);
+    --jr-on-secondary: var(--m3-on-secondary);
+    --jr-on-secondary-container: var(--m3-on-secondary-container);
+    
+    --jr-tertiary: var(--m3-tertiary);
+    --jr-tertiary-container: var(--m3-tertiary-container);
+    --jr-on-tertiary: var(--m3-on-tertiary);
+    --jr-on-tertiary-container: var(--m3-on-tertiary-container);
+    
+    --jr-surface: var(--m3-surface);
+    --jr-surface-variant: var(--m3-surface-variant);
+    --jr-surface-dim: var(--m3-surface-dim);
+    --jr-surface-bright: var(--m3-surface-bright);
+    --jr-surface-container: var(--m3-surface-container);
+    --jr-surface-container-high: var(--m3-surface-container-high);
+    
+    --jr-on-surface: var(--m3-on-surface);
+    --jr-on-surface-variant: var(--m3-on-surface-variant);
+    
+    --jr-outline: var(--m3-outline);
+    --jr-outline-variant: var(--m3-outline-variant);
+    --jr-error: var(--m3-error);
+    --jr-on-error: var(--m3-on-error);
+    
+    --jr-shadow-1: var(--m3-shadow-1);
+    --jr-shadow-2: var(--m3-shadow-2);
+    --jr-shadow-3: var(--m3-shadow-3);
+    --jr-shadow-4: var(--m3-shadow-4);
+    --jr-shadow-5: var(--m3-shadow-5);
+    
+    --jr-shape-small: var(--m3-shape-small);
+    --jr-shape-medium: var(--m3-shape-medium);
+    --jr-shape-large: var(--m3-shape-large);
+    --jr-shape-extra-large: var(--m3-shape-extra-large);
+    
+    /* Beautiful Background Gradients - Updated for Website Theme */
+    --jr-bg-primary: linear-gradient(135deg, var(--m3-surface) 0%, var(--m3-surface-container) 50%, var(--m3-surface-container-low) 100%);
+    --jr-bg-secondary: linear-gradient(135deg, var(--m3-surface-container-low) 0%, var(--m3-surface-container) 50%, var(--m3-surface) 100%);
+}
+
+/* Global Container with proper side margins */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+}
+
+/* Hero Section Styles */
+.jr-hero {
+    background: linear-gradient(135deg, var(--jr-primary-container) 0%, var(--jr-secondary-container) 100%);
+    padding: 60px 0;
+    margin-bottom: 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--jr-primary);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--jr-secondary);
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--jr-on-surface-variant);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.hero-image {
+    flex: 0 0 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.college-visual {
+    width: 180px;
+    height: 180px;
+    background: var(--jr-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--jr-shadow-3);
+}
+
+.college-visual .material-icons {
+    font-size: 100px;
+    color: var(--jr-on-primary);
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .jr-hero {
+        padding: 40px 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .college-visual {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .college-visual .material-icons {
+        font-size: 80px;
+    }
+}
+
+/* Tab Navigation Styles */
+.tab-navigation {
+    background-color: var(--jr-surface);
+    border-bottom: 2px solid var(--jr-outline-variant);
+    box-shadow: var(--jr-shadow-1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    overflow-x: auto;
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tab-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--jr-shape-small);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--animation-standard);
+    background-color: var(--jr-secondary-container);
+    color: var(--jr-on-secondary-container);
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.tab-button:hover {
+    background-color: var(--jr-secondary);
+    color: var(--jr-on-secondary);
+}
+
+.tab-button.active {
+    background-color: var(--jr-primary);
+    color: var(--jr-on-primary);
+}
+
+/* Content Wrapper with proper side margins */
+.content-wrapper {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Cards and Panels with proper margins */
+.card {
+    background-color: var(--jr-surface-bright);
+    border: 1px solid var(--jr-outline-variant);
+    border-radius: var(--jr-shape-large);
+    padding: 30px;
+    margin: 0 auto 30px;
+    box-shadow: var(--jr-shadow-1);
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.card-hover {
+    transition: transform var(--animation-standard), box-shadow var(--animation-standard);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--jr-shadow-3);
+}
+
+/* Forms */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--jr-primary);
+    margin-bottom: 8px;
+}
+
+.form-input, .form-select, .form-textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--jr-outline-variant);
+    border-radius: var(--jr-shape-small);
+    font-size: 16px;
+    transition: border-color var(--animation-standard), box-shadow var(--animation-standard);
+    background-color: var(--jr-surface-bright);
+    color: var(--jr-on-surface);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--jr-primary);
+    box-shadow: 0 0 0 3px rgba(57, 36, 4, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-primary {
+    background-color: var(--jr-primary);
+    color: var(--jr-on-primary);
+    padding: 15px 32px;
+    border: none;
+    border-radius: var(--jr-shape-small);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--animation-standard);
+}
+
+.btn-primary:hover {
+    background-color: var(--jr-secondary);
+}
+
+.btn-secondary {
+    background-color: var(--jr-secondary-container);
+    color: var(--jr-on-secondary-container);
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--jr-shape-small);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--animation-standard);
+}
+
+.btn-secondary:hover {
+    background-color: var(--jr-secondary);
+    color: var(--jr-on-secondary);
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--jr-surface-bright);
+    border-radius: var(--jr-shape-large);
+    overflow: hidden;
+    box-shadow: var(--jr-shadow-1);
+}
+
+.data-table th {
+    background-color: var(--jr-primary);
+    color: var(--jr-on-primary);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid var(--jr-primary-container);
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--jr-outline-variant);
+    color: var(--jr-on-surface);
+}
+
+.data-table tr:nth-child(even) {
+    background-color: var(--jr-surface-container-low);
+}
+
+.data-table tr:hover {
+    background-color: var(--jr-surface-container);
+}
+
+/* Syllabus Tabs */
+.syllabus-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.syllabus-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--jr-shape-small);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--animation-standard);
+    background-color: var(--jr-secondary-container);
+    color: var(--jr-on-secondary-container);
+}
+
+.syllabus-button:hover {
+    background-color: var(--jr-secondary);
+    color: var(--jr-on-secondary);
+}
+
+.syllabus-button.active {
+    background-color: var(--jr-primary);
+    color: var(--jr-on-primary);
+}
+
+.syllabus-content {
+    display: none;
+}
+
+.syllabus-content.active {
+    display: block;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.subject-card {
+    background-color: var(--jr-surface-bright);
+    padding: 20px;
+    border-radius: var(--jr-shape-small);
+    border: 1px solid var(--jr-outline-variant);
+}
+
+.subject-title {
+    font-weight: 600;
+    color: var(--jr-primary);
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.subject-list {
+    list-style: none;
+}
+
+.subject-list li {
+    color: var(--jr-on-surface-variant);
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.subject-list li:before {
+    content: "â€¢";
+    color: var(--jr-primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Code of Conduct */
+.conduct-card {
+    background-color: var(--jr-surface-bright);
+    padding: 30px;
+    border-radius: var(--jr-shape-small);
+    border: 1px solid var(--jr-outline-variant);
+}
+
+.conduct-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--jr-primary);
+    margin-bottom: 20px;
+}
+
+.conduct-list {
+    list-style: none;
+}
+
+.conduct-list li {
+    color: var(--jr-on-surface-variant);
+    margin-bottom: 12px;
+    padding-left: 15px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.conduct-list li:before {
+    content: "â€¢";
+    color: var(--jr-primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.notice-box {
+    background-color: var(--jr-surface-container-low);
+    border: 1px solid var(--jr-outline-variant);
+    border-radius: var(--jr-shape-small);
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.notice-title {
+    font-weight: 600;
+    color: var(--jr-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notice-text {
+    color: var(--jr-on-surface-variant);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Global Body Background for Jr College Pages */
+body.jr-college-page {
+    background: var(--jr-bg-primary);
+    min-height: 100vh;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--jr-on-surface);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Enhanced Header for Jr College */
+.jr-header {
+    background: linear-gradient(135deg, var(--jr-primary) 0%, var(--jr-secondary) 100%);
+    color: var(--jr-on-primary);
+    padding: 2rem 0;
+    box-shadow: var(--jr-shadow-3);
+    position: relative;
+    overflow: hidden;
+}
+
+.jr-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.jr-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.jr-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.jr-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    border-radius: var(--jr-shape-medium);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+}
+
+.jr-college-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--jr-on-primary);
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+}
+
+.jr-college-info .jr-subtitle {
+    color: var(--jr-primary-container);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.jr-college-info .jr-affiliation {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* Enhanced Navigation for Jr College */
+.jr-navigation {
+    background: var(--jr-surface-container);
+    border-bottom: 3px solid var(--jr-primary);
+    box-shadow: var(--jr-shadow-2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 24px 0;
+}
+
+.jr-nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.jr-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.jr-nav-buttons::-webkit-scrollbar {
+    display: none;
+}
+
+.jr-nav-button {
+    padding: 16px 24px;
+    border: none;
+    border-radius: var(--jr-shape-medium);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--jr-surface-bright);
+    color: var(--jr-primary);
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: var(--jr-shadow-1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jr-nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.jr-nav-button:hover::before {
+    left: 100%;
+}
+
+.jr-nav-button:hover {
+    background: var(--jr-primary-container);
+    color: var(--jr-on-primary-container);
+    box-shadow: var(--jr-shadow-2);
+    transform: translateY(-2px);
+}
+
+.jr-nav-button.active {
+    background: var(--jr-primary);
+    color: var(--jr-on-primary);
+    box-shadow: var(--jr-shadow-3);
+    transform: translateY(-1px);
+}
+
+/* Content Areas with Beautiful Backgrounds */
+.jr-content-area {
+    background: var(--jr-bg-secondary);
+    min-height: calc(100vh - 400px);
+    padding: 48px 0;
+}
+
+.jr-content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.jr-section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--jr-primary);
+    margin-bottom: 32px;
+    text-align: center;
+    position: relative;
+}
+
+.jr-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, var(--jr-primary), var(--jr-secondary));
+    border-radius: 2px;
+}
+
+.jr-section-subtitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--jr-secondary);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.jr-section-subtitle::before {
+    content: '';
+    width: 6px;
+    height: 32px;
+    background: linear-gradient(45deg, var(--jr-secondary), var(--jr-tertiary));
+    border-radius: 3px;
+}
+
+/* Enhanced Cards */
+.jr-card {
+    background: var(--jr-bg-cards);
+    border: 1px solid var(--jr-outline-variant);
+    border-radius: var(--jr-shape-large);
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: var(--jr-shadow-2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jr-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, var(--jr-primary), var(--jr-secondary), var(--jr-tertiary));
+}
+
+.jr-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--jr-shadow-4);
+}
+
+/* Enhanced Tables */
+.jr-table-container {
+    overflow-x: auto;
+    margin: 24px 0;
+    border-radius: var(--jr-shape-medium);
+    box-shadow: var(--jr-shadow-2);
+    background: var(--jr-surface-bright);
+}
+
+.jr-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--jr-surface-bright);
+    border-radius: var(--jr-shape-medium);
+    overflow: hidden;
+}
+
+.jr-table th {
+    background: linear-gradient(45deg, var(--jr-primary), var(--jr-secondary));
+    color: var(--jr-on-primary);
+    padding: 20px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--jr-primary);
+}
+
+.jr-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--jr-outline-variant);
+    color: var(--jr-on-surface);
+    font-size: 14px;
+}
+
+.jr-table tr:nth-child(even) {
+    background: var(--jr-surface-variant);
+}
+
+.jr-table tr:hover {
+    background: var(--jr-primary-container);
+    color: var(--jr-on-primary-container);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* Enhanced Forms */
+.jr-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.jr-form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.jr-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.jr-form-label {
+    font-weight: 600;
+    color: var(--jr-primary);
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.jr-form-input, .jr-form-select, .jr-form-textarea {
+    padding: 16px 20px;
+    border: 2px solid var(--jr-outline-variant);
+    border-radius: var(--jr-shape-medium);
+    font-size: 16px;
+    background: var(--jr-surface-bright);
+    color: var(--jr-on-surface);
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.jr-form-input:focus, .jr-form-select:focus, .jr-form-textarea:focus {
+    outline: none;
+    border-color: var(--jr-primary);
+    box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.1);
+    transform: translateY(-2px);
+}
+
+.jr-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Enhanced Buttons */
+.jr-btn-primary {
+    background: linear-gradient(45deg, var(--jr-primary), var(--jr-secondary));
+    color: var(--jr-on-primary);
+    padding: 16px 32px;
+    border: none;
+    border-radius: var(--jr-shape-medium);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--jr-shadow-2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jr-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.jr-btn-primary:hover::before {
+    left: 100%;
+}
+
+.jr-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--jr-shadow-3);
+}
+
+.jr-btn-secondary {
+    background: var(--jr-tertiary);
+    color: var(--jr-on-tertiary);
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--jr-shape-medium);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--jr-shadow-1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.jr-btn-secondary:hover {
+    background: var(--jr-tertiary-container);
+    color: var(--jr-on-tertiary-container);
+    box-shadow: var(--jr-shadow-2);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Footer */
+.jr-footer {
+    background: linear-gradient(135deg, var(--jr-primary) 0%, var(--jr-secondary) 100%);
+    color: var(--jr-on-primary);
+    padding: 64px 0 32px;
+    margin-top: 80px;
+    border-radius: var(--jr-shape-large) var(--jr-shape-large) 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.jr-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footerGrain" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23footerGrain)"/></svg>');
+    opacity: 0.3;
+}
+
+.jr-footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 48px;
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.jr-footer-section h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--jr-on-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.jr-footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--jr-tertiary);
+    border-radius: 2px;
+}
+
+.jr-footer-section p, .jr-footer-section li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.jr-footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.jr-footer-section a {
+    color: var(--jr-on-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.jr-footer-section a:hover {
+    color: var(--jr-tertiary);
+    transform: translateX(4px);
+}
+
+.jr-footer-bottom {
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    margin-top: 48px;
+    padding-top: 32px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.jr-footer-bottom p {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Animation Classes */
+.jr-fade-in {
+    animation: jrFadeIn 0.6s ease-in-out;
+}
+
+.jr-slide-in-left {
+    animation: jrSlideInLeft 0.6s ease-out;
+}
+
+.jr-bounce-in {
+    animation: jrBounceIn 0.8s ease-out;
+}
+
+@keyframes jrFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes jrSlideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes jrBounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .jr-college-info h1 {
+        font-size: 2rem;
+    }
+    
+    .jr-nav-buttons {
+        justify-content: flex-start;
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .jr-header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .jr-college-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .jr-nav-button {
+        font-size: 12px;
+        padding: 12px 16px;
+    }
+
+    .jr-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jr-section-title {
+        font-size: 2rem;
+    }
+
+    .jr-footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .jr-college-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .jr-section-title {
+        font-size: 1.8rem;
+    }
+
+    .jr-card {
+        padding: 20px;
+    }
+}
+
+/* Utility Classes */
+.jr-text-center { text-align: center; }
+.jr-mb-20 { margin-bottom: 20px; }
+.jr-mb-30 { margin-bottom: 30px; }
+.jr-mt-30 { margin-top: 30px; }
+.jr-hidden { display: none; }
+.jr-flex-center { display: flex; align-items: center; justify-content: center; }
+
+/* Loading States */
+.jr-loading {
+    display: inline-block;
+    animation: jrSpin 1s linear infinite;
+}
+
+@keyframes jrSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Notification Styles */
+.jr-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--jr-primary);
+    color: var(--jr-on-primary);
+    padding: 16px 24px;
+    border-radius: var(--jr-shape-medium);
+    box-shadow: var(--jr-shadow-3);
+    z-index: 10000;
+    max-width: 400px;
+    animation: jrSlideInRight 0.3s ease-out;
+    font-weight: 600;
+}
+
+.jr-notification.success {
+    background: var(--jr-secondary);
+    color: var(--jr-on-secondary);
+}
+
+.jr-notification.error {
+    background: var(--jr-error);
+    color: var(--jr-on-error);
+}
+
+@keyframes jrSlideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Placeholder Sections */
+.jr-placeholder {
+    background: var(--jr-bg-cards);
+    border: 2px dashed var(--jr-outline);
+    border-radius: var(--jr-shape-large);
+    padding: 80px 40px;
+    text-align: center;
+    box-shadow: var(--jr-shadow-1);
+    position: relative;
+    overflow: hidden;
+}
+
+.jr-placeholder::before {
+    content: 'ðŸš§';
+    font-size: 64px;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.jr-placeholder-text {
+    font-size: 20px;
+    color: var(--jr-on-surface-variant);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

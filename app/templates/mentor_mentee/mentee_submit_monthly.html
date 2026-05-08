@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="max-width: 700px; margin-top: 40px; margin-bottom: 40px;">
+    <div style="padding: 40px; background: var(--m3-surface); border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+        <h1 style="color: var(--m3-primary); margin-bottom: 30px;">Submit Monthly Form</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div style="padding: 12px; margin-bottom: 16px; border-radius: 4px; {% if category == 'error' %}background: #ffebee; color: #c62828;{% else %}background: #e8f5e9; color: #2e7d32;{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--m3-on-surface);">Month & Year (e.g., Jan 2026)</label>
+                <input type="text" name="month_year" placeholder="Jan 2026" required style="width: 100%; padding: 12px; border: 1px solid var(--m3-outline); border-radius: 4px; box-sizing: border-box;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--m3-on-surface);">Learning Progress</label>
+                <textarea name="learning_progress" rows="4" style="width: 100%; padding: 12px; border: 1px solid var(--m3-outline); border-radius: 4px; font-family: sans-serif; box-sizing: border-box;" placeholder="Describe what you learned this month..." required></textarea>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--m3-on-surface);">Challenges Faced</label>
+                <textarea name="challenges" rows="4" style="width: 100%; padding: 12px; border: 1px solid var(--m3-outline); border-radius: 4px; font-family: sans-serif; box-sizing: border-box;" placeholder="What challenges did you face?" required></textarea>
+            </div>
+            
+            <div style="margin-bottom: 30px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--m3-on-surface);">Goals This Month</label>
+                <textarea name="goals_this_month" rows="4" style="width: 100%; padding: 12px; border: 1px solid var(--m3-outline); border-radius: 4px; font-family: sans-serif; box-sizing: border-box;" placeholder="What are your goals?" required></textarea>
+            </div>
+            
+            <button type="submit" style="width: 100%; padding: 12px; background: var(--m3-primary); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; margin-bottom: 10px;">
+                Submit Form
+            </button>
+            <a href="{{ url_for('mentor_mentee.mentee_dashboard') }}" style="display: block; width: 100%; padding: 12px; background: var(--m3-outline); color: var(--m3-on-surface); border: none; border-radius: 4px; cursor: pointer; font-weight: 600; text-align: center; text-decoration: none;">
+                Cancel
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

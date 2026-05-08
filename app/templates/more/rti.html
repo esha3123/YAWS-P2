@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}RTI - Saket College{% endblock %}
+
+{% block styles %}
+<style>
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.rti-link {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: var(--m3-primary);
+  text-decoration: none;
+}
+
+.rti-link:hover {
+  text-decoration: underline;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">RTI Declaration</h1>
+  <a href="{{ url_for('frontend.serve_docs', filepath='departments/Statutory Declaration RTI Act.pdf') }}" class="rti-link" target="_blank">
+    Click here to view RTI Declaration PDF
+  </a>
+</div>
+
+<script>
+  // Automatically redirect to the PDF
+  window.location.href = "{{ url_for('frontend.serve_docs', filepath='departments/Statutory Declaration RTI Act.pdf') }}";
+</script>
+{% endblock %}

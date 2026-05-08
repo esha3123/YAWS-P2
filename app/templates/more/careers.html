@@ -1,0 +1,348 @@
+{% extends "base.html" %}
+
+{% block title %}Careers - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.content-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--m3-primary) 0%, var(--m3-tertiary) 100%);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: var(--m3-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--m3-on-surface-variant);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.careers-main-section {
+  background-color: var(--m3-surface-1);
+  border-radius: var(--m3-shape-medium);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--m3-shadow-1);
+}
+
+.careers-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.careers-header-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--m3-primary) 0%, var(--m3-tertiary) 100%);
+  color: var(--m3-on-primary);
+  border-radius: 50%;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.careers-header-text h2 {
+  color: var(--m3-primary);
+  margin: 0;
+  font-weight: 700;
+}
+
+.careers-header-text p {
+  color: var(--m3-on-surface-variant);
+  margin: 0.3rem 0 0;
+}
+
+.contact-details {
+  padding: 1.5rem;
+  background-color: rgba(var(--m3-surface-variant-rgb), 0.5);
+  border-radius: var(--m3-shape-medium);
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--m3-tertiary);
+}
+
+.contact-item {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  color: var(--m3-tertiary);
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.contact-text h3 {
+  color: var(--m3-primary);
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+.contact-text p {
+  margin: 0;
+  color: var(--m3-on-surface);
+}
+
+.contact-text a {
+  color: var(--m3-tertiary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-text a:hover {
+  color: var(--m3-tertiary-container);
+  text-decoration: underline;
+}
+
+.opening-hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.form-section {
+  margin-top: 1.5rem;
+}
+
+.form-section h3 {
+  color: var(--m3-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--m3-on-surface);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--m3-outline);
+  border-radius: var(--m3-shape-small);
+  background-color: var(--m3-surface);
+  color: var(--m3-on-surface);
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: var(--m3-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--m3-primary-rgb), 0.2);
+}
+
+.form-control::placeholder {
+  color: var(--m3-outline);
+  opacity: 0.7;
+}
+
+input[type="file"].form-control {
+  padding: 0.6rem;
+  background-color: rgba(var(--m3-surface-variant-rgb), 0.3);
+}
+
+.form-button {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, var(--m3-primary) 0%, var(--m3-primary-container) 100%);
+  color: var(--m3-on-primary);
+  border: none;
+  border-radius: var(--m3-shape-medium);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: var(--m3-shadow-1);
+}
+
+.form-button:hover {
+  background: linear-gradient(135deg, var(--m3-primary-hover) 0%, var(--m3-primary) 100%);
+  box-shadow: var(--m3-shadow-2);
+  transform: translateY(-2px);
+}
+
+.highlight {
+  color: var(--m3-tertiary);
+  font-weight: 500;
+}
+
+.file-upload-info {
+  display: block; 
+  margin-top: 0.5rem; 
+  color: var(--m3-on-surface-variant);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.file-upload-info::before {
+  content: "📎";
+  margin-right: 0.3rem;
+}
+
+.required-mark {
+  color: var(--m3-error);
+  margin-left: 3px;
+}
+
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Join Our Team</h1>
+  <p class="page-subtitle">Be part of our journey to shape the future of education</p>
+  
+  <div class="careers-main-section">
+    <div class="careers-header">
+      <div class="careers-header-icon">📞</div>
+      <div class="careers-header-text">
+        <h2>Career Opportunities</h2>
+        <p>We're looking for dedicated professionals to join our team</p>
+      </div>
+    </div>
+
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text">
+          <h3>Address</h3>
+          <p>Saket Vidyanagari Marg, Kalyan East, Dist. Thane (MAH), India – 421 306</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div class="contact-text">
+          <h3>Phone</h3>
+          <p>+91- 8356901298</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <h3>Email</h3>
+          <p><a href="mailto:info@saketcollege.edu.in">info@saketcollege.edu.in</a></p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">🕒</div>
+        <div class="contact-text">
+          <h3>Opening Hours</h3>
+          <div class="opening-hours">
+            <p>Monday – Saturday</p>
+            <p>10:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Apply Now</h3>
+      <p>Please submit your details below. Our <span class="highlight">HR Team</span> will review your application and get back to you shortly.</p>
+      
+      <form method="post" enctype="multipart/form-data" action="#?Not-Implemented">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span class="required-mark">*</span></label>
+            <input type="text" name="your-name" class="form-control" placeholder="Enter your full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Email Address <span class="required-mark">*</span></label>
+            <input type="email" name="your-email" class="form-control" placeholder="Enter your email address" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Contact Number <span class="required-mark">*</span></label>
+            <input type="tel" name="tel-404" class="form-control" placeholder="Enter your contact number" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Upload your Resume <span class="required-mark">*</span></label>
+            <input type="file" name="file-894" class="form-control" accept=".pdf,.doc,.docx" required>
+            <small class="file-upload-info">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</small>
+          </div>
+        </div>
+        
+
+        
+        <div class="form-group">
+          <label>Why do you want to join us? (optional)</label>
+          <textarea name="your-message" rows="4" class="form-control" placeholder="Tell us about your motivation to join Saket College..."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <input type="submit" value="Submit Application" class="form-button">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,522 @@
+{% extends "base.html" %}
+
+{% block title %}NAAC - Saket College{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/naac.css') }}">
+{% endblock %}
+
+{% block content %}
+<main class="naac-container">
+  <div class="naac-content">
+    <nav class="naac-nav">
+      <ul class="m3-list">
+        <li><a href="{{ url_for('frontend.naac_dvv') }}" class="view-btn {% if active_section == 'naac-dvv' %}active{% endif %}">NAAC – DVV</a></li>
+        <li><a href="{{ url_for('frontend.naac_appeal') }}" class="view-btn {% if active_section == 'naac-appeal' %}active{% endif %}">NAAC – Appeal</a></li>
+        <li><a href="{{ url_for('frontend.naac_iqac') }}" class="view-btn {% if active_section == 'iqac' %}active{% endif %}">IQAC</a></li>
+        <li><a href="{{ url_for('frontend.naac_strategic_plan') }}" class="view-btn {% if active_section == 'strategic-plan' %}active{% endif %}">Strategic Plan</a></li>
+        <li><a href="{{ url_for('frontend.naac_aqar') }}" class="view-btn {% if active_section == 'aqar' %}active{% endif %}">AQAR</a></li>
+        <li><a href="{{ url_for('frontend.naac_iiqa') }}" class="view-btn {% if active_section == 'iiqa' %}active{% endif %}">IIQA</a></li>
+        <li><a href="{{ url_for('frontend.naac_ssr') }}" class="view-btn {% if active_section == 'ssr' %}active{% endif %}">SSR</a></li>
+        <li><a href="{{ url_for('frontend.naac_criteria_docs') }}" class="view-btn {% if active_section == 'criteria-docs' %}active{% endif %}">Criteria-wise Documentation</a></li>
+        <li><a href="{{ url_for('frontend.naac_institutional') }}" class="view-btn {% if active_section == 'institutional' %}active{% endif %}">Institutional Distinctiveness</a></li>
+      </ul>
+    </nav>
+
+    <div class="content-sections">
+      <section id="naac-dvv" class="naac-section {% if active_section == 'naac-dvv' %}active{% endif %}" {% if active_section != 'naac-dvv' %}style="display:none"{% endif %}>
+        <h2>NAAC DVV (2023-24)</h2>
+        <div class="dvv-grid">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Extended Profile</th>
+                <th>Cr-1</th>
+                <th>Cr-2</th>
+                <th>Cr-3</th>
+                <th>Cr-4</th>
+                <th>Cr-5</th>
+                <th>Cr-6</th>
+                <th>Cr-7</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/1.1.pdf') }}">1.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/1.2.1.pdf') }}">1.2.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/2.1.1.pdf') }}">2.1.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/3.1.1.pdf') }}">3.1.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/4.1.2.pdf') }}">4.1.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/5.1.1.pdf') }}">5.1.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/6.2.2.pdf') }}">6.2.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/7.1.2.pdf') }}">7.1.2</a></td>
+              </tr>
+              <tr>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/2.1.pdf') }}">2.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/1.2.2.pdf') }}">1.2.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/2.1.2.pdf') }}">2.1.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/3.2.2.pdf') }}">3.2.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/4.3.2.pdf') }}">4.3.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/5.1.2.pdf') }}">5.1.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/6.3.2.pdf') }}">6.3.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/7.1.3.pdf') }}">7.1.3</a></td>
+              </tr>
+              <tr>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/2.2.pdf') }}">2.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/1.3.2.pdf') }}">1.3.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/2.2.1.pdf') }}">2.2.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/3.3.1.pdf') }}">3.3.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/4.4.1.pdf') }}">4.4.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/5.1.3.pdf') }}">5.1.3</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/6.3.3.pdf') }}">6.3.3</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/3.1.pdf') }}">3.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/1.4.1.pdf') }}">1.4.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/2.4.1.pdf') }}">2.4.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/3.3.2.pdf') }}">3.3.2</a></td>
+                <td></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/5.1.4.pdf') }}">5.1.4</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/6.5.2.pdf') }}">6.5.2</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/2.4.2.pdf') }}">2.4.2</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/3.4.3.pdf') }}">3.4.3</a></td>
+                <td></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/5.2.1.pdf') }}">5.2.1</a></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/2.6.3.pdf') }}">2.6.3</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/3.5.1.pdf') }}">3.5.1</a></td>
+                <td></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/5.2.2.pdf') }}">5.2.2</a></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/5.3.1.pdf') }}">5.3.1</a></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/dvv/5.3.2.pdf') }}">5.3.2</a></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="naac-appeal" class="naac-section {% if active_section == 'naac-appeal' %}active{% endif %}" {% if active_section != 'naac-appeal' %}style="display:none"{% endif %}>
+        <h2>NAAC Appeal</h2>
+        <div class="appeal-grid">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>CR - 01</th>
+                <th>CR - 02</th>
+                <th>CR - 04</th>
+                <th>CR - 05</th>
+                <th>CR - 06</th>
+                <th>CR - 07</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/1.3.1.pdf') }}">1.3.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/2.5.1.pdf') }}">2.5.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/4.1.1.pdf') }}">4.1.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/5.4.1.pdf') }}">5.4.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/6.3.1.pdf') }}">6.3.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/7.2.1.pdf') }}">7.2.1</a></td>
+              </tr>
+              <tr>
+                <td>N/A</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/2.6.1.pdf') }}">2.6.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/4.2.1.pdf') }}">4.2.1</a></td>
+                <td>N/A</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/6.4.1.pdf') }}">6.4.1</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='naac/appeal/7.3.1.pdf') }}">7.3.1</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="iqac" class="naac-section {% if active_section == 'iqac' %}active{% endif %}" {% if active_section != 'iqac' %}style="display:none"{% endif %}>
+        <h2>IQAC Details</h2>
+        <div class="tab-container">
+          <div class="tab-buttons">
+            <button class="tab-btn active view-btn" data-tab="composition">Composition</button>
+            <button class="tab-btn view-btn" data-tab="minutes">Minutes</button>
+            <button class="tab-btn view-btn" data-tab="feedback">Feedback</button>
+          </div>
+          
+          <div id="composition" class="tab-content active">
+            <table id="iqac-composition-table" class="data-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2023-24</td>
+                  <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/IQAC Committe 2023-24.pdf') }}" class="view-btn">View</a></td>
+                </tr>
+                <tr>
+                  <td>2022-23</td>
+                  <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/IQAC Committee.pdf') }}" class="view-btn">View</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="minutes" class="tab-content">
+            <table id="iqac-minutes-table" class="data-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Minutes</th>
+                  <th>ATR</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div id="feedback" class="tab-content">
+            <table id="feedback-table" class="data-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="strategic-plan" class="naac-section {% if active_section == 'strategic-plan' %}active{% endif %}" {% if active_section != 'strategic-plan' %}style="display:none"{% endif %}>
+        <h2>Strategic Plan</h2>
+        <div class="strategic-plan-content">
+          <p>View our institution's strategic plan document:</p>
+          <a href="{{ url_for('frontend.serve_docs', filepath='misc/6.2.1 Startgic plan.pdf') }}" target="_blank" class="view-btn">Strategic Plan Document</a>
+        </div>
+      </section>
+
+      <section id="aqar" class="naac-section {% if active_section == 'aqar' %}active{% endif %}" {% if active_section != 'aqar' %}style="display:none"{% endif %}>
+        <h2>AQAR Reports</h2>
+        <div class="aqar-reports">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>AQAR Year</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AQAR Report 2018-19</td>
+                <td><a href="#" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>AQAR Report 2019-20</td>
+                <td><a href="#" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>AQAR Report 2020-21</td>
+                <td><a href="#" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>AQAR Report 2021-22</td>
+                <td><a href="#" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>AQAR Report 2022-23</td>
+                <td><a href="#" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>AQAR Report 2023-24</td>
+                <td><a href="#" class="view-btn">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="iiqa" class="naac-section {% if active_section == 'iiqa' %}active{% endif %}" {% if active_section != 'iiqa' %}style="display:none"{% endif %}>
+        <h2>IIQA</h2>
+        <div class="iiqa-content">
+          <h3>Institutional Committees</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Committee Name</th>
+                <th>2023-24</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NSS Unit</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/NSS Unit  2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Staff Welfare Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Staff WelfareCommittee 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Research Cell</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Research Cell 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Student Council</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Student Council 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Sports Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Sports Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Training & Placement</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Training & Placement Committee2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>IT Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/IT Committee2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>DLLE Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/DLLE Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Alumni Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Alumni Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Library Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Library Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Cultural Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Cultural Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Time Table Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Time Table Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Green Club</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Green Club 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Attendance Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Attendance Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="ssr" class="naac-section {% if active_section == 'ssr' %}active{% endif %}" {% if active_section != 'ssr' %}style="display:none"{% endif %}>
+        <h2>SSR Documents</h2>
+        <div class="ssr-documents">
+          <h3>Statutory Committees</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Committee Name</th>
+                <th>2024-25</th>
+                <th>2023-24</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Anti-Ragging Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2024-25/Anti-Ragging Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2023-24/Anti-Ragging Committee.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>ICC & Anti Sexual Harassment</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2024-25/ICC & Anti Sexual Harassment Committee.pdf') }}" class="view-btn">View</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2023-24/ICC, Anti Sexual Committee.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Examination Committee</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2024-25/Examination Committee 2023-24.pdf') }}" class="view-btn">View</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2023-24/Examination Committee.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Students Grievance Redressal</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2024-25/Students Grievance Redressal Committee2023-24.pdf') }}" class="view-btn">View</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2023-24/Students Grievance Redressal Committee.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>SC, ST & OBC Cell</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2024-25/SC, ST & OBC Cell.pdf') }}" class="view-btn">View</a></td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/statutory/2023-24/SC, ST & OBC Cell.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="criteria-docs" class="naac-section {% if active_section == 'criteria-docs' %}active{% endif %}" {% if active_section != 'criteria-docs' %}style="display:none"{% endif %}>
+        <h2>Criteria-wise Documentation</h2>
+        <div class="criteria-docs">
+          <!-- Best Practices Section -->
+          <h3>Best Practices</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Best Practices</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2023-24</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='student/best-practices/Best practices 2023 - 24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>2022-23</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='student/best-practices/BP 2022-23.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>2020-21</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='student/best-practices/BP 2020-21.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>2019-20</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='student/best-practices/BP 2019-20.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Student Activities -->
+          <h3>Student Activities</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Activity</th>
+                <th>Document</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NSS Activities</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='student/nss/NSS.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>DLLE Activities</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='student/dlle/DLLE.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Placement Records</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='student/placements/Placement Record.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- General Documentation -->
+          <h3>General Documentation</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Document Type</th>
+                <th>View</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Code of Conduct</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='misc/Code of Conduct.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Academic Calendar 2023-24</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='misc/Academic Calender 2023-24.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Admission Procedure</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='misc/ADMISSION PROCEDURE.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Action Taken Report</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='misc/ACTION TAKEN REPORT.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+              <tr>
+                <td>Best Practices 2021-22</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='misc/Best Practices 2021-22.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- College Development -->
+          <h3>College Development</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Document Type</th>
+                <th>View</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CDC MoM 2024-25</td>
+                <td><a href="{{ url_for('frontend.serve_docs', filepath='committees/college-development/COLLEGE DEVELOPMENT COMMITTEE MoM 2024-25.pdf') }}" class="view-btn">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="institutional" class="naac-section {% if active_section == 'institutional' %}active{% endif %}" {% if active_section != 'institutional' %}style="display:none"{% endif %}>
+        <h2>Institutional Distinctiveness</h2>
+        <div class="vision-mission">
+          <div class="vision">
+            <h3>Vision</h3>
+            <p>To develop young citizens into competent, intellectual & committed human beings with a moral and social responsibility, capable of surviving in a competitive world.</p>
+          </div>
+          <div class="mission">
+            <h3>Mission</h3>
+            <ul class="m3-list">
+              <li>To equip students with appropriate knowledge and suitable skills in their chosen discipline.</li>
+              <li>To provide education opportunities to all aspirants and especially to students from weaker section of the society through need based financial support system.</li>
+              <li>To provide value-based education to mould them into dutiful and responsible citizens.</li>
+              <li>To recognize and promote student's potential and offer a platform for their overall development.</li>
+              <li>To provide integrated learning experiences to equip students with qualities that will enable to realize their ambition.</li>
+              <li>To focus on providing vocational education.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/naac.js') }}" defer></script>
+{% endblock %}

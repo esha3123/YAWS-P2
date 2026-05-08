@@ -1,0 +1,264 @@
+.staff-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.staff-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.staff-header h1 {
+  font-size: 2.5rem;
+  color: var(--m3-primary);
+  margin-bottom: 1rem;
+}
+
+.staff-header p {
+  font-size: 1.1rem;
+  color: var(--m3-on-surface-variant);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.staff-nav {
+  background-color: var(--m3-surface-container);
+  border-radius: var(--m3-shape-small);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.staff-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.staff-nav li {
+  margin: 0.25rem;
+  background-color: var(--m3-primary);
+  border-radius: var(--m3-shape-small);
+}
+
+.view-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  border-radius: var(--m3-shape-small);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.view-btn:hover,
+.view-btn.active {
+  background-color: var(--m3-primary-container);
+  color: var(--m3-on-primary-container);
+  transform: translateY(-2px);
+}
+
+.tab-container {
+  margin-top: 1rem;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  flex: 1;
+  min-width: 120px;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.staff-section {
+  margin-bottom: 3rem;
+  animation: fadeIn 0.5s;
+  display: none;
+}
+
+.staff-section.active {
+  display: block;
+}
+
+.staff-section h2 {
+  color: var(--m3-primary);
+  border-bottom: 2px solid var(--m3-outline-variant);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.staff-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: var(--m3-primary);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: var(--m3-shadow-2);
+  overflow: hidden;
+  border-radius: var(--m3-shape-small);
+  margin-bottom: 2rem;
+}
+
+.data-table thead {
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+}
+
+.data-table th, 
+.data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: var(--m3-surface-container-low);
+}
+
+.data-table tr:hover {
+  background-color: var(--m3-surface-variant);
+}
+
+.search-container {
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  width: 95%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--m3-outline-variant);
+  border-radius: var(--m3-shape-small);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: var(--m3-surface-container-low);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--m3-primary);
+  background-color: var(--m3-surface-container);
+}
+
+.staff-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.staff-card {
+  background-color: var(--m3-surface-container);
+  border-radius: var(--m3-shape-small);
+  overflow: hidden;
+  box-shadow: var(--m3-shadow-2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--m3-shadow-3);
+  background-color: var(--m3-surface-container-high);
+}
+
+.staff-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.staff-image img {
+  width: 80px;
+  height: 80px;
+  opacity: 0.3;
+}
+
+.staff-info {
+  padding: 1.2rem;
+}
+
+.staff-info h3 {
+  margin: 0 0 0.5rem;
+  color: #1a3b5d;
+  font-size: 1.1rem;
+}
+
+.staff-info p {
+  margin: 0.3rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.staff-info .position {
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.staff-info .qualification {
+  color: #555;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .staff-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .staff-nav li {
+    margin: 0.25rem 0;
+  }
+  
+  .tab-buttons {
+    flex-direction: column;
+  }
+  
+  .staff-cards {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .data-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .staff-header h1 {
+    font-size: 2rem;
+  }
+}

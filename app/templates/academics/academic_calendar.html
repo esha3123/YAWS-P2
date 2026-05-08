@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Academic Calendar - Saket College{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Academic Calendar</h1>
+  
+  <table class="calendar-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Academic Calendar 2019-20</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/calendar/2019-20.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>Academic Calendar 2020-21</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/calendar/2020-21.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>Academic Calendar 2021-22</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/calendar/2021-22.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>Academic Calendar 2022-23</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/calendar/2022-23.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>Academic Calendar 2023-24</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='misc/Academic Calender 2023-24.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>Academic Calendar 2024-25</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/calendar/2024-25.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>Academic Calendar 2025-26</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='/static/docs/Academic Calendar 2025-26.pdf') }}" target="_blank" class="view-button">View</a></td>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="QsZQCwAHK0Chde5BxwqpGf5CI1M6aNKuFR0w1VsYfnk" />
+  <!-- Primary Meta Tags -->
+  <title>{% block title %}Saket College of Arts, Science & Commerce{% endblock %}</title>
+  <meta name="title" content="Saket College of Arts, Science & Commerce - NAAC 'B' Grade College in Kalyan">
+  <meta name="description" content="Established in 2002, Saket College of Arts, Science & Commerce offers quality education through various undergraduate and postgraduate programs. Affiliated with University of Mumbai and NAAC 'B' Grade accredited.">
+  <meta name="keywords" content="Saket College, Arts Science Commerce, Mumbai University, Kalyan college, NAAC accredited, higher education, undergraduate programs, postgraduate programs">
+  <meta name="author" content="Saket College">
+  
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saketcollege.edu.in/">
+  <meta property="og:title" content="Saket College of Arts, Science & Commerce - Excellence in Education">
+  <meta property="og:description" content="Established in 2002, Saket College offers various undergraduate and postgraduate programs with the motto 'GYANAM ANANTAM' (Knowledge is Infinite). Located in Kalyan, Maharashtra.">
+  <meta property="og:image" content="{{ url_for('static', filename='logo2.png', _external=True) }}">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://saketcollege.edu.in/">
+  <meta name="twitter:title" content="Saket College of Arts, Science & Commerce - Kalyan, Maharashtra">
+  <meta name="twitter:description" content="Providing quality education since 2002. Affiliated with University of Mumbai and NAAC 'B' Grade accredited.">
+  <meta name="twitter:image" content="{{ url_for('static', filename='logo2.png', _external=True) }}">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://saketcollege.edu.in{{ request.path }}">
+  
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="IN-MH">
+  <meta name="geo.placename" content="Kalyan, Maharashtra">
+  <meta name="geo.position" content="19.218027;73.140555">
+  <meta name="ICBM" content="19.218027, 73.140555">
+  
+  <!-- Other Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="revisit-after" content="7 days">
+  <meta name="classification" content="Education, College, University">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  {% block head %}{% endblock %}
+  <style>{% block styles %}{% endblock %}</style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+     
+        <div class="logo-college-container">
+          <div class="logo">
+            <img src="{{ url_for('static', filename='logo2.png') }}" alt="College Logo" />
+          </div>
+          <div class="college-name">
+            
+            <h1>SAKET COLLEGE OF ARTS, SCIENCE & COMMERCE</h1>
+            <p>(Permanently Affiliated To University Of Mumbai)</p>
+            <p><b>NAAC Re-Accredited 'B' Grade</b></p>
+          </div>
+        </div>
+     
+      <div class="facu">
+        <a href="{{ url_for('frontend.facu', subpath='naac') }}">NAAC/IQAC</a>
+        <a href="{{ url_for('frontend.facu', subpath='staffs') }}">Staffs</a>
+        <a href="{{ url_for('frontend.facu', subpath='alumni') }}">Alumni</a>
+        <a href="{{ url_for('frontend.facu', subpath='placement') }}">Placement</a>
+        <a href="{{ url_for('frontend.facu', subpath='visit') }}">Visit</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="mobile-nav-header">
+      <a href="/" class="mobile-home"><i class="fa fa-home" style="font-size:1rem;"></i></a>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <ul class="nav-list">
+      <li class="desktop-home"><a href="/"><i class="material-icons">home</i></a></li>
+      <li class="dropdown">
+        <a href="#academics">About us <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.about', subpath='saket-gyaanpeeth')}}">About Saket Gyanpeeth</a></li>
+          <li><a href="{{ url_for('frontend.about', subpath='message')}}">Message</a></li>
+          <li><a href="{{ url_for('frontend.about', subpath='commitee')}}">Commitee</a></li>
+          <li><a href="{{ url_for('frontend.serve_docs', filepath='misc/organogram.pdf') }}">Organogram</a></li>
+          <li><a href="{{ url_for('frontend.serve_docs', filepath='docs/Dataforwebsite.pdf') }}">Public Self-Disclosure</a></li>
+          
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#admissions">Academics <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.academics', subpath='program_courses')}}">Program & Courses</a></li>
+          <li><a href="{{ url_for('frontend.academics', subpath='academic_calendar')}}">Academic Calendar</a></li>
+          <li><a href="{{ url_for('frontend.academics', subpath='jr_college')}}">Jr. College</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#examinations">Student Corner <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.student', subpath='notice') }}">Notices</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='activities') }}">Activities</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='syllabus') }}">Syllabus</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='program-outcome') }}">Outcomes</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='student-support') }}">Student Support</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='code-of-conduct') }}">Code Of Conduct</a></li>
+          <li><a href="{{ url_for('mentor_mentee.index') }}">Mentor-Mentee</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#student">Library <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.library', subpath='about') }}">About Library</a></li>
+          <li><a href="{{ url_for('frontend.library', subpath='commitee') }}">Library Commitee</a></li>
+          <li><a href="{{ url_for('frontend.library', subpath='activities') }}">Activities</a></li>
+          <li><a href="{{ url_for('frontend.library', subpath='code-of-conduct') }}">Code Of Conduct</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Extension Activities <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.extension', subpath='nss') }}">NSS</a></li>
+          <li><a href="{{ url_for('frontend.extension', subpath='dlle') }}">DLLE</a></li>
+          <li><a href="{{ url_for('frontend.extension', subpath='best-practices') }}">Best Practices</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Examination <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.examination', subpath='committee') }}">Exam committee</a></li>
+          <li><a href="{{ url_for('frontend.examination', subpath='policy') }}">Exam Policy</a></li>
+          <li><a href="{{ url_for('frontend.examination', subpath='timetable') }}">Exam Time-Table</a></li>
+          <li><a href="{{ url_for('frontend.examination', subpath='results') }}">Exam Results</a></li>
+          <li><a href="{{ url_for('frontend.examination', subpath='notices') }}">Notices & Circulars</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Feedback <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://forms.office.com/r/3dSmYuA9CY" target="_blank">Parents feedback form</a></li>
+          <li><a href="https://forms.office.com/r/9RMNWKgD3D" target="_blank">Employer feedback</a></li>
+          <li><a href="https://forms.office.com/r/eVHEzJ9MS0" target="_blank">Alumni feedback form</a></li>
+          <li><a href="https://forms.office.com/r/TnAv0uxm81" target="_blank">Syllabus feedback form</a></li>
+          <li><a href="https://forms.office.com/r/eAiQ9GRPnG" target="_blank">Teachers feedback form</a></li>
+          <li><a href="https://forms.office.com/r/ERTKtDj6rD" target="_blank">Students feedback form</a></li>
+          <li><a href="https://forms.office.com/r/n1UpKWURXV" target="_blank">Grievance Feedback Form</a></li>
+          <li><a href="{{ url_for('frontend.serve_docs', filepath='misc/6.5.2Action taken Report.pdf') }}" target="_blank">Action Taken Report</a></li>
+        </ul>
+      </li>
+     
+<!-- <li class="dropdown">
+        <a href="#">Research & Publication<i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.research', subpath='publisher') }}">Book Publisher</a></li>
+          <li><a href="{{ url_for('frontend.research', subpath='research-paper') }}">Research Paper</a></li>
+          <li><a href="{{ url_for('frontend.research', subpath='minor') }}">Minor Project</a></li>
+          <li><a href="{{ url_for('frontend.research', subpath='major') }}">Major Project</a></li>
+          <li><a href="{{ url_for('frontend.research', subpath='seminar') }}">Seminar/Conference</a></li>
+        </ul>
+    </li> -->
+     <li class="dropdown">
+        <a href="#">More <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.more', subpath='admission-enquiry') }}">Admission Enquiry</a></li>
+          <li><a href="{{ url_for('frontend.more', subpath='press-reports') }}">Press Reports & Newsletters</a></li>
+          <li><a href="{{ url_for('frontend.more', subpath='rti') }}">RTI</a></li>
+          <li><a href="{{ url_for('frontend.more', subpath='careers') }}">Careers</a></li>
+          <li><a href="{{ url_for('frontend.more', subpath='blog') }}">Blog</a></li>
+        </ul>
+</li>
+    </ul>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="m3-list">
+                <li><a href="{{ url_for('frontend.about', subpath='saket-gyaanpeeth') }}"><span class="material-icons">arrow_right</span>About Us</a></li>
+                <li><a href="{{ url_for('frontend.academics', subpath='program_courses') }}"><span class="material-icons">arrow_right</span>Academics</a></li>
+                <li><a href="{{ url_for('frontend.student', subpath='notice') }}"><span class="material-icons">arrow_right</span>Student Corner</a></li>
+                <li><a href="https://mu.ac.in/"><span class="material-icons">arrow_right</span>Mumbai University</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Programs</h3>
+            <ul class="m3-list">
+                <li><a href="{{ url_for('frontend.academics', subpath='program_courses') }}"><span class="material-icons">arrow_right</span>Program & Courses</a></li>
+                <li><a href="{{ url_for('frontend.academics', subpath='course_outcomes') }}"><span class="material-icons">arrow_right</span>Course Outcomes</a></li>
+                <li><a href="{{ url_for('frontend.extension', subpath='nss') }}"><span class="material-icons">arrow_right</span>NSS</a></li>
+                <li><a href="{{ url_for('frontend.extension', subpath='dlle') }}"><span class="material-icons">arrow_right</span>DLLE</a></li>
+                <li><a href="{{ url_for('frontend.extension', subpath='best-practices') }}"><span class="material-icons">arrow_right</span>Best Practices</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <span class="material-icons">location_on</span>
+                <p>Saket Vidyanagari Marg, Kalyan (East) - 421306</p>
+            </div>
+            <div class="contact-info">
+                <span class="material-icons">phone</span>
+                <p>+91 72080 20258</p>
+            </div>
+            <div class="contact-info">
+                <span class="material-icons">email</span>
+                <p>info@saketcollege.edu</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/saketcollegekyn/" class="m3-icon-button"><span class="material-icons">facebook</span></a>
+                <a href="https://www.instagram.com/saketgyanpeeth/" class="m3-icon-button"><span class="material-icons">public</span></a>
+                <a href="https://www.linkedin.com/school/saket-college/" class="m3-icon-button"><span class="material-icons">business_center</span></a>
+                <a href="https://www.youtube.com/channel/UC_XtAIjJjJjJjJjJjJjJjJ" class="m3-icon-button"><span class="material-icons">photo_camera</span></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for updates and news.</p>
+            <form class="m3-form">
+                <div class="m3-text-field">
+                    <input type="email" id="newsletter-email" placeholder=" ">
+                    <label for="newsletter-email">Email Address</label>
+                </div>
+                <button type="submit" class="m3-button">
+                    <span class="material-icons">mail</span>
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Saket College. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
+  {% block scripts %}{% endblock %}
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="material-icons">arrow_upward</i>
+  </button>
+</body>
+</html>

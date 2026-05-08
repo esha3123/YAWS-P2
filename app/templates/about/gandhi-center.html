@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Gandhi Studies Centre - Saket College{% endblock %}
+
+{% block head %}
+<style>
+.gandhi-center {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.center-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.center-intro h1 {
+    color: var(--m3-primary);
+    margin-bottom: 20px;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-caption {
+    padding: 15px;
+    background: white;
+}
+
+.image-caption h3 {
+    margin: 0;
+    color: var(--m3-primary);
+    font-size: 1.1em;
+}
+
+.image-caption p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 0.9em;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="gandhi-center">
+    <div class="center-intro">
+        <h1>Gandhi Studies Centre</h1>
+        <p>Welcome to our UGC-sponsored Gandhi Studies Centre, dedicated to promoting Gandhian philosophy and values.</p>
+    </div>
+
+    <div class="image-gallery">
+        {% for i in range(1, 11) %}
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='ugc-sponsored/WhatsApp Image 2025-05-08 at 1.51.02 PM (' + i|string + ').jpeg') }}" 
+                 alt="Gandhi Center Image {{ i }}">
+            <div class="image-caption">
+                <h3>Gandhi Center Activity</h3>
+                <p>Activities and events promoting Gandhian values and philosophy</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

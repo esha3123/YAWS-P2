@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saket Junior College of Arts, Science & Commerce</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fefcf3;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #fefcf3;
+            border-bottom: 4px solid #d2b48c;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            color: #a0522d;
+            font-size: 16px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Tab Navigation */
+        .tab-navigation {
+            background-color: #fefcf3;
+            border-bottom: 2px solid #d2b48c;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 20px 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            overflow-x: auto;
+            padding: 0 10px;
+        }
+
+        .tab-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #d2b48c;
+            color: #8b4513;
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .tab-button:hover {
+            background-color: #c19a6b;
+        }
+
+        .tab-button.active {
+            background-color: #8b4513;
+            color: #fefcf3;
+        }
+
+        /* Content Sections */
+        .content-wrapper {
+            padding: 40px 0;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 30px;
+        }
+
+        .section-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+
+        /* Cards and Panels */
+        .card {
+            background-color: #fefcf3;
+            border: 1px solid #d2b48c;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Forms */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 8px;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            padding: 12px 16px;
+            border: 1px solid #d2b48c;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-primary {
+            background-color: #8b4513;
+            color: #fefcf3;
+            padding: 15px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #7a3e11;
+        }
+
+        .btn-secondary {
+            background-color: #d2b48c;
+            color: #8b4513;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #c19a6b;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fefcf3;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .data-table th {
+            background-color: #8b4513;
+            color: #fefcf3;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid #a0522d;
+        }
+
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid #d2b48c;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f5f1e8;
+        }
+
+        .data-table tr:hover {
+            background-color: #f0ead6;
+        }
+
+        /* Syllabus Tabs */
+        .syllabus-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .syllabus-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #d2b48c;
+            color: #8b4513;
+        }
+
+        .syllabus-button:hover {
+            background-color: #c19a6b;
+        }
+
+        .syllabus-button.active {
+            background-color: #8b4513;
+            color: #fefcf3;
+        }
+
+        .syllabus-content {
+            display: none;
+        }
+
+        .syllabus-content.active {
+            display: block;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .subject-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #d2b48c;
+        }
+
+        .subject-title {
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .subject-list {
+            list-style: none;
+        }
+
+        .subject-list li {
+            color: #5d4037;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .subject-list li:before {
+            content: "•";
+            color: #8b4513;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Code of Conduct */
+        .conduct-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #d2b48c;
+        }
+
+        .conduct-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+
+        .conduct-list {
+            list-style: none;
+        }
+
+        .conduct-list li {
+            color: #5d4037;
+            margin-bottom: 12px;
+            padding-left: 15px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .conduct-list li:before {
+            content: "•";
+            color: #8b4513;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .notice-box {
+            background-color: #f5f1e8;
+            border: 1px solid #d2b48c;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .notice-title {
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .notice-text {
+            color: #a0522d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Exam Section */
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .exam-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .exam-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+
+        .exam-schedule {
+            list-style: none;
+        }
+
+        .exam-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .exam-item:last-child {
+            border-bottom: none;
+        }
+
+        .exam-date {
+            color: #8b4513;
+            font-weight: 500;
+        }
+
+        .exam-guidelines {
+            list-style: none;
+        }
+
+        .exam-guidelines li {
+            color: #5d4037;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .exam-guidelines li:before {
+            content: "•";
+            color: #8b4513;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 50;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: #666;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        /* Chart Styles */
+        .chart-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .pie-chart-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pie-chart {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .pie-chart svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .pie-slice {
+            transition: all 0.3s ease;
+        }
+
+        .pie-slice:hover {
+            transform: scale(1.05);
+        }
+
+        .chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .chart-total {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .chart-label {
+            font-size: 14px;
+            color: #a0522d;
+        }
+
+        .legend {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .legend-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .legend-item:hover {
+            background-color: #f8f8f8;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 12px;
+        }
+
+        .legend-label {
+            font-weight: 500;
+            flex-grow: 1;
+        }
+
+        .legend-stats {
+            text-align: right;
+        }
+
+        .legend-count {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .legend-percent {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .summary-box {
+            background-color: #fefcf3;
+            border: 1px solid #d2b48c;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .summary-title {
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .summary-list {
+            list-style: none;
+            font-size: 14px;
+            color: #a0522d;
+        }
+
+        .summary-list li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .summary-list li:before {
+            content: "•";
+            color: #8b4513;
+            position: absolute;
+            left: 0;
+        }
+
+        .summary-total {
+            font-weight: 600;
+            color: #8b4513;
+            padding-top: 10px;
+            border-top: 1px solid #d2b48c;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #8b4513;
+            color: #fefcf3;
+            padding: 50px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #fefcf3;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #a0522d;
+            margin-top: 40px;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .tab-buttons {
+                justify-content: flex-start;
+                padding: 0 15px;
+            }
+
+            .tab-button {
+                font-size: 12px;
+                padding: 10px 16px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .pie-chart {
+                width: 280px;
+                height: 280px;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .pie-chart {
+                width: 240px;
+                height: 240px;
+            }
+
+            .chart-total {
+                font-size: 28px;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .placeholder-section {
+            background-color: #fefcf3;
+            border: 1px solid #d2b48c;
+            border-radius: 12px;
+            padding: 60px 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .placeholder-text {
+            font-size: 18px;
+            color: #a0522d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Saket Junior College</h1>
+                    <p>Arts, Science & Commerce</p>
+                </div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-navigation">
+        <div class="container">
+            <div class="tab-buttons">
+                <button onclick="showTab('admission')" class="tab-button active">
+                    Admission
+                </button>
+                <button onclick="showTab('faculty')" class="tab-button">
+                    Faculty
+                </button>
+                <button onclick="showTab('student')" class="tab-button">
+                    Student
+                </button>
+                <button onclick="showTab('examination')" class="tab-button">
+                    Examination
+                </button>
+                <button onclick="showTab('notice')" class="tab-button">
+                    Notice
+                </button>
+                <button onclick="showTab('activities')" class="tab-button">
+                    Activities
+                </button>
+                <button onclick="showTab('gallery')" class="tab-button">
+                    Gallery
+                </button>
+                <button onclick="showTab('awards')" class="tab-button">
+                    Awards
+                </button>
+                <button onclick="showTab('committee')" class="tab-button">
+                    Committee
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="container content-wrapper">
+        <!-- Admission Tab -->
+        <div id="admission" class="tab-content active">
+            <h3 class="section-title">Admission Information</h3>
+            
+            <!-- Admission Enquiry Form -->
+            <div class="card">
+                <h4 class="section-subtitle">Admission Enquiry Form</h4>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" class="form-input" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address *</label>
+                        <input type="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number *</label>
+                        <input type="tel" class="form-input" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Stream *</label>
+                        <select class="form-select" required>
+                            <option value="">Select Stream</option>
+                            <option value="arts">Arts</option>
+                            <option value="science">Science</option>
+                            <option value="commerce">Commerce</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">10th Percentage *</label>
+                        <input type="number" class="form-input" placeholder="Enter your 10th percentage" min="0" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Date of Birth *</label>
+                        <input type="date" class="form-input" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="form-label">Address</label>
+                        <textarea class="form-textarea" placeholder="Enter your complete address"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="form-label">Additional Message</label>
+                        <textarea class="form-textarea" placeholder="Any questions or additional information"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn-primary">
+                            Submit Enquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Students Admitted Chart -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                    <h4 class="section-subtitle" style="margin-bottom: 0;">Students Admitted - Department Wise</h4>
+                    <button onclick="showEnrollmentChart()" class="btn-primary">
+                        📊 View Enrollment Chart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faculty Tab -->
+        <div id="faculty" class="tab-content">
+            <h3 class="section-title">Our Faculty</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Name of the Teacher</th>
+                            <th>Subject</th>
+                            <th>Qualification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Mrs. Peuli D. Bhattachrya</td>
+                            <td>Biology</td>
+                            <td>M.Sc., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mr. N.K. Mule</td>
+                            <td>Economics</td>
+                            <td>M.A., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Mr. Anandrao Patil</td>
+                            <td>His/Pol. Sci</td>
+                            <td>M.A., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Mr. Sanjay P. Chaudhari</td>
+                            <td>Geography</td>
+                            <td>M.A., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mrs. Rebecca R. Gurap</td>
+                            <td>English</td>
+                            <td>M.A., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Mrs. Jyoti R. Shirke</td>
+                            <td>Marathi</td>
+                            <td>M.A., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Mrs. Sakshi S. Gole</td>
+                            <td>Hindi</td>
+                            <td>M.A., M.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Mrs. Amita S. Mahajan</td>
+                            <td>Information Technology</td>
+                            <td>M.Sc., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Mrs. Vandana S. Mahale</td>
+                            <td>Physics</td>
+                            <td>M.Sc., B.Ed., MBA</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Mrs. Rohini M. Bendre</td>
+                            <td>Chemistry</td>
+                            <td>M.Sc., B.Ed.</td>
+                        </tr>
+                            <tr>
+                            <td>11</td>
+                            <td>Mrs. Pooja G. Chaudhri</td>
+                            <td>Chemistry</td>
+                            <td>M.Sc., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Ms. Gauri R. Bhagat</td>
+                            <td>Maths</td>
+                            <td>M.Sc.</td>
+                        </tr>
+                          <tr>
+                            <td>13</td>
+                            <td>Mrs. Suvarna Patil</td>
+                            <td>Maths</td>
+                            <td>M.Sc., B.Ed.</td>
+                        </tr>
+                       <tr>
+                            <td>14</td>
+                            <td>Mrs. Bindu Shynu</td>
+                            <td>English</td>
+                            <td>M.A., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Mrs. Sujata Nair</td>
+                            <td>English</td>
+                            <td>M.A., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Mrs. Nayana I. Tayade</td>
+                            <td>B.K.</td>
+                            <td>M.Com., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Mrs. Supriya Salagre</td>
+                            <td>Economics</td>
+                            <td>M.A., B.Ed., MBA</td>
+                        </tr>
+                       
+                        <tr>
+                            <td>18</td>
+                            <td>Ms. Geetu Chattani</td>
+                            <td>O.C.</td>
+                            <td>M.Com., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Mr. Umesh Sonawane</td>
+                            <td>Phy.Edu</td>
+                            <td>M.Com., M.P.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Mrs. Lata Nihalani</td>
+                            <td>SP</td>
+                            <td>M.Com., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>Mrs. Prerana S. Mirgule</td>
+                            <td>Biology</td>
+                            <td>M.Sc., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>Mrs. Nayana S. Surve</td>
+                            <td>Economics</td>
+                            <td>M.A., B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>Mrs. Vaishali Baniya</td>
+                            <td>Computer Science</td>
+                            <td>B.Tech.</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>Ms. Chaitali Borse</td>
+                            <td>B.K./S.P.</td>
+                            <td>M.Com.</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>Mrs. Poonam Patil</td>
+                            <td>Information Technology</td>
+                            <td>M.Sc., B.Ed.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Student Tab -->
+        <div id="student" class="tab-content">
+            <h3 class="section-title">Student Information</h3>
+            
+            <!-- Syllabus Section -->
+            <div class="card">
+                <h4 class="section-subtitle">Syllabus</h4>
+                
+                <!-- Stream Tabs for Syllabus -->
+                <div class="syllabus-tabs">
+                    <button onclick="showSyllabus('arts-syllabus')" class="syllabus-button active">
+                        Arts Stream
+                    </button>
+                    <button onclick="showSyllabus('science-syllabus')" class="syllabus-button">
+                        Science Stream
+                    </button>
+                    <button onclick="showSyllabus('commerce-syllabus')" class="syllabus-button">
+                        Commerce Stream
+                    </button>
+                </div>
+
+                <!-- Arts Syllabus -->
+                <div id="arts-syllabus" class="syllabus-content active">
+                    <h5 class="subject-title" style="font-size: 20px; margin-bottom: 20px;">Arts Stream Syllabus</h5>
+                    <div class="subject-card">
+                        <h6 class="subject-title">Core Subjects</h6>
+                        <ul class="subject-list">
+                            <li>English (Compulsory)</li>
+                            <li>Hindi/Marathi (Compulsory)</li>
+                            <li>History</li>
+                            <li>Geography</li>
+                            <li>Political Science</li>
+                            <li>Economics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Science Syllabus -->
+                <div id="science-syllabus" class="syllabus-content">
+                    <h5 class="subject-title" style="font-size: 20px; margin-bottom: 20px;">Science Stream Syllabus</h5>
+                    <div class="subject-grid">
+                        <div class="subject-card">
+                            <h6 class="subject-title">Core Subjects</h6>
+                            <ul class="subject-list">
+                                <li>English (Compulsory)</li>
+                                <li>Physics</li>
+                                <li>Chemistry</li>
+                                <li>Mathematics</li>
+                                <li>Biology</li>
+                            </ul>
+                        </div>
+                        <div class="subject-card">
+                            <h6 class="subject-title">Optional Subjects</h6>
+                            <ul class="subject-list">
+                                <li>Computer Science</li>
+                                <li>Information Technology</li>
+                                <li>Electronics</li>
+                                <li>Environmental Science</li>
+                                <li>Statistics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commerce Syllabus -->
+                <div id="commerce-syllabus" class="syllabus-content">
+                    <h5 class="subject-title" style="font-size: 20px; margin-bottom: 20px;">Commerce Stream Syllabus</h5>
+                    <div class="subject-grid">
+                        <div class="subject-card">
+                            <h6 class="subject-title">Core Subjects</h6>
+                            <ul class="subject-list">
+                                <li>English (Compulsory)</li>
+                                <li>Accountancy</li>
+                                <li>Business Studies</li>
+                                <li>Economics</li>
+                                <li>Mathematics</li>
+                            </ul>
+                        </div>
+                        <div class="subject-card">
+                            <h6 class="subject-title">Optional Subjects</h6>
+                            <ul class="subject-list">
+                                <li>Statistics</li>
+                                <li>Computer Science</li>
+                                <li>Secretarial Practice</li>
+                                <li>Book Keeping</li>
+                                <li>Organization of Commerce</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code of Conduct Section -->
+            <div class="card">
+                <h4 class="section-subtitle">Student Code of Conduct</h4>
+                
+                <div class="conduct-card">
+                    <h5 class="conduct-title">Student Code of Conduct Rules</h5>
+                    
+                    <ul class="conduct-list">
+                        <!-- Campus Property & Environment -->
+                        <li>Students should take care of college property and help in keeping the college campus neat and clean.</li>
+                        <li>Any damage to the college property shall be paid by the student.</li>
+                        <li>Minimum water utilization by the students is expected in the campus.</li>
+                        <li>For minimum energy consumption all electricity points must be switched off when not in use.</li>
+                        <li>Photography in the campus is prohibited unless prior permission of the principal must be obtained.</li>
+                        
+                        <!-- Prohibited Items & Substances -->
+                        <li>Smoking, chewing Gutka, Tobacco, chewing gums is strictly prohibited in the college campus, including the canteen.</li>
+                        <li>Any student found violating these regulations shall be dealt with severely.</li>
+                        <li>Use of Mobile phones, iPods, earphones, Mp3 player, headphones etc. in the college premises is strictly prohibited.</li>
+                        <li>If the student is found using any of the above mentioned electronic equipment in the college premises, the same (in case of mobile phone, with SIM card, Memory card) will be confiscated and the student will be punished for non adherence of code of conduct.</li>
+                        <li>Use of two/four wheelers by student is prohibited in the campus.</li>
+                        <li>The management and college authorities are not responsible for any loss or damage of the vehicles.</li>
+                        
+                        <!-- Academic Conduct -->
+                        <li>Student found indulging in unfair means in examination will be dealt with strictness as per the university rules and regulations.</li>
+                        <li>Students must maintain regular attendance and submit assignments on time.</li>
+                        <li>Respect towards teachers and fellow students is mandatory.</li>
+                        
+                        <!-- Dress Code -->
+                        <li>The students should follow a proper dress code.</li>
+                        <li>Short, off shoulders, sleeveless, deep cut dresses should be strictly avoided by girl students.</li>
+                        <li>Three fourth length or shorts should be avoided by boy students.</li>
+                        
+                        <!-- College Timing -->
+                        <li>College timing is from 12:40 PM to 5:20 PM.</li>
+                        <li>Students must be punctual and attend all classes regularly.</li>
+                    </ul>
+                </div>
+
+                <!-- Important Notice -->
+                <div class="notice-box">
+                    <h6 class="notice-title">
+                        ⚠️ Important Notice
+                    </h6>
+                    <p class="notice-text">
+                        All students are expected to read and follow the complete code of conduct. 
+                        Violation of any rule may result in disciplinary action. For detailed guidelines, 
+                        please refer to the student handbook provided during admission.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Examination Tab -->
+        <div id="examination" class="tab-content">
+            <h3 class="section-title">Examination Information</h3>
+            <div class="exam-grid">
+                <div class="exam-card card-hover">
+                    <h4 class="exam-title">Exam Schedule</h4>
+                    <div class="exam-schedule">
+                        <div class="exam-item">
+                            <span>First Term Exam</span>
+                            <span class="exam-date">Oct 15-25, 2024</span>
+                        </div>
+                        <div class="exam-item">
+                            <span>Second Term Exam</span>
+                            <span class="exam-date">Feb 10-20, 2025</span>
+                        </div>
+                        <div class="exam-item">
+                            <span>Final Exam</span>
+                            <span class="exam-date">Mar 15-30, 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exam-card card-hover">
+                    <h4 class="exam-title">Exam Guidelines</h4>
+                    <ul class="exam-guidelines">
+                        <li>Arrive 30 minutes before exam</li>
+                        <li>Bring valid ID card</li>
+                        <li>No electronic devices allowed</li>
+                        <li>Follow dress code</li>
+                        <li>Maintain exam hall discipline</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card mt-30">
+                <h4 class="section-subtitle">Downloads</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <button class="btn-primary">
+                        Exam Time Table
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notice Tab -->
+        <div id="notice" class="tab-content">
+            <h3 class="section-title">Notice Board</h3>
+            <div class="placeholder-section">
+                <p class="placeholder-text">Notice board will be updated soon.</p>
+            </div>
+        </div>
+
+        <!-- Activities Tab -->
+        <div id="activities" class="tab-content">
+            <h3 class="section-title">College Activities</h3>
+            <div class="placeholder-section">
+                <p class="placeholder-text">College activities information will be updated soon.</p>
+            </div>
+        </div>
+
+        <!-- Gallery Tab -->
+        <div id="gallery" class="tab-content">
+            <h3 class="section-title">Photo Gallery</h3>
+            <div class="placeholder-section">
+                <p class="placeholder-text">Photo gallery will be updated soon.</p>
+            </div>
+        </div>
+
+        <!-- Awards Tab -->
+        <div id="awards" class="tab-content">
+            <h3 class="section-title">Awards & Achievements</h3>
+            <div class="placeholder-section">
+                <p class="placeholder-text">Awards and achievements information will be updated soon.</p>
+            </div>
+        </div>
+
+        <!-- Committee Tab -->
+        <div id="committee" class="tab-content">
+            <h3 class="section-title">College Committees</h3>
+            
+            <!-- Single Comprehensive Committee Table -->
+            <div class="card">
+                <h4 class="section-subtitle">All College Committees</h4>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Committee</th>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Responsibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Academic Committee -->
+                            <tr>
+                                <td style="font-weight: 600; color: #8b4513;">Academic</td>
+                                <td style="font-weight: 600; color: #8b4513;">Chairperson</td>
+                                <td>Dr. Rajesh Kumar</td>
+                                <td>Physics</td>
+                                <td>Overall Academic Management</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Vice-Chairperson</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Prof. Sunita Sharma</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mathematics</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Academic Planning</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mr. Amit Patel</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Commerce</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Commerce Stream Coordination</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Dr. Priya Mehta</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Chemistry</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Science Stream Coordination</td>
+                            </tr>
+                            
+                            <!-- Examination Committee -->
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Examination</td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Controller</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Prof. Ravi Singh</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Biology</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Overall Exam Coordination</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Deputy Controller</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Ms. Kavita Joshi</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">English</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Question Paper Management</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mr. Deepak Gupta</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Economics</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Result Processing</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Rohini Bendre</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Chemistry</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Invigilation Coordination</td>
+                            </tr>
+                            
+                            <!-- Attendance Committee -->
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Attendance</td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Coordinator</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Vandana Mahale</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Physics</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Attendance Monitoring</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Jyoti Shirke</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Marathi</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Arts Stream Attendance</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Nayana Tayade</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Commerce</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Commerce Stream Attendance</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Prerana Mirgule</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Biology</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Science Stream Attendance</td>
+                            </tr>
+                            
+                            <!-- Assignment Committee -->
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Assignment</td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Coordinator</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Rebecca Gurap</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">English</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Assignment Guidelines</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Ms. Gauri Bhagat</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mathematics</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Science Assignments</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mr. Anandrao Patil</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">History/Political Science</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Arts Assignments</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Ms. Geetu Chattani</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Commerce</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Commerce Assignments</td>
+                            </tr>
+                            
+                            <!-- Library Committee -->
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Library</td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Librarian</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Sujata Nair</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">English</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Library Management</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Assistant</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Amita Mahajan</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Information Technology</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Digital Resources</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Sakshi Gole</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Hindi</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Book Acquisition</td>
+                            </tr>
+                            
+                            <!-- Discipline Committee -->
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Discipline</td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Chairperson</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Dr. Rajesh Kumar</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Physics</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Overall Discipline Management</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Prof. Sunita Sharma</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mathematics</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Student Grievance Handling</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mr. Umesh Sonawane</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Physical Education</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Disciplinary Hearings</td>
+                            </tr>
+                            
+                            <!-- Cultural Committee -->
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Cultural</td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Coordinator</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Bindu Shynu</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">English</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Drama & Literature</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Jyoti Shirke</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Marathi</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Traditional Arts</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Sakshi Gole</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Hindi</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Poetry & Music</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mr. Umesh Sonawane</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Physical Education</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Sports Events</td>
+                            </tr>
+                            
+                            <!-- Student Welfare Committee -->
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Student Welfare</td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Coordinator</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Supriya Salagre</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Economics</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Student Counseling</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #f5f1e8;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mr. Umesh Sonawane</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Physical Education</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Sports & Health</td>
+                            </tr>
+                            <tr class="hover:bg-opacity-50" style="background-color: #fefcf3;">
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;"></td>
+                                <td class="border px-4 py-3 font-semibold" style="border-color: #d2b48c; color: #8b4513;">Member</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Mrs. Vaishali Baniya</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Computer Science</td>
+                                <td class="border px-4 py-3" style="border-color: #d2b48c;">Digital Literacy</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enrollment Chart Modal -->
+    <div id="enrollmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Student Enrollment Distribution</h3>
+                <button onclick="closeEnrollmentChart()" class="modal-close">&times;</button>
+            </div>
+            
+            <div class="chart-container">
+                <!-- Enhanced Pie Chart -->
+                <div class="pie-chart-wrapper">
+                    <div class="pie-chart">
+                        <svg viewBox="0 0 200 200">
+                            <!-- Science with CS: 60 students (13.6%) - Blue -->
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#3B82F6" stroke-width="25" 
+                                    stroke-dasharray="85.3 540" stroke-dashoffset="0" class="pie-slice"></circle>
+                            
+                            <!-- Science with IT: 40 students (9.1%) - Green -->
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#10B981" stroke-width="25" 
+                                    stroke-dasharray="57.2 540" stroke-dashoffset="-85.3" class="pie-slice"></circle>
+                            
+                            <!-- Science with Hindi: 30 students (6.8%) - Yellow -->
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#F59E0B" stroke-width="25" 
+                                    stroke-dasharray="42.9 540" stroke-dashoffset="-142.5" class="pie-slice"></circle>
+                            
+                            <!-- Science with Marathi: 20 students (4.5%) - Red -->
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#EF4444" stroke-width="25" 
+                                    stroke-dasharray="28.6 540" stroke-dashoffset="-185.4" class="pie-slice"></circle>
+                            
+                            <!-- Commerce: 120 students (27.3%) - Purple -->
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#8B5CF6" stroke-width="25" 
+                                    stroke-dasharray="171.4 540" stroke-dashoffset="-214" class="pie-slice"></circle>
+                            
+                            <!-- Commerce IT: 116 students (26.4%) - Pink -->
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#EC4899" stroke-width="25" 
+                                    stroke-dasharray="165.7 540" stroke-dashoffset="-385.4" class="pie-slice"></circle>
+                            
+                            <!-- Arts: 56 students (12.7%) - Brown -->
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#8B4513" stroke-width="25" 
+                                    stroke-dasharray="80 540" stroke-dashoffset="-551.1" class="pie-slice"></circle>
+                        </svg>
+                        
+                        <!-- Center text -->
+                        <div class="chart-center">
+                            <div class="chart-total">442</div>
+                            <div class="chart-label">Total Students</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Legend and Statistics -->
+                <div class="legend">
+                    <h4 class="legend-title">Enrollment Breakdown</h4>
+                    
+                    <div class="legend-item" style="background-color: #eff6ff;">
+                        <div style="display: flex; align-items: center;">
+                            <div class="legend-color" style="background-color: #3B82F6;"></div>
+                            <span class="legend-label">Science with Computer Science</span>
+                        </div>
+                        <div class="legend-stats">
+                            <div class="legend-count">60</div>
+                            <div class="legend-percent">13.6%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-item" style="background-color: #ecfdf5;">
+                        <div style="display: flex; align-items: center;">
+                            <div class="legend-color" style="background-color: #10B981;"></div>
+                            <span class="legend-label">Science with IT</span>
+                        </div>
+                        <div class="legend-stats">
+                            <div class="legend-count">40</div>
+                            <div class="legend-percent">9.1%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-item" style="background-color: #fffbeb;">
+                        <div style="display: flex; align-items: center;">
+                            <div class="legend-color" style="background-color: #F59E0B;"></div>
+                            <span class="legend-label">Science with Hindi</span>
+                        </div>
+                        <div class="legend-stats">
+                            <div class="legend-count">30</div>
+                            <div class="legend-percent">6.8%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-item" style="background-color: #fef2f2;">
+                        <div style="display: flex; align-items: center;">
+                            <div class="legend-color" style="background-color: #EF4444;"></div>
+                            <span class="legend-label">Science with Marathi</span>
+                        </div>
+                        <div class="legend-stats">
+                            <div class="legend-count">20</div>
+                            <div class="legend-percent">4.5%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-item" style="background-color: #faf5ff;">
+                        <div style="display: flex; align-items: center;">
+                            <div class="legend-color" style="background-color: #8B5CF6;"></div>
+                            <span class="legend-label">Commerce</span>
+                        </div>
+                        <div class="legend-stats">
+                            <div class="legend-count">120</div>
+                            <div class="legend-percent">27.3%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-item" style="background-color: #fdf2f8;">
+                        <div style="display: flex; align-items: center;">
+                            <div class="legend-color" style="background-color: #EC4899;"></div>
+                            <span class="legend-label">Commerce with IT</span>
+                        </div>
+                        <div class="legend-stats">
+                            <div class="legend-count">116</div>
+                            <div class="legend-percent">26.4%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-item" style="background-color: #f5f1e8;">
+                        <div style="display: flex; align-items: center;">
+                            <div class="legend-color" style="background-color: #8B4513;"></div>
+                            <span class="legend-label">Arts</span>
+                        </div>
+                        <div class="legend-stats">
+                            <div class="legend-count">56</div>
+                            <div class="legend-percent">12.7%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-box">
+                        <h5 class="summary-title">Summary</h5>
+                        <ul class="summary-list">
+                            <li>Total Science Students: 150 (34%)</li>
+                            <li>Total Commerce Students: 236 (53.4%)</li>
+                            <li>Total Arts Students: 56 (12.7%)</li>
+                            <li class="summary-total">Total Enrollment: 442 Students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>📍 Saket Vidyanagari Marg, Kalyan (East) - 421306</p>
+                    <p>📞 +91 7208020258</p>
+                    <p>✉️ info@saketjrcollege.edu</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Academic</a></li>
+                        <li><a href="#">Student Corner</a></li>
+                        <li><a href="#">HSC Board</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Saket Junior College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                button.style.backgroundColor = '#d2b48c';
+                button.style.color = '#8b4513';
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            event.target.style.backgroundColor = '#8b4513';
+            event.target.style.color = '#fefcf3';
+        }
+
+        function showSyllabus(syllabusName) {
+            // Hide all syllabus contents
+            const syllabusContents = document.querySelectorAll('.syllabus-content');
+            syllabusContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Remove active class from all syllabus buttons
+            const syllabusButtons = document.querySelectorAll('.syllabus-button');
+            syllabusButtons.forEach(button => {
+                button.classList.remove('active');
+                button.style.backgroundColor = '#d2b48c';
+                button.style.color = '#8b4513';
+            });
+
+            // Show selected syllabus content
+            document.getElementById(syllabusName).style.display = 'block';
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            event.target.style.backgroundColor = '#8b4513';
+            event.target.style.color = '#fefcf3';
+        }
+
+        function showEnrollmentChart() {
+            document.getElementById('enrollmentModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+            
+            // Animate pie chart slices
+            setTimeout(() => {
+                const slices = document.querySelectorAll('.pie-slice');
+                slices.forEach((slice, index) => {
+                    slice.style.strokeDashoffset = slice.getAttribute('stroke-dashoffset');
+                });
+            }, 100);
+        }
+
+        function closeEnrollmentChart() {
+            document.getElementById('enrollmentModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('enrollmentModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEnrollmentChart();
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'972bb7d4a7164200',t:'MTc1NTc5NTk1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+

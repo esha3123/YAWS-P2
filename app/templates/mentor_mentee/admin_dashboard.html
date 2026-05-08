@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+    <h1 style="color: var(--m3-primary); margin-bottom: 30px;">Admin Dashboard</h1>
+    
+    <div style="margin-bottom: 40px; padding: 20px; background: var(--m3-surface); border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+        <h2 style="color: var(--m3-on-surface); margin-bottom: 20px;">Upload Role CSV</h2>
+        <p style="color: var(--m3-on-surface-variant); margin-bottom: 15px;">
+            Upload a CSV with columns: <code>email, name, role, department, year (optional), roll_no (optional)</code>
+        </p>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="csv_file" accept=".csv" required style="margin-bottom: 15px;">
+            <button type="submit" style="padding: 10px 20px; background: var(--m3-primary); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Upload Roles</button>
+        </form>
+    </div>
+    
+    <div style="margin-bottom: 40px; padding: 20px; background: var(--m3-surface); border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.12);">
+        <h2 style="color: var(--m3-on-surface); margin-bottom: 20px;">System Statistics</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="padding: 15px; background: var(--m3-primary-container); border-radius: 8px;">
+                <div style="font-size: 24px; font-weight: 700; color: var(--m3-primary);">{{ mentees|length }}</div>
+                <div style="color: var(--m3-on-primary-container);">Mentees</div>
+            </div>
+            <div style="padding: 15px; background: var(--m3-primary-container); border-radius: 8px;">
+                <div style="font-size: 24px; font-weight: 700; color: var(--m3-primary);">{{ mentors|length }}</div>
+                <div style="color: var(--m3-on-primary-container);">Mentors</div>
+            </div>
+            <div style="padding: 15px; background: var(--m3-primary-container); border-radius: 8px;">
+                <div style="font-size: 24px; font-weight: 700; color: var(--m3-primary);">{{ monthly_forms|length }}</div>
+                <div style="color: var(--m3-on-primary-container);">Monthly Forms</div>
+            </div>
+            <div style="padding: 15px; background: var(--m3-primary-container); border-radius: 8px;">
+                <div style="font-size: 24px; font-weight: 700; color: var(--m3-primary);">{{ yearly_forms|length }}</div>
+                <div style="color: var(--m3-on-primary-container);">Yearly Forms</div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center;">
+        <a href="{{ url_for('mentor_mentee.logout') }}" style="padding: 10px 20px; background: var(--m3-error); color: white; text-decoration: none; border-radius: 4px; font-weight: 600;">Logout</a>
+    </div>
+</div>
+{% endblock %}

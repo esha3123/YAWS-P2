@@ -1,0 +1,448 @@
+{% extends "base.html" %}
+
+{% block title %}National Service Scheme (NSS) - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.section-heading {
+  color: var(--m3-secondary);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.nss-mission {
+  background-color: var(--m3-surface-variant);
+  padding: 20px;
+  border-radius: var(--m3-shape-medium);
+  margin-bottom: 20px;
+}
+
+.nss-mission h3 {
+  color: var(--m3-primary);
+  margin-bottom: 15px;
+}
+
+.nss-motto {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--m3-tertiary);
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: var(--m3-surface-variant);
+  border-radius: var(--m3-shape-small);
+}
+
+.nss-objectives {
+  margin: 20px 0;
+}
+
+.nss-objectives ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.nss-objectives li {
+  margin-bottom: 8px;
+}
+
+.nss-activities {
+  margin: 20px 0;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.activity-card {
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  overflow: hidden;
+  box-shadow: var(--m3-shadow-1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--m3-shadow-2);
+}
+
+.activity-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.activity-content {
+  padding: 15px;
+}
+
+.activity-content h4 {
+  color: var(--m3-primary);
+  margin-bottom: 10px;
+}
+
+.view-button {
+  display: inline-block;
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--m3-shape-small);
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.view-button:hover {
+  background-color: var(--m3-primary-hover);
+}
+
+.nss-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.nss-table th, .nss-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.nss-table th {
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  font-weight: 500;
+}
+
+.nss-table tr:hover {
+  background-color: var(--m3-surface-variant);
+}
+
+.nss-committee {
+  margin: 20px 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: var(--m3-surface);
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 1000px;
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-4);
+}
+
+.close-button {
+  color: var(--m3-on-surface-variant);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: var(--m3-primary);
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--m3-shape-small);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">National Service Scheme (NSS)</h1>
+  
+  <div class="nss-mission">
+    <h3>About NSS</h3>
+    <p>The National Service Scheme (NSS) is an Indian government-sponsored public service program conducted by the Ministry of Youth Affairs and Sports of the Government of India. Popularly known as NSS, the scheme was launched in Gandhiji's centenary year (1969) and aims at developing student's personality through community service.</p>
+    <p>At Saket College, the NSS unit is actively engaged in various community service activities, social awareness campaigns, and development programs that benefit both students and society at large.</p>
+  </div>
+  
+  <div class="nss-motto">
+    "NOT ME, BUT YOU"
+  </div>
+  
+  <div class="nss-objectives">
+    <h2 class="section-heading">Objectives of NSS</h2>
+    <ul>
+      <li>Understand the community in which they work</li>
+      <li>Understand themselves in relation to their community</li>
+      <li>Identify the needs and problems of the community and involve them in problem-solving</li>
+      <li>Develop among themselves a sense of social and civic responsibility</li>
+      <li>Utilize their knowledge in finding practical solutions to individual and community problems</li>
+      <li>Develop competence required for group-living and sharing of responsibilities</li>
+      <li>Gain skills in mobilizing community participation</li>
+      <li>Acquire leadership qualities and democratic attitudes</li>
+      <li>Develop capacity to meet emergencies and natural disasters</li>
+      <li>Practice national integration and social harmony</li>
+    </ul>
+  </div>
+  
+  <h2 class="section-heading">NSS Activities at Saket College</h2>
+  <p>The NSS unit at Saket College conducts a wide range of activities focusing on community development, social awareness, and student personality development. Some of our key initiatives include:</p>
+  
+  <div class="activity-grid">
+    <div class="activity-card" onclick="openModal('community')">
+      <img src="{{ url_for('static', filename='images/activities/nss/donation.png') }}" alt="Community Service" class="activity-image">
+      <div class="activity-content">
+        <h4>Community Service</h4>
+        <p>Regular visits to nearby villages, conducting cleanliness drives, tree plantation, and helping underprivileged communities.</p>
+      </div>
+    </div>
+    
+    <div class="activity-card" onclick="openModal('health')">
+      <img src="{{ url_for('static', filename='images/activities/nss/yoga-day.png') }}" alt="Health Awareness" class="activity-image">
+      <div class="activity-content">
+        <h4>Health Awareness</h4>
+        <p>Organizing blood donation camps, health check-up camps, and awareness programs on various health issues.</p>
+      </div>
+    </div>
+    
+    <div class="activity-card" onclick="openModal('environment')">
+      <img src="{{ url_for('static', filename='images/activities/nss/best=out-of-wast.png') }}" alt="Environmental Awareness" class="activity-image">
+      <div class="activity-content">
+        <h4>Environmental Awareness</h4>
+        <p>Promoting environmental conservation through tree plantation, plastic-free campaigns, and water conservation awareness.</p>
+      </div>
+    </div>
+    
+    <div class="activity-card" onclick="openModal('voting')">
+      <img src="{{ url_for('static', filename='images/activities/nss/vote.png') }}" alt="Voting Awareness" class="activity-image">
+      <div class="activity-content">
+        <h4>Voting Awareness</h4>
+        <p>Promoting awareness about the importance of voting and democratic participation among students and communities.</p>
+      </div>
+    </div>
+    
+    <div class="activity-card" onclick="openModal('residential')">
+      <img src="{{ url_for('static', filename='images/activities/nss/residential.png') }}" alt="Residential Camp" class="activity-image">
+      <div class="activity-content">
+        <h4>Residential Camp</h4>
+        <p>7-day special camps in adopted villages where volunteers engage in intensive community service and rural development activities.</p>
+      </div>
+    </div>
+    
+    <div class="activity-card" onclick="openModal('abha')">
+      <img src="{{ url_for('static', filename='images/activities/nss/abha-card.png') }}" alt="ABHA Card Campaign" class="activity-image">
+      <div class="activity-content">
+        <h4>ABHA Card Campaign</h4>
+        <p>Promoting Ayushman Bharat Health Account (ABHA) registration to provide digital health IDs for better healthcare access.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="nss-committee">
+    <h2 class="section-heading">NSS Committee</h2>
+    <table class="nss-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Role in NSS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Prof. Sanjay Choudhari</td>
+          <td>Assistant Professor</td>
+          <td>NSS Program Officer</td>
+        </tr>
+        <tr>
+          <td>Prof. Sanchita Panda</td>
+          <td>Academic Coordinator</td>
+          <td>NSS Program Officer</td>
+        </tr>
+        <tr>
+          <td>Prof. Renuka Shingole</td>
+          <td>Assistant Professor</td>
+          <td>NSS Committee Member</td>
+        </tr>
+        <tr>
+          <td>Prof. Pritee Badgujar</td>
+          <td>Assistant Professor</td>
+          <td>NSS Committee Member</td>
+        </tr>
+        <tr>
+          <td>Prof. Shweta Mourya</td>
+          <td>Assistant Professor</td>
+          <td>NSS Committee Member</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <h2 class="section-heading">Special Camps and Programs</h2>
+  <p>Every year, the NSS unit of Saket College organizes a 7-day special camp in a nearby adopted village. The camp involves various activities aimed at community development and providing practical experience to NSS volunteers in community living.</p>
+  
+  <h2 class="section-heading">Benefits of Joining NSS</h2>
+  <ul class="nss-objectives">
+    <li>Develop leadership skills, communication abilities, and team spirit</li>
+    <li>Gain hands-on experience in community service and social work</li>
+    <li>Certificate of completion which is beneficial for higher studies</li>
+    <li>Additional 10 marks for admission to certain postgraduate courses as per University of Mumbai guidelines</li>
+    <li>Exposure to various social issues and community challenges</li>
+    <li>Opportunity to participate in state and national-level NSS camps</li>
+  </ul>
+  
+  <h2 class="section-heading">How to Join NSS</h2>
+  <p>Students interested in joining the NSS unit at Saket College can apply at the beginning of the academic year. Selection is based on the student's interest in social service and community development. For more information, please contact the NSS Program Officer or visit the NSS office in the college.</p>
+</div>
+
+<div id="communityModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal('community')">&times;</span>
+    <h2>Community Service Activities</h2>
+    <div class="photo-gallery">
+      <img src="{{ url_for('static', filename='images/activities/nss/donation.png') }}" alt="Donation Drive" class="gallery-image">
+      <img src="{{ url_for('static', filename='images/activities/nss/donation2.png') }}" alt="Donation Activities" class="gallery-image">
+    </div>
+  </div>
+</div>
+
+<div id="healthModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal('health')">&times;</span>
+    <h2>Health Awareness Campaigns</h2>
+    <div class="photo-gallery">
+      <img src="{{ url_for('static', filename='images/activities/nss/yoga-day.png') }}" alt="Yoga Day" class="gallery-image">
+      <img src="{{ url_for('static', filename='images/activities/nss/yoga-day2.png') }}" alt="Yoga Day Activities" class="gallery-image">
+    </div>
+  </div>
+</div>
+
+<div id="environmentModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal('environment')">&times;</span>
+    <h2>Environmental Conservation Initiatives</h2>
+    <div class="photo-gallery">
+      <img src="{{ url_for('static', filename='images/activities/nss/best=out-of-wast.png') }}" alt="Best Out of Waste" class="gallery-image">
+      <img src="{{ url_for('static', filename='images/activities/nss/best-out-of-waste2.png') }}" alt="Best Out of Waste Activities" class="gallery-image">
+    </div>
+  </div>
+</div>
+
+<div id="votingModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal('voting')">&times;</span>
+    <h2>Voting Awareness Campaign</h2>
+    <div class="photo-gallery">
+      <img src="{{ url_for('static', filename='images/activities/nss/vote.png') }}" alt="Voting Awareness" class="gallery-image">
+      <img src="{{ url_for('static', filename='images/activities/nss/vote2.png') }}" alt="Voting Awareness Activities" class="gallery-image">
+    </div>
+  </div>
+</div>
+
+<div id="residentialModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal('residential')">&times;</span>
+    <h2>NSS Residential Camp</h2>
+    <div class="photo-gallery">
+      <img src="{{ url_for('static', filename='images/activities/nss/residential.png') }}" alt="Residential Camp" class="gallery-image">
+      <img src="{{ url_for('static', filename='images/activities/nss/residentil.png') }}" alt="Residential Camp Activities" class="gallery-image">
+    </div>
+  </div>
+</div>
+
+<div id="abhaModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal('abha')">&times;</span>
+    <h2>ABHA Card Campaign</h2>
+    <div class="photo-gallery">
+      <img src="{{ url_for('static', filename='images/activities/nss/abha-card.png') }}" alt="ABHA Card Campaign" class="gallery-image">
+      <img src="{{ url_for('static', filename='images/activities/nss/abha-2.png') }}" alt="ABHA Card Activities" class="gallery-image">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(type) {
+  document.getElementById(type + 'Modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(type) {
+  document.getElementById(type + 'Modal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Close modals when clicking outside the content
+window.onclick = function(event) {
+  const modals = document.getElementsByClassName('modal');
+  for (let i = 0; i < modals.length; i++) {
+    if (event.target === modals[i]) {
+      modals[i].style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  }
+}
+</script>
+{% endblock %}

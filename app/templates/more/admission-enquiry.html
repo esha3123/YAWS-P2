@@ -1,0 +1,295 @@
+{% extends "base.html" %}
+
+{% block title %}Admission Enquiry - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.content-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--m3-primary) 0%, var(--m3-tertiary) 100%);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: var(--m3-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--m3-on-surface-variant);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.admission-section {
+  background-color: var(--m3-surface-1);
+  border-radius: var(--m3-shape-medium);
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--m3-shadow-1);
+}
+
+.section-heading {
+  font-size: 1.8rem;
+  color: var(--m3-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.enquiry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--m3-on-primary);
+  background: linear-gradient(135deg, var(--m3-primary) 0%, var(--m3-primary-container) 100%);
+  border: none;
+  border-radius: var(--m3-shape-medium);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--m3-shadow-2);
+  min-width: 250px;
+  text-align: center;
+}
+
+.enquiry-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--m3-shadow-3);
+  background: linear-gradient(135deg, var(--m3-primary-container) 0%, var(--m3-primary) 100%);
+}
+
+.enquiry-button:active {
+  transform: translateY(-1px);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.enquiry-button i {
+  font-size: 1.4rem;
+}
+
+.enquiry-button.degree {
+  background: linear-gradient(135deg, var(--m3-primary) 0%, var(--m3-tertiary) 100%);
+}
+
+.enquiry-button.degree:hover {
+  background: linear-gradient(135deg, var(--m3-tertiary) 0%, var(--m3-primary) 100%);
+}
+
+.enquiry-button.jr-college {
+  background: linear-gradient(135deg, var(--m3-secondary) 0%, #8d8936 100%);
+}
+
+.enquiry-button.jr-college:hover {
+  background: linear-gradient(135deg, #8d8936 0%, var(--m3-secondary) 100%);
+}
+
+.info-section {
+  background-color: var(--m3-surface-container);
+  border-radius: var(--m3-shape-medium);
+  padding: 2rem;
+  margin-top: 2rem;
+  border-left: 4px solid var(--m3-primary);
+}
+
+.info-section h3 {
+  font-size: 1.4rem;
+  color: var(--m3-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.info-section p {
+  font-size: 1rem;
+  color: var(--m3-on-surface-variant);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+.info-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.info-section li {
+  font-size: 1rem;
+  color: var(--m3-on-surface);
+  line-height: 1.8;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.info-section li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--m3-primary);
+  font-weight: bold;
+}
+
+.contact-info {
+  background-color: var(--m3-surface-container-high);
+  border-radius: var(--m3-shape-medium);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: var(--m3-on-surface);
+  margin: 0.5rem 0;
+}
+
+.contact-info a {
+  color: var(--m3-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .enquiry-button {
+    width: 100%;
+    min-width: unset;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .admission-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .info-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .section-heading {
+    font-size: 1.3rem;
+  }
+
+  .enquiry-button {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Admission Enquiry</h1>
+  <p class="page-subtitle">
+    Welcome to Saket College! We're excited to help you begin your academic journey with us.
+    <br>Please select the program you're interested in to fill out our enquiry form.
+  </p>
+
+  <div class="admission-section">
+    <h2 class="section-heading">Choose Your Program</h2>
+    
+    <div class="button-container">
+      <a href="https://forms.office.com/r/KN5KtjsUvB" class="enquiry-button degree" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">school</i>
+        <span>Degree College Enquiry (UG/PG)</span>
+      </a>
+      
+      <a href="https://forms.office.com/r/TfiYLfTmYN" class="enquiry-button jr-college" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">menu_book</i>
+        <span>Jr. College Enquiry</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3>About Our Admission Process</h3>
+    <p>
+      At Saket College of Arts, Science & Commerce, we strive to make the admission process as smooth and transparent as possible. 
+      Our enquiry form is the first step towards joining our prestigious institution.
+    </p>
+    <ul>
+      <li>Fill out the online enquiry form by clicking the appropriate button above</li>
+      <li>Our admission team will review your details</li>
+      <li>You will receive a confirmation email with further instructions</li>
+      <li>Attend the scheduled counseling session (if applicable)</li>
+      <li>Complete the admission formalities as guided</li>
+    </ul>
+  </div>
+
+  <div class="contact-info">
+    <h3 style="color: var(--m3-primary); margin-bottom: 1rem;">Need Help?</h3>
+    <p>For any queries regarding admissions, please contact:</p>
+    <p><strong>Admission Office</strong></p>
+    <p>Email: <a href="mailto:admission@saketcollege.edu.in">admission@saketcollege.edu.in</a></p>
+    <p>Phone: <a href="tel:+912212345678">+91 221 234 5678</a></p>
+  </div>
+</div>
+
+
+{% endblock %}

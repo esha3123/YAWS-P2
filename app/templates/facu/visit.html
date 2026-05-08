@@ -1,0 +1,651 @@
+{% extends "base.html" %}
+
+{% block title %}Visit - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+  text-align: center;
+}
+
+.visit-section {
+  margin-bottom: 40px;
+}
+
+.visit-section h2 {
+  color: var(--m3-primary);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.visit-section p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image-container {
+  flex: 1;
+  min-width: 250px;
+  height: 200px;
+  border: 1px solid var(--m3-outline-variant);
+  border-radius: var(--m3-shape-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--m3-surface-variant);
+  margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--m3-shadow-2);
+}
+
+.image-container::after {
+  content: "Click to enlarge";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover::after {
+  opacity: 1;
+}
+
+.campus-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover .campus-image {
+  transform: scale(1.05);
+}
+
+.image-placeholder {
+  color: var(--m3-outline);
+  text-align: center;
+  padding: 10px;
+  font-style: italic;
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  border: 1px dashed var(--m3-outline);
+  border-radius: var(--m3-shape-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--m3-surface-variant);
+  margin: 20px 0;
+}
+
+.contact-details {
+  background-color: var(--m3-surface-variant);
+  padding: 20px;
+  border-radius: var(--m3-shape-small);
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.contact-item .material-icons {
+  margin-right: 15px;
+  color: var(--m3-primary);
+}
+
+.directions-list {
+  margin: 20px 0;
+}
+
+.directions-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.transport-option {
+  background-color: var(--m3-surface);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: var(--m3-shape-small);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.transport-option h3 {
+  color: var(--m3-primary);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Modal styles for enlarged image */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  overflow: auto;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.enlarged-image {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 3px solid white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.zoom-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.zoom-btn {
+  background-color: var(--m3-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+.zoom-btn:hover {
+  background-color: var(--m3-tertiary);
+  transform: scale(1.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+}
+
+.loading-indicator .material-icons.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column;
+  }
+  
+  .image-container {
+    width: 100%;
+  }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Visit Saket College</h1>
+  
+  <div class="visit-section">
+    <h2>About Our Campus</h2>
+    <p>Saket College is located in the vibrant city of Kalyan. Our campus spans across a beautiful landscape, offering state-of-the-art facilities for academic and extracurricular activities. We welcome prospective students, parents, alumni, and visitors to explore our campus.</p>
+    
+    <div class="image-row">
+      <div class="image-container" data-image="image1">
+        <img src="/static/images/visit/collegecampus.jpg" alt="CampusMainBuilding" class="campus-image" data-src="/static/images/visit/campus-main.jpg">
+      </div>
+      <div class="image-container" data-image="image2">
+        <img src="/static/images/visit/CampusGardenImage.jpg" alt="Campus Garden" class="campus-image" data-src="/static/images/visit/campus-garden.jpg">
+      </div>
+      <div class="image-container" data-image="image3">
+        <img src="/static/images/visit/library.jpg" alt="Campus Library" class="campus-image" data-src="/static/images/visit/campus-library.jpg">
+      </div>
+    </div>
+  </div>
+  
+  <div class="visit-section">
+    <h2>Campus Infrastructure</h2>
+    <p>Saket College offers world-class infrastructure to provide students with an excellent learning environment. Our facilities are designed to enhance academic growth while supporting extracurricular and recreational activities.</p>
+    
+    <div class="transport-option">
+      <h3>Modern Library</h3>
+      <p>Our spacious, well-equipped library houses over 25,000 books across various disciplines, academic journals, magazines, and digital resources. With dedicated reading zones, discussion areas, and computer terminals for digital research, the library serves as a knowledge hub for students and faculty alike.</p>
+      <div class="image-row">
+        <div class="image-container" data-image="library1">
+          <img src="/static/images/visit/BookCollections.jpg" alt="Book Collections" class="campus-image" data-src="/static/images/visit/library-collections.jpg">
+        </div>
+        <div class="image-container" data-image="library2">
+          <img src="/static/images/visit/library2.jpg" alt="Library Reading Area" class="campus-image" data-src="/static/images/visit/library-reading.jpg">
+        </div>
+      </div>
+    </div>
+    
+    <div class="transport-option">
+      <h3>State-of-the-Art Classrooms</h3>
+      <p>All classrooms are equipped with smart boards, projectors, and modern furniture to create an engaging learning environment. Air-conditioned lecture halls with excellent acoustics ensure comfortable academic sessions throughout the year.</p>
+      <div class="image-row">        <div class="image-container" data-image="classroom1">
+          <img src="/static/images/visit/SmartClassroom.jpg" alt="Smart Classroom" class="campus-image" data-src="/static/images/visit/Smart Classroom.jpg">
+        </div>
+        <div class="image-container" data-image="classroom2">
+          <img src="/static/images/visit/LectureHall.jpg" alt="Lecture Hall" class="campus-image" data-src="/static/images/visit/Lecture Hall.jpg">
+        </div>
+      </div>
+    </div>
+    
+    <div class="transport-option">
+      <h3>Modern Gymnasium</h3>
+      <p>Our gymnasium features the latest fitness equipment, weight training section, cardio zone, and dedicated areas for yoga and aerobics. Professional trainers are available to guide students with personalized fitness routines and wellness programs.</p>
+      <div class="image-row">
+        <div class="image-container" data-image="gym1">
+          <img src="/static/images/visit/gym.jpg" alt="Gym Equipment" class="campus-image" data-src="/static/images/visit/gym-equipment.jpg">
+        </div>
+        <div class="image-container" data-image="gym2">
+          <img src="/static/images/visit/gym2.jpg" alt="Fitness Training Area" class="campus-image" data-src="/static/images/visit/fitness-area.jpg">
+        </div>
+      </div>
+    </div>
+    
+    <div class="transport-option">
+      <h3>Sports Facilities</h3>
+      <p>The campus includes outdoor courts for basketball, volleyball, and badminton, along with a cricket ground and football field. Indoor sports facilities include table tennis, chess, and carrom to encourage students' participation in sports activities.</p>
+      <div class="image-row">
+        <div class="image-container" data-image="sports1">
+          <img src="/static/images/sports.jpg" alt="Sports Ground" class="campus-image" data-src="/static/images/visit/sports-ground.jpg">
+        </div>
+        <div class="image-container" data-image="sports2">
+          <img src="static\images\visit\IndoorSportsArea.jpg" alt="Indoor Sports Area" class="campus-image" data-src="/static/images/visit/indoor-sports.jpg">
+        </div>
+      </div>
+    </div>
+    
+    <div class="transport-option">
+      <h3>Cafeteria</h3>
+      <p>Our spacious cafeteria offers a variety of nutritious and delicious meals, snacks, and beverages at affordable prices. With ample seating capacity and a pleasant ambiance, it's a perfect place for students to relax and socialize.</p>
+      <div class="image-row">
+        <div class="image-container" data-image="cafeteria1">
+          <img src="#" alt="Cafeteria Seating" class="campus-image" data-src="/static/images/visit/cafeteria-seating.jpg">
+        </div>
+        <div class="image-container" data-image="cafeteria2">
+          <img src="#" alt="Food Counter" class="campus-image" data-src="/static/images/visit/food-counter.jpg">
+        </div>
+      </div>
+    </div>
+    
+    <div class="transport-option">
+      <h3>Computer Labs</h3>
+      <p>Multiple computer laboratories equipped with the latest hardware and software cater to various academic requirements. High-speed internet connectivity and technical support ensure smooth operation for research and practical sessions.</p>
+      <div class="image-row">
+        <div class="image-container" data-image="lab1">
+          <img src="/static/images/visit/ComputerLab.jpg" alt="Computer Lab" class="campus-image" data-src="/static/images/visit/computer-lab.jpg">
+        </div>
+        <div class="image-container" data-image="lab2">
+          <img src="\static\images\visit\Computerlab1.jpg" alt="Digital Learning Space" class="campus-image" data-src="/static/images/visit/digital-learning.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="visit-section">
+    <h2>Campus Tour</h2>
+    <p>We offer guided tours of our campus to prospective students and visitors. The tour includes visits to academic buildings, library, laboratories, sports facilities, and other areas of interest. Campus tours are available on weekdays (Monday to Friday) from 10:00 AM to 3:00 PM.</p>
+    <p>To schedule a campus tour, please contact our administrative office at least two days in advance.</p>
+    
+    <div class="image-container" style="width: 100%; height: 300px;">
+      <img src="/static/images/home-page.png" alt="Campus Panoramic View" class="campus-image" data-src="/static/images/visit/campus-panorama.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+  
+  <div class="visit-section">
+    <h2>Location & Directions</h2>
+    <p>Our campus is located at Saket Vidyanagari Marg, Kalyan (East), Maharashtra - 421306.</p>
+    
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.477113332672!2d73.14055487605074!3d19.218027482015923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7944940000001%3A0x57eacad21a0aa19c!2sSaket%20College%20of%20Arts%2C%20Science%20%26%20Commerce!5e0!3m2!1sen!2sin!4v1746606281048!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  
+  <div class="visit-section">
+    <h2>Contact Information</h2>
+    <p>For more information about campus visits or to schedule a tour, please contact us:</p>
+    
+    <div class="contact-details">
+      <div class="contact-item">
+        <span class="material-icons">location_on</span>
+        <div>
+          <strong>Address:</strong>
+          <p>Saket College of Arts, Science & Commerce<br>
+          Saket Vidyanagari Marg, Kalyan (East)<br>
+          Maharashtra - 421306</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <span class="material-icons">phone</span>
+        <div>
+          <strong>Phone:</strong>
+          <p>+91 72080 20258</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <span class="material-icons">email</span>
+        <div>
+          <strong>Email:</strong>
+          <p>info@saketcollege.edu</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <span class="material-icons">access_time</span>
+        <div>
+          <strong>Office Hours:</strong>
+          <p>Monday to Saturday: 9:30 AM - 6:00 PM<br>
+          Sunday: Closed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="enlargedImage" class="enlarged-image" alt="Enlarged Campus Image">
+      <div class="zoom-controls">
+        <button class="zoom-btn" onclick="zoomIn()"><span class="material-icons">add</span></button>
+        <button class="zoom-btn" onclick="zoomOut()"><span class="material-icons">remove</span></button>
+        <button class="zoom-btn" onclick="resetZoom()"><span class="material-icons">refresh</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Add click event listeners to all image containers
+  document.addEventListener('DOMContentLoaded', function() {
+    const imageContainers = document.querySelectorAll('.image-container');
+    imageContainers.forEach(function(container) {
+      container.addEventListener('click', function() {
+        const imageElement = this.querySelector('img');
+        if (imageElement) {
+          // Use the current src if it's not a placeholder
+          const imageSrc = imageElement.src && !imageElement.src.endsWith('#') 
+            ? imageElement.src 
+            : imageElement.dataset.src;
+            
+          if (imageSrc && !imageSrc.endsWith('#')) {
+            openModal(imageSrc, imageElement.alt);
+          } else {
+            showImagePlaceholder(this.dataset.image);
+          }
+        }
+      });
+    });
+    
+    // Apply placeholder styling to empty images
+    applyPlaceholderStyling();
+    
+    // Initialize lazy loading
+    loadImages();
+  });
+
+  // Modal functionality
+  const modal = document.getElementById('imageModal');
+  const enlargedImage = document.getElementById('enlargedImage');
+  let currentZoom = 1;
+
+  function openModal(imageSrc, altText) {
+    if (!imageSrc || imageSrc === '#') return;
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    // Show loading indicator immediately
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.className = 'loading-indicator';
+    loadingIndicator.innerHTML = '<span class="material-icons spin">refresh</span><p>Loading image...</p>';
+    
+    // Clear existing content
+    enlargedImage.style.opacity = '0';
+    const existingIndicator = modal.querySelector('.loading-indicator');
+    if (existingIndicator) {
+      existingIndicator.remove();
+    }
+    
+    modal.querySelector('.modal-content').insertBefore(loadingIndicator, enlargedImage);
+    
+    // Set image source and handle loading
+    enlargedImage.onload = function() {
+      const indicator = modal.querySelector('.loading-indicator');
+      if (indicator) {
+        indicator.remove();
+      }
+      enlargedImage.style.opacity = '1';
+      currentZoom = 1;
+      enlargedImage.style.transform = `scale(${currentZoom})`;
+    };
+    
+    enlargedImage.onerror = function() {
+      const indicator = modal.querySelector('.loading-indicator');
+      if (indicator) {
+        indicator.innerHTML = '<p>Error loading image</p>';
+      }
+    };
+    
+    enlargedImage.src = imageSrc;
+    enlargedImage.alt = altText || "Campus Image";
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // Re-enable scrolling
+  }
+
+  function zoomIn() {
+    currentZoom += 0.2;
+    if (currentZoom > 3) currentZoom = 3; // Maximum zoom
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+
+  function zoomOut() {
+    currentZoom -= 0.2;
+    if (currentZoom < 0.5) currentZoom = 0.5; // Minimum zoom
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+
+  function resetZoom() {
+    currentZoom = 1;
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+
+  // Apply placeholder styling to empty images or images with # src
+  function applyPlaceholderStyling() {
+    const images = document.querySelectorAll('.campus-image');
+    images.forEach(function(img) {
+      if (!img.src || img.src.endsWith('#')) {
+        // Create placeholder container for the image
+        const container = img.parentElement;
+        const placeholderText = document.createElement('div');
+        placeholderText.className = 'image-placeholder';
+        placeholderText.textContent = img.alt || 'Image coming soon';
+        
+        // Hide the image and add placeholder
+        img.style.display = 'none';
+        if (!container.querySelector('.image-placeholder')) {
+          container.appendChild(placeholderText);
+        }
+      }
+    });
+  }
+
+  // Show temporary placeholder for images that aren't available
+  function showImagePlaceholder(imageId) {
+    const tempModal = document.createElement('div');
+    tempModal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:1000; flex-direction:column;';
+    
+    const message = document.createElement('div');
+    message.innerHTML = `<h3 style="color:white; margin-bottom:20px;">Image Not Available Yet</h3><p style="color:white;">The image "${imageId}" will be added soon.</p>`;
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Close';
+    closeBtn.style.cssText = 'margin-top:20px; padding:10px 20px; background-color:var(--m3-primary); color:white; border:none; border-radius:4px; cursor:pointer;';
+    closeBtn.onclick = function() {
+      document.body.removeChild(tempModal);
+    };
+    
+    tempModal.appendChild(message);
+    tempModal.appendChild(closeBtn);
+    document.body.appendChild(tempModal);
+    
+    // Auto close after 3 seconds
+    setTimeout(function() {
+      if (document.body.contains(tempModal)) {
+        document.body.removeChild(tempModal);
+      }
+    }, 3000);
+  }
+
+  // Close modal when clicking outside the image
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+
+  // Lazy load images when they become available
+  function loadImages() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    // Create intersection observer for lazy loading
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          
+          // If image data-src is available, try loading the image
+          if (img.dataset.src) {
+            const checkImage = new Image();
+            checkImage.onload = function() {
+              img.src = img.dataset.src;
+              img.style.display = 'block';
+              
+              // Remove placeholder if it exists
+              const placeholder = img.parentElement.querySelector('.image-placeholder');
+              if (placeholder) {
+                placeholder.remove();
+              }
+              
+              observer.unobserve(img);
+            };
+            checkImage.onerror = function() {
+              // Keep the placeholder if image doesn't exist yet
+              console.log('Image not yet available: ' + img.dataset.src);
+            };
+            checkImage.src = img.dataset.src;
+          }
+        }
+      });
+    }, {
+      rootMargin: '0px 0px 200px 0px', // Load images 200px before they enter viewport
+      threshold: 0.1
+    });
+    
+    // Observe all images with data-src attribute
+    images.forEach(img => observer.observe(img));
+  }
+</script>
+{% endblock %}

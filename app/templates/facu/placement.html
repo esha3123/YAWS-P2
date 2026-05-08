@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+{% block title %}Placement Cell - Saket College{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/placement.css') }}">
+<style>
+  /* Dropdown styles */
+  .m3-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  /* Make all navigation buttons consistent */
+  .placement-nav .m3-button {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .placement-nav .m3-button a {
+    color: var(--m3-on-primary, #fff);
+    text-decoration: none;
+  }
+  .placement-nav .m3-button:hover {
+    background-color: var(--m3-primary-container, #6200ee);
+    color: var(--m3-on-primary-container, #fff);
+  }
+  .m3-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--m3-surface-container-high, #f0f0f0);
+    min-width: 200px;
+    box-shadow: var(--m3-shadow-2, 0 3px 6px rgba(0,0,0,0.16));
+    border-radius: var(--m3-shape-small, 4px);
+    z-index: 1000;
+  }
+  
+  .m3-dropdown-menu.show {
+    display: block;
+  }
+  
+  .m3-dropdown-menu a {
+    color: var(--m3-on-surface, #000);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+  }
+  
+  .m3-dropdown-menu a:hover {
+    background-color: var(--m3-surface-container-highest, #e0e0e0);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="placement-container">
+  <div class="placement-content">
+    <h2>College Placement & Career Services</h2>
+    
+    <section class="about-section">
+      <h3>About Our College</h3>
+      <div class="about-content">
+        <img src="{{ url_for('static', filename='images/campus.jpg') }}" alt="College Campus">
+        <p>The placement process at Saket College is a cornerstone of its commitment to student success and career
+          advancement. The college's dedicated Placement Cell works tirelessly to bridge the gap between academic
+          learning and professional careers, ensuring that students are well-prepared for the challenges of the
+          corporate world...</p>
+      </div>
+    </section>
+
+    <nav class="placement-nav">
+      <button class="m3-button"><a href="#recruiters">Recruiters</a></button>
+      <button class="m3-button"><a href="#objective">Objective</a></button>
+      <button class="m3-button"><a href="#activity-picture">Activity Pictures</a></button>
+      <button class="m3-button"><a href="#mega-job-fair">Mega Job Fair</a></button>
+      <div class="m3-dropdown">
+        <button class="m3-button dropdown-trigger" id="placement-dropdown-btn">Placement Cell/Records</button>
+        <div class="m3-dropdown-menu" id="placement-dropdown-menu">
+          <a href="{{ url_for('frontend.serve_docs', filepath='committees/institutional/2023---24/Training & Placement Committee2023-24.pdf') }}">Placement Cell</a>
+          <a href="{{ url_for('frontend.serve_docs', filepath='student/placements/Placement Record.pdf') }}">Placement Record</a>
+        </div>
+      </div>
+    </nav>
+
+    <section id="recruiters" class="content-section">
+      <h3>Our Recruiters</h3>
+      <p>We partner with leading companies to provide top placement opportunities for our students.</p>
+      <div class="recruiters-grid">
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/SSSS.png') }}" alt="SSSS">
+        </div>
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/adhaan.png') }}" alt="Adhaan">
+        </div>
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/calibehr.png') }}" alt="Calibehr">
+        </div>
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/conneqt.png') }}" alt="Conneqt">
+        </div>
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/eos.png') }}" alt="EOS">
+        </div>
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/infojini.png') }}" alt="Infojini">
+        </div>
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/hdb.png') }}" alt="HDB">
+        </div>
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/quess.png') }}" alt="Quess">
+        </div>
+        
+        <div class="recruiter-logo">
+          <img src="{{ url_for('static', filename='images/placement/telepresence.png') }}" alt="Telepresence">
+        </div>
+      </div>
+    </section>
+
+    <section id="objective" class="content-section">
+      <h3>Objective</h3>
+      <p>Here are the short objectives of college placements:</p>
+      <ul class="m3-list">
+        <li><strong>Career Guidance:</strong> Providing comprehensive career counseling and guidance</li>
+        <li><strong>Industry Connection:</strong> Building and maintaining strong industry relationships</li>
+        <li><strong>Skill Development:</strong> Organizing training programs for skill enhancement</li>
+        <li><strong>Placement Support:</strong> Facilitating campus placements and interviews</li>
+        <li><strong>Bridge Academia and Industry:</strong> Align academic knowledge with job demands</li>
+      </ul>
+    </section>
+
+    <section id="activity-picture" class="content-section">
+      <h3>Training Activities</h3>
+      <p>Check out some of the activities organized by our placement cell.</p>
+      <div class="activity-grid">
+        <div class="activity-image">
+          <img src="{{ url_for('static', filename='images/placement/activities(1).png') }}" alt="Activity 1">
+          <p>Mock Interview Sessions</p>
+        </div>
+        <div class="activity-image">
+          <img src="{{ url_for('static', filename='images/placement/activities(2).png') }}" alt="Activity 2">
+          <p>Soft Skills Training Workshop</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mega-job-fair" class="content-section">
+      <h3>Mega Job Fair</h3>
+      <p>Our annual Mega Job Fair brings together numerous companies and provides excellent opportunities for our students.</p>
+      <div class="job-fair-grid">
+        <div class="fair-image">
+          <img src="{{ url_for('static', filename='images/placement/jobfair(1).png') }}" alt="Job Fair 1">
+        </div>
+        <div class="fair-image">
+          <img src="{{ url_for('static', filename='images/placement/jobfair(2).png') }}" alt="Job Fair 2">
+        </div>
+        <div class="fair-image">
+          <img src="{{ url_for('static', filename='images/placement/jobfair(3).png') }}" alt="Job Fair 3">
+        </div>
+        <div class="fair-image">
+          <img src="{{ url_for('static', filename='images/placement/jobfair(4).png') }}" alt="Job Fair 4">
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownBtn = document.getElementById('placement-dropdown-btn');
+    const dropdownMenu = document.getElementById('placement-dropdown-menu');
+    
+    if (dropdownBtn && dropdownMenu) {
+      dropdownBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle('show');
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (!dropdownBtn.contains(e.target)) {
+          dropdownMenu.classList.remove('show');
+        }
+      });
+    }
+  });
+</script>
+{% endblock %}

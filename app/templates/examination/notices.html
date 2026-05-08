@@ -1,0 +1,584 @@
+{% extends "base.html" %}
+
+{% block title %}Examination Notices - Saket College{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock head %}
+
+{% block styles %}
+{{ super() }}
+<style>
+  .content-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--m3-on-surface);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    color: var(--m3-on-surface-variant);
+    font-size: 1.1rem;
+  }
+
+  .notice-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--m3-outline-variant);
+    padding-bottom: 10px;
+    justify-content: center;
+  }
+
+  .notice-tab {
+    background: var(--m3-surface-container-low);
+    border: none;
+    border-radius: var(--m3-shape-small);
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--m3-on-surface-variant);
+    min-width: 200px;
+    text-align: center;
+    box-shadow: var(--m3-shadow-1);
+  }
+
+  .notice-tab:hover {
+    background: var(--m3-surface-container-high);
+  }
+
+  .notice-tab.active {
+    background: var(--m3-primary-container);
+    color: var(--m3-on-primary-container);
+    font-weight: 500;
+    box-shadow: var(--m3-shadow-2);
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  .notice-filters {
+    background-color: var(--m3-surface-container);
+    padding: 1.5rem;
+    border-radius: var(--m3-shape-large);
+    box-shadow: var(--m3-shadow-2);
+    margin: 0 2rem 2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .notice-filters:hover {
+    box-shadow: var(--m3-shadow-3);
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .filter-group label {
+    color: var(--m3-on-surface-variant);
+    font-weight: 500;
+    font-size: 0.95rem;
+    min-width: 80px;
+  }
+
+  .filter-group select, 
+  .filter-group input[type="text"] {
+    padding: 0.75rem;
+    border: 2px solid var(--m3-outline-variant);
+    border-radius: var(--m3-shape-medium);
+    background-color: var(--m3-surface);
+    color: var(--m3-on-surface);
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    transition: all 0.2s ease;
+  }
+
+  .filter-group select:hover, 
+  .filter-group input[type="text"]:hover {
+    border-color: var(--m3-primary);
+  }
+
+  .filter-group select:focus, 
+  .filter-group input[type="text"]:focus {
+    border-color: var(--m3-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--m3-primary-container);
+  }
+
+  .notice-table {
+    background-color: var(--m3-surface-container);
+    border-radius: var(--m3-shape-large);
+    box-shadow: var(--m3-shadow-2);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    margin: 0 2rem;
+  }
+
+  .notice-table:hover {
+    box-shadow: var(--m3-shadow-3);
+  }
+
+  .notice-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .notice-table th,
+  .notice-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--m3-outline-variant);
+  }
+
+  .notice-table th {
+    background-color: var(--m3-surface-container-highest);
+    color: var(--m3-on-surface);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .notice-table tr:hover {
+    background-color: var(--m3-surface-container-high);
+  }
+
+  .notice-link {
+    color: var(--m3-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .notice-link:hover {
+    color: var(--m3-primary-container);
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 2.5rem 2rem 0 2rem;
+  }
+
+  .pagination button {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    background-color: var(--m3-surface-variant);
+    color: var(--m3-on-surface-variant);
+    border-radius: var(--m3-shape-medium);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .pagination button.active {
+    background-color: var(--m3-primary);
+    color: var(--m3-on-primary);
+    transform: scale(1.05);
+  }
+
+  .pagination button:hover:not(.active) {
+    background-color: var(--m3-surface-container-highest);
+    transform: translateY(-2px);
+  }
+
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--m3-on-surface-variant);
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .content-container {
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .notice-filters {
+      padding: 1.5rem;
+      flex-direction: column;
+      align-items: stretch;
+      margin: 0 1rem 2rem 1rem;
+    }
+
+    .notice-table {
+      margin: 0 1rem;
+    }
+
+    .pagination {
+      margin: 2rem 1rem 0 1rem;
+    }
+
+    .filter-group {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .filter-group label {
+      min-width: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .notice-table {
+      overflow-x: auto;
+    }
+
+    .notice-table th,
+    .notice-table td {
+      padding: 0.75rem;
+    }
+  }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<main class="main-content">
+  <div class="content-container">
+    <div class="page-header">
+      <h1>Examination Notices and Circulars</h1>
+      <p>Stay updated with the latest examination announcements and university circulars</p>
+    </div>
+
+    <!-- Tab Buttons -->
+    <!-- <div class="notice-tabs">
+      <button id="examNoticeTab" class="notice-tab active" onclick="switchTab('examNotice')">Examination Notices</button>
+      <button id="universityCircularTab" class="notice-tab" onclick="switchTab('universityCircular')">University Circulars</button>
+    </div> -->
+
+    <!-- Examination Notices Tab -->
+    <div id="examNoticeContent" class="tab-content active">
+      <div class="notice-filters">
+        <div class="filter-group">
+          <label>Sort by:</label>
+          <select id="examSortFilter">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="az">A to Z</option>
+            <option value="za">Z to A</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Search:</label>
+          <input type="text" id="examTextFilter" placeholder="Search examination notices">
+        </div>
+      </div>
+
+      <div class="notice-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Notice Title</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="examNoticeTableBody">
+            <tr>
+              <td colspan="3" class="loading">
+                <span class="material-icons" style="margin-right: 8px;">hourglass_empty</span>
+                Loading examination notices...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination" id="examPaginationContainer"></div>
+    </div>
+
+    <!-- University Circulars Tab -->
+    <div id="universityCircularContent" class="tab-content">
+      <div class="notice-filters">
+        <div class="filter-group">
+          <label>Sort by:</label>
+          <select id="circularSortFilter">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="az">A to Z</option>
+            <option value="za">Z to A</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Search:</label>
+          <input type="text" id="circularTextFilter" placeholder="Search university circulars">
+        </div>
+      </div>
+
+      <div class="notice-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Circular Title</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="circularNoticeTableBody">
+            <tr>
+              <td colspan="3" class="loading">
+                <span class="material-icons" style="margin-right: 8px;">hourglass_empty</span>
+                Loading university circulars...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination" id="circularPaginationContainer"></div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+  let currentExamPage = 1;
+  let currentCircularPage = 1;
+  const perPage = 30;
+  let activeTab = 'examNotice';
+
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('en-IN', options);
+  }
+
+  async function fetchExamNotices(page = 1, filters = {}) {
+    try {
+      const queryParams = new URLSearchParams({
+        page: page,
+        per_page: perPage,
+        ...filters
+      });
+      const response = await fetch(`/api/notices/exam?${queryParams}`);
+      if (!response.ok) throw new Error('Failed to fetch exam notices');
+      
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching exam notices:', error);
+      return null;
+    }
+  }
+
+  // For now, we'll use the same API endpoint for circulars
+  // You can create a separate endpoint later if needed
+  async function fetchUniversityCirculars(page = 1, filters = {}) {
+    try {
+      // Return empty data for now - no circulars to display
+      return {
+        notices: [],
+        total: 0,
+        pages: 0,
+        current_page: 1,
+        has_next: false,
+        has_prev: false
+      };
+    } catch (error) {
+      console.error('Error fetching university circulars:', error);
+      return null;
+    }
+  }
+
+  function sortNotices(notices, sortType) {
+    return notices.sort((a, b) => {
+      switch(sortType) {
+        case 'newest':
+          return new Date(b.date_uploaded) - new Date(a.date_uploaded);
+        case 'oldest':
+          return new Date(a.date_uploaded) - new Date(b.date_uploaded);
+        case 'az':
+          return a.title.localeCompare(b.title);
+        case 'za':
+          return b.title.localeCompare(a.title);
+        default:
+          return 0;
+      }
+    });
+  }
+
+  function filterNotices(notices, textFilter) {
+    if (!textFilter) return notices;
+    return notices.filter(notice => 
+      notice.title.toLowerCase().includes(textFilter.toLowerCase())
+    );
+  }
+
+  function renderNotices(notices, tableBodyId) {
+    const tableBody = document.getElementById(tableBodyId);
+    tableBody.innerHTML = '';
+
+    if (!notices.length) {
+      const noticeType = tableBodyId.includes('exam') ? 'examination notices' : 'university circulars';
+      tableBody.innerHTML = `
+        <tr>
+          <td colspan="3" style="text-align: center;">No ${noticeType} found</td>
+        </tr>
+      `;
+      return;
+    }
+
+    notices.forEach(notice => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${formatDate(notice.date_uploaded)}</td>
+        <td>
+          <a href="${notice.url}" class="notice-link" target="_blank">
+            ${notice.title}
+          </a>
+        </td>
+        <td>
+          <a href="${notice.url}" class="notice-link" target="_blank">
+            View
+            <span class="material-icons">visibility</span>
+          </a>
+        </td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+
+  function renderPagination(data, containerId, changPageFunc) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+
+    if (data.pages <= 1) return;
+    
+    if (data.has_prev) {
+      const prevBtn = document.createElement('button');
+      prevBtn.innerHTML = '<span class="material-icons">chevron_left</span>';
+      prevBtn.onclick = () => changPageFunc(data.current_page - 1);
+      container.appendChild(prevBtn);
+    }
+    
+    for (let i = 1; i <= data.pages; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.onclick = () => changPageFunc(i);
+      if (i === data.current_page) btn.classList.add('active');
+      container.appendChild(btn);
+    }
+
+    if (data.has_next) {
+      const nextBtn = document.createElement('button');
+      nextBtn.innerHTML = '<span class="material-icons">chevron_right</span>';
+      nextBtn.onclick = () => changPageFunc(data.current_page + 1);
+      container.appendChild(nextBtn);
+    }
+  }
+
+  async function changeExamPage(page) {
+    currentExamPage = page;
+    const data = await fetchExamNotices(page, getExamFilters());
+    if (data) {
+      let notices = data.notices;
+      const sortType = document.getElementById('examSortFilter').value;
+      const textFilter = document.getElementById('examTextFilter').value;
+      
+      notices = filterNotices(notices, textFilter);
+      notices = sortNotices(notices, sortType);
+      
+      renderNotices(notices, 'examNoticeTableBody');
+      renderPagination(data, 'examPaginationContainer', changeExamPage);
+    }
+  }
+
+  async function changeCircularPage(page) {
+    currentCircularPage = page;
+    const data = await fetchUniversityCirculars(page, getCircularFilters());
+    if (data) {
+      let notices = data.notices;
+      const sortType = document.getElementById('circularSortFilter').value;
+      const textFilter = document.getElementById('circularTextFilter').value;
+      
+      notices = filterNotices(notices, textFilter);
+      notices = sortNotices(notices, sortType);
+      
+      renderNotices(notices, 'circularNoticeTableBody');
+      renderPagination(data, 'circularPaginationContainer', changeCircularPage);
+    }
+  }
+
+  function getExamFilters() {
+    const filters = {};
+    const textFilter = document.getElementById('examTextFilter').value;
+    if (textFilter) filters.text = textFilter;
+    return filters;
+  }
+
+  function getCircularFilters() {
+    const filters = {};
+    const textFilter = document.getElementById('circularTextFilter').value;
+    if (textFilter) filters.text = textFilter;
+    return filters;
+  }
+
+  function switchTab(tabName) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+      content.classList.remove('active');
+    });
+    
+    // Remove active class from all tabs
+    const tabs = document.querySelectorAll('.notice-tab');
+    tabs.forEach(tab => {
+      tab.classList.remove('active');
+    });
+    
+    // Show selected tab content
+    document.getElementById(tabName + 'Content').classList.add('active');
+    
+    // Add active class to selected tab
+    document.getElementById(tabName + 'Tab').classList.add('active');
+    
+    activeTab = tabName;
+    
+    // Load data for the selected tab
+    if (tabName === 'examNotice') {
+      changeExamPage(1);
+    } else if (tabName === 'universityCircular') {
+      changeCircularPage(1);
+    }
+  }
+
+  // Event listeners for exam notices filters
+  document.getElementById('examSortFilter').addEventListener('change', () => changeExamPage(currentExamPage));
+  document.getElementById('examTextFilter').addEventListener('input', () => changeExamPage(1));
+  
+  // Event listeners for circular filters
+  document.getElementById('circularSortFilter').addEventListener('change', () => changeCircularPage(currentCircularPage));
+  document.getElementById('circularTextFilter').addEventListener('input', () => changeCircularPage(1));
+  
+  // Initialize with the first tab
+  changeExamPage(1);
+</script>
+{% endblock scripts %}

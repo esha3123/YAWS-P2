@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Committee - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.loading-text {
+  text-align: center;
+  color: var(--m3-on-surface-variant);
+  margin-top: 20px;
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Library Committee</h1>
+  <p class="loading-text">Loading committee document...</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    window.location.href = "{{ url_for('frontend.serve_docs', filepath='committees/Library Committee.pdf') }}";
+  });
+</script>
+{% endblock %}

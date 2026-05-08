@@ -1,0 +1,1169 @@
+{% extends "base.html" %}
+
+{% block title %}Jr. College - Saket College{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/jr_college.css?v=2.0">
+{% endblock %}
+
+{% block content %}
+<!-- Jr College Hero Section -->
+<section class="jr-hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Saket Junior College</h1>
+                <p class="hero-subtitle">Arts, Science & Commerce</p>
+                <p class="hero-description">Empowering young minds with quality education and holistic development. Permanently affiliated to University of Mumbai.</p>
+            </div>
+            <div class="hero-image">
+                <div class="college-visual">
+                    <span class="material-icons">school</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Navigation Tabs -->
+<div class="tab-navigation">
+    <div class="container">
+        <div class="tab-buttons">
+            <button onclick="showTab('admission')" class="tab-button active">
+                Admission
+            </button>
+            <button onclick="showTab('faculty')" class="tab-button">
+                Faculty
+            </button>
+            <button onclick="showTab('student')" class="tab-button">
+                Student
+            </button>
+            <button onclick="showTab('examination')" class="tab-button">
+                Examination
+            </button>
+            <button onclick="showTab('notice')" class="tab-button">
+                Notice
+            </button>
+            <button onclick="showTab('activities')" class="tab-button">
+                Activities
+            </button>
+            <button onclick="showTab('gallery')" class="tab-button">
+                Gallery
+            </button>
+            <button onclick="showTab('awards')" class="tab-button">
+                Awards
+            </button>
+            <button onclick="showTab('committee')" class="tab-button">
+                Committee
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Tab Content -->
+<div class="container content-wrapper">
+    <!-- Admission Tab -->
+    <div id="admission" class="tab-content active">
+        <h3 class="section-title">Admission Information</h3>
+        
+        <!-- Admission Enquiry Form -->
+        <div class="card">
+            <h4 class="section-subtitle">Admission Enquiry Form</h4>
+            <form class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-input" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-input" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Preferred Stream *</label>
+                    <select class="form-select" required>
+                        <option value="">Select Stream</option>
+                        <option value="arts">Arts</option>
+                        <option value="science">Science</option>
+                        <option value="commerce">Commerce</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">10th Percentage *</label>
+                    <input type="number" class="form-input" placeholder="Enter your 10th percentage" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date of Birth *</label>
+                    <input type="date" class="form-input" required>
+                </div>
+                <div class="form-group full-width">
+                    <label class="form-label">Address</label>
+                    <textarea class="form-textarea" placeholder="Enter your complete address"></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <label class="form-label">Additional Message</label>
+                    <textarea class="form-textarea" placeholder="Any questions or additional information"></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <button type="submit" class="btn-primary">
+                        Submit Enquiry
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Students Admitted Chart -->
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                <h4 class="section-subtitle" style="margin-bottom: 0;">Students Admitted - Department Wise</h4>
+                <button onclick="showEnrollmentChart()" class="btn-primary">
+                    ЁЯУК View Enrollment Chart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faculty Tab -->
+    <div id="faculty" class="tab-content">
+        <h3 class="section-title">Our Faculty</h3>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>S.N.</th>
+                        <th>Name of the Teacher</th>
+                        <th>Subject</th>
+                        <th>Qualification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mrs. Peuli D. Bhattachrya</td>
+                        <td>Biology</td>
+                        <td>M.Sc., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mr. N.K. Mule</td>
+                        <td>Economics</td>
+                        <td>M.A., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Mr. Anandrao Patil</td>
+                        <td>His/Pol. Sci</td>
+                        <td>M.A., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Mr. Sanjay P. Chaudhari</td>
+                        <td>Geography</td>
+                        <td>M.A., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Mrs. Rebecca R. Gurap</td>
+                        <td>English</td>
+                        <td>M.A., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Mrs. Jyoti R. Shirke</td>
+                        <td>Marathi</td>
+                        <td>M.A., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Mrs. Sakshi S. Gole</td>
+                        <td>Hindi</td>
+                        <td>M.A., M.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Mrs. Amita S. Mahajan</td>
+                        <td>Information Technology</td>
+                        <td>M.Sc., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Mrs. Vandana S. Mahale</td>
+                        <td>Physics</td>
+                        <td>M.Sc., B.Ed., MBA</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Mrs. Rohini M. Bendre</td>
+                        <td>Chemistry</td>
+                        <td>M.Sc., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Mrs. Pooja G. Chaudhri</td>
+                        <td>Chemistry</td>
+                        <td>M.Sc., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Ms. Gauri R. Bhagat</td>
+                        <td>Maths</td>
+                        <td>M.Sc.</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Mrs. Suvarna Patil</td>
+                        <td>Maths</td>
+                        <td>M.Sc., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Mrs. Bindu Shynu</td>
+                        <td>English</td>
+                        <td>M.A., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Mrs. Sujata Nair</td>
+                        <td>English</td>
+                        <td>M.A., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Mrs. Nayana I. Tayade</td>
+                        <td>B.K.</td>
+                        <td>M.Com., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Mrs. Supriya Salagre</td>
+                        <td>Economics</td>
+                        <td>M.A., B.Ed., MBA</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Ms. Geetu Chattani</td>
+                        <td>O.C.</td>
+                        <td>M.Com., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Mr. Umesh Sonawane</td>
+                        <td>Phy.Edu</td>
+                        <td>M.Com., M.P.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Mrs. Lata Nihalani</td>
+                        <td>SP</td>
+                        <td>M.Com., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Mrs. Prerana S. Mirgule</td>
+                        <td>Biology</td>
+                        <td>M.Sc., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Mrs. Nayana S. Surve</td>
+                        <td>Economics</td>
+                        <td>M.A., B.Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Mrs. Vaishali Baniya</td>
+                        <td>Computer Science</td>
+                        <td>B.Tech.</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Ms. Chaitali Borse</td>
+                        <td>B.K./S.P.</td>
+                        <td>M.Com.</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Mrs. Poonam Patil</td>
+                        <td>Information Technology</td>
+                        <td>M.Sc., B.Ed.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Student Tab -->
+    <div id="student" class="tab-content">
+        <h3 class="section-title">Student Information</h3>
+        
+        <!-- Syllabus Section -->
+        <div class="card">
+            <h4 class="section-subtitle">Syllabus</h4>
+            
+            <!-- Stream Tabs for Syllabus -->
+            <div class="syllabus-tabs">
+                <button onclick="showSyllabus('arts-syllabus')" class="syllabus-button active">
+                    Arts Stream
+                </button>
+                <button onclick="showSyllabus('science-syllabus')" class="syllabus-button">
+                    Science Stream
+                </button>
+                <button onclick="showSyllabus('commerce-syllabus')" class="syllabus-button">
+                    Commerce Stream
+                </button>
+            </div>
+
+            <!-- Arts Syllabus -->
+            <div id="arts-syllabus" class="syllabus-content active">
+                <h5 class="subject-title" style="font-size: 20px; margin-bottom: 20px;">Arts Stream Syllabus</h5>
+                <div class="subject-card">
+                    <h6 class="subject-title">Core Subjects</h6>
+                    <ul class="subject-list">
+                        <li>English (Compulsory)</li>
+                        <li>Hindi/Marathi (Compulsory)</li>
+                        <li>History</li>
+                        <li>Geography</li>
+                        <li>Political Science</li>
+                        <li>Economics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Science Syllabus -->
+            <div id="science-syllabus" class="syllabus-content">
+                <h5 class="subject-title" style="font-size: 20px; margin-bottom: 20px;">Science Stream Syllabus</h5>
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <h6 class="subject-title">Core Subjects</h6>
+                        <ul class="subject-list">
+                            <li>English (Compulsory)</li>
+                            <li>Physics</li>
+                            <li>Chemistry</li>
+                            <li>Mathematics</li>
+                            <li>Biology</li>
+                        </ul>
+                    </div>
+                    <div class="subject-card">
+                        <h6 class="subject-title">Optional Subjects</h6>
+                        <ul class="subject-list">
+                            <li>Computer Science</li>
+                            <li>Information Technology</li>
+                            <li>Electronics</li>
+                            <li>Environmental Science</li>
+                            <li>Statistics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commerce Syllabus -->
+            <div id="commerce-syllabus" class="syllabus-content">
+                <h5 class="subject-title" style="font-size: 20px; margin-bottom: 20px;">Commerce Stream Syllabus</h5>
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <h6 class="subject-title">Core Subjects</h6>
+                        <ul class="subject-list">
+                            <li>English (Compulsory)</li>
+                            <li>Accountancy</li>
+                            <li>Business Studies</li>
+                            <li>Economics</li>
+                            <li>Mathematics</li>
+                        </ul>
+                    </div>
+                    <div class="subject-card">
+                        <h6 class="subject-title">Optional Subjects</h6>
+                        <ul class="subject-list">
+                            <li>Statistics</li>
+                            <li>Computer Science</li>
+                            <li>Secretarial Practice</li>
+                            <li>Book Keeping</li>
+                            <li>Organization of Commerce</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code of Conduct Section -->
+        <div class="card">
+            <h4 class="section-subtitle">Student Code of Conduct</h4>
+            
+            <div class="conduct-card">
+                <h5 class="conduct-title">Student Code of Conduct Rules</h5>
+                
+                <ul class="conduct-list">
+                    <!-- Campus Property & Environment -->
+                    <li>Students should take care of college property and help in keeping the college campus neat and clean.</li>
+                    <li>Any damage to the college property shall be paid by the student.</li>
+                    <li>Minimum water utilization by the students is expected in the campus.</li>
+                    <li>For minimum energy consumption all electricity points must be switched off when not in use.</li>
+                    <li>Photography in the campus is prohibited unless prior permission of the principal must be obtained.</li>
+                    
+                    <!-- Prohibited Items & Substances -->
+                    <li>Smoking, chewing Gutka, Tobacco, chewing gums is strictly prohibited in the college campus, including the canteen.</li>
+                    <li>Any student found violating these regulations shall be dealt with severely.</li>
+                    <li>Use of Mobile phones, iPods, earphones, Mp3 player, headphones etc. in the college premises is strictly prohibited.</li>
+                    <li>If the student is found using any of the above mentioned electronic equipment in the college premises, the same (in case of mobile phone, with SIM card, Memory card) will be confiscated and the student will be punished for non adherence of code of conduct.</li>
+                    <li>Use of two/four wheelers by student is prohibited in the campus.</li>
+                    <li>The management and college authorities are not responsible for any loss or damage of the vehicles.</li>
+                    
+                    <!-- Academic Conduct -->
+                    <li>Student found indulging in unfair means in examination will be dealt with strictness as per the university rules and regulations.</li>
+                    <li>Students must maintain regular attendance and submit assignments on time.</li>
+                    <li>Respect towards teachers and fellow students is mandatory.</li>
+                    
+                    <!-- Dress Code -->
+                    <li>The students should follow a proper dress code.</li>
+                    <li>Short, off shoulders, sleeveless, deep cut dresses should be strictly avoided by girl students.</li>
+                    <li>Three fourth length or shorts should be avoided by boy students.</li>
+                    
+                    <!-- College Timing -->
+                    <li>College timing is from 12:40 PM to 5:20 PM.</li>
+                    <li>Students must be punctual and attend all classes regularly.</li>
+                </ul>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="notice-box">
+                <h6 class="notice-title">
+                    тЪая╕П Important Notice
+                </h6>
+                <p class="notice-text">
+                    All students are expected to read and follow the complete code of conduct. 
+                    Violation of any rule may result in disciplinary action. For detailed guidelines, 
+                    please refer to the student handbook provided during admission.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Continue with other tabs... -->
+    <!-- Note: Adding remaining tabs for examination, notice, activities, gallery, awards, committee -->
+
+</div>
+
+    <!-- Examination Tab -->
+    <div id="examination" class="tab-content">
+        <h3 class="section-title">Examination Information</h3>
+        
+        <!-- Examination Details Card -->
+        <div class="card">
+            <h4 class="section-subtitle">Jr College Examination System</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div class="conduct-card">
+                    <div class="conduct-title">HSC Exam Pattern</div>
+                    <ul class="conduct-list">
+                        <li>Maharashtra State Board HSC Pattern</li>
+                        <li>Class XI & XII (Two Years Program)</li>
+                        <li>Internal Assessment: 20 Marks</li>
+                        <li>Board Examination: 80 Marks</li>
+                        <li>Practical Exams for Science Stream</li>
+                        <li>Oral/Project Assessment</li>
+                        <li>Unit Tests & Prelims</li>
+                    </ul>
+                </div>
+                <div class="conduct-card">
+                    <div class="conduct-title">HSC Guidelines</div>
+                    <ul class="conduct-list">
+                        <li>Attendance requirement: Minimum 75%</li>
+                        <li>Hall tickets from Maharashtra Board</li>
+                        <li>Valid Aadhar Card required</li>
+                        <li>Scientific calculator allowed</li>
+                        <li>Report 30 minutes before exam</li>
+                        <li>Blue/Black pen only</li>
+                        <li>Mobile phones strictly prohibited</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Examination Notices -->
+        <div class="card">
+            <h4 class="section-subtitle">Jr College Examination Notices</h4>
+            <div id="exam-notices-container">
+                <div style="text-align: center; padding: 20px;">
+                    <span class="material-icons" style="font-size: 48px; color: var(--jr-primary); margin-bottom: 10px;">description</span>
+                    <p>Loading Jr College examination notices...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notice Tab -->
+    <div id="notice" class="tab-content">
+        <h3 class="section-title">Jr College Notices</h3>
+        
+        <!-- Notice Filter Options -->
+        <div class="card">
+            <h4 class="section-subtitle">Filter Notices</h4>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+                <button onclick="filterNotices('all')" class="btn-secondary notice-filter active" data-type="all">All Notices</button>
+                <button onclick="filterNotices('general')" class="btn-secondary notice-filter" data-type="general">General</button>
+                <!-- <button onclick="filterNotices('admission')" class="btn-secondary notice-filter" data-type="admission">Admission</button> -->
+                <button onclick="filterNotices('exam')" class="btn-secondary notice-filter" data-type="exam">Examination</button>
+                <!-- <button onclick="filterNotices('event')" class="btn-secondary notice-filter" data-type="event">Events</button> -->
+            </div>
+        </div>
+
+        <!-- Notices Container -->
+        <div class="card">
+            <h4 class="section-subtitle">Latest Notices</h4>
+            <div id="jr-notices-container">
+                <div style="text-align: center; padding: 20px;">
+                    <span class="material-icons" style="font-size: 48px; color: var(--jr-primary); margin-bottom: 10px;">announcement</span>
+                    <p>Loading notices...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activities Tab -->
+    <div id="activities" class="tab-content">
+        <h3 class="section-title">Jr College Activities</h3>
+        
+        <!-- Activity Categories -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+            <!-- Academic Activities -->
+            <div class="card card-hover">
+                <h4 class="section-subtitle">Academic Activities</h4>
+                <ul class="conduct-list">
+                    <li>Science Project Exhibition</li>
+                    <li>Mathematics Quiz Competition</li>
+                    <li>Essay Writing Competitions</li>
+                    <li>Debate and Elocution</li>
+                    <li>English Speaking Contest</li>
+                    <li>Subject-wise Presentations</li>
+                </ul>
+                <div class="notice-box">
+                    <div class="notice-title">
+                        <span class="material-icons">school</span>
+                        Academic Focus
+                    </div>
+                    <div class="notice-text">Enhancing learning through competitions</div>
+                </div>
+            </div>
+
+            <!-- Cultural Activities -->
+            <div class="card card-hover">
+                <h4 class="section-subtitle">Cultural Activities</h4>
+                <ul class="conduct-list">
+                    <li>Annual Day Celebration</li>
+                    <li>Traditional Day Events</li>
+                    <li>Poetry Recitation</li>
+                    <li>Dance and Music Programs</li>
+                    <li>Art and Craft Exhibitions</li>
+                    <li>Festival Celebrations</li>
+                </ul>
+                <div class="notice-box">
+                    <div class="notice-title">
+                        <span class="material-icons">celebration</span>
+                        Cultural Development
+                    </div>
+                    <div class="notice-text">Building cultural awareness and talents</div>
+                </div>
+            </div>
+
+            <!-- Sports Activities -->
+            <div class="card card-hover">
+                <h4 class="section-subtitle">Sports & Games</h4>
+                <ul class="conduct-list">
+                    <li>Inter-house Sports Competition</li>
+                    <li>Cricket and Football Matches</li>
+                    <li>Athletics Events</li>
+                    <li>Table Tennis Tournament</li>
+                    <li>Badminton Competition</li>
+                    <li>Annual Sports Day</li>
+                </ul>
+                <div class="notice-box">
+                    <div class="notice-title">
+                        <span class="material-icons">sports</span>
+                        Physical Development
+                    </div>
+                    <div class="notice-text">Promoting fitness and teamwork</div>
+                </div>
+            </div>
+
+            <!-- Educational Tours -->
+            <div class="card card-hover">
+                <h4 class="section-subtitle">Educational Tours</h4>
+                <ul class="conduct-list">
+                    <li>Science Museum Visits</li>
+                    <li>Historical Places Tours</li>
+                    <li>Industrial Visits</li>
+                    <li>Planetarium Visits</li>
+                    <li>Nature Study Trips</li>
+                    <li>Educational Excursions</li>
+                </ul>
+                <div class="notice-box">
+                    <div class="notice-title">
+                        <span class="material-icons">explore</span>
+                        Practical Learning
+                    </div>
+                    <div class="notice-text">Learning beyond classroom</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Tab -->
+    <div id="gallery" class="tab-content">
+        <h3 class="section-title">Jr College Gallery</h3>
+        
+        <!-- Gallery Categories -->
+        <div class="card">
+            <h4 class="section-subtitle">Photo Categories</h4>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px;">
+                <button onclick="showGalleryCategory('all')" class="btn-secondary gallery-filter active" data-category="all">All Photos</button>
+                <button onclick="showGalleryCategory('classroom')" class="btn-secondary gallery-filter" data-category="classroom">Classroom</button>
+                <button onclick="showGalleryCategory('labs')" class="btn-secondary gallery-filter" data-category="labs">Laboratories</button>
+                <button onclick="showGalleryCategory('events')" class="btn-secondary gallery-filter" data-category="events">Events</button>
+                <button onclick="showGalleryCategory('sports')" class="btn-secondary gallery-filter" data-category="sports">Sports</button>
+            </div>
+        </div>
+
+        <!-- Photo Grid -->
+        <div class="card">
+            <div id="gallery-container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <!-- Placeholder Gallery Items -->
+                    <div class="gallery-item" data-category="classroom">
+                        <div style="background: var(--jr-surface-container); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--jr-on-surface-variant);">
+                            <div style="text-align: center;">
+                                <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">meeting_room</span>
+                                <p>Classroom Activities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="labs">
+                        <div style="background: var(--jr-surface-container); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--jr-on-surface-variant);">
+                            <div style="text-align: center;">
+                                <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">science</span>
+                                <p>Laboratory Sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="events">
+                        <div style="background: var(--jr-surface-container); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--jr-on-surface-variant);">
+                            <div style="text-align: center;">
+                                <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">event</span>
+                                <p>College Events</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="sports">
+                        <div style="background: var(--jr-surface-container); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--jr-on-surface-variant);">
+                            <div style="text-align: center;">
+                                <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">sports</span>
+                                <p>Sports Activities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px; padding: 20px; color: var(--jr-on-surface-variant);">
+                    <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">photo_library</span>
+                    <p>Jr College photo gallery showcasing student life, laboratory sessions, and academic activities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Awards Tab -->
+    <div id="awards" class="tab-content">
+        <h3 class="section-title">Jr College Achievements</h3>
+        
+        <!-- Achievement Categories -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+            <!-- Academic Excellence -->
+            <div class="card card-hover">
+                <h4 class="section-subtitle">Academic Excellence</h4>
+                <ul class="conduct-list">
+                    <li>High Pass Percentage in HSC Board Exams</li>
+                    <li>Excellence in Commerce Stream Results</li>
+                    <li>Top Performing Jr College - Science Stream</li>
+                    <li>Outstanding Results - Class 12 Examinations</li>
+                    <li>Merit Students in Board Examinations</li>
+                    <li>Subject-wise Topper Recognition</li>
+                </ul>
+                <div class="notice-box">
+                    <div class="notice-title">
+                        <span class="material-icons">military_tech</span>
+                        Academic Success
+                    </div>
+                    <div class="notice-text">95% Pass Rate in HSC Board Exams 2025</div>
+                </div>
+            </div>
+
+            <!-- Student Achievements -->
+            <div class="card card-hover">
+                <h4 class="section-subtitle">Student Achievements</h4>
+                <ul class="conduct-list">
+                    <li>District Level Project Exhibition Winners</li>
+                    <li>Inter-Jr College Quiz Champions</li>
+                    <li>Mathematics Competition Medal Winners</li>
+                    <li>Annual Day Cultural Program Stars</li>
+                    <li>Sports Day Championship Achievers</li>
+                    <li>English Essay Competition Winners</li>
+                </ul>
+                <div class="notice-box">
+                    <div class="notice-title">
+                        <span class="material-icons">emoji_events</span>
+                        Student Success
+                    </div>
+                    <div class="notice-text">30+ Students Won Various Competitions in 2025</div>
+                </div>
+            </div>
+
+            <!-- Educational Recognition -->
+            <div class="card card-hover">
+                <h4 class="section-subtitle">Educational Recognition</h4>
+                <ul class="conduct-list">
+                    <li>Maharashtra State Board Affiliation</li>
+                    <li>Quality Education Provider Recognition</li>
+                    <li>Consistent Academic Performance</li>
+                    <li>Student Development Programs</li>
+                    <li>Community Education Support</li>
+                    <li>Parent-Teacher Collaboration Excellence</li>
+                </ul>
+                <div class="notice-box">
+                    <div class="notice-title">
+                        <span class="material-icons">stars</span>
+                        Recognition
+                    </div>
+                    <div class="notice-text">Trusted Jr College for Quality Education</div>
+                </div>
+            </div>
+
+            <!-- College Development -->
+            <div class="card card-hover">
+                <h4 class="section-subtitle">Infrastructure & Development</h4>
+                <ul class="conduct-list">
+                    <li>Well-equipped Science Laboratories</li>
+                    <li>Modern Classroom Facilities</li>
+                    <li>Digital Learning Resources</li>
+                    <li>Safe and Secure Campus Environment</li>
+                    <li>Library with Updated Books</li>
+                    <li>Sports and Recreation Facilities</li>
+                </ul>
+                <div class="notice-box">
+                    <div class="notice-title">
+                        <span class="material-icons">foundation</span>
+                        Facilities
+                    </div>
+                    <div class="notice-text">Continuous Infrastructure Development</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Committee Tab -->
+    <div id="committee" class="tab-content">
+        <h3 class="section-title">College Committees</h3>
+        
+        <!-- Committee Information -->
+        <div class="card">
+            <h4 class="section-subtitle">All College Committees</h4>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Committee</th>
+                            <th>Position</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Responsibility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Academic Committee -->
+                        <tr>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Academic</td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Chairperson</td>
+                            <td>Dr. Rajesh Kumar</td>
+                            <td>Physics</td>
+                            <td>Overall Academic Management</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Vice-Chairperson</td>
+                            <td>Prof. Sunita Sharma</td>
+                            <td>Mathematics</td>
+                            <td>Academic Planning</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mr. Amit Patel</td>
+                            <td>Commerce</td>
+                            <td>Commerce Stream Coordination</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Dr. Priya Mehta</td>
+                            <td>Chemistry</td>
+                            <td>Science Stream Coordination</td>
+                        </tr>
+                        
+                        <!-- Examination Committee -->
+                        <tr>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Examination</td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Controller</td>
+                            <td>Prof. Ravi Singh</td>
+                            <td>Biology</td>
+                            <td>Overall Exam Coordination</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Deputy Controller</td>
+                            <td>Ms. Kavita Joshi</td>
+                            <td>English</td>
+                            <td>Question Paper Management</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mr. Deepak Gupta</td>
+                            <td>Economics</td>
+                            <td>Result Processing</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mrs. Rohini Bendre</td>
+                            <td>Chemistry</td>
+                            <td>Invigilation Coordination</td>
+                        </tr>
+                        
+                        <!-- Attendance Committee -->
+                        <tr>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Attendance</td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Coordinator</td>
+                            <td>Mrs. Vandana Mahale</td>
+                            <td>Physics</td>
+                            <td>Attendance Monitoring</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mrs. Jyoti Shirke</td>
+                            <td>Marathi</td>
+                            <td>Arts Stream Attendance</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mrs. Nayana Tayade</td>
+                            <td>Commerce</td>
+                            <td>Commerce Stream Attendance</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mrs. Prerana Mirgule</td>
+                            <td>Biology</td>
+                            <td>Science Stream Attendance</td>
+                        </tr>
+                        
+                        <!-- Assignment Committee -->
+                        <tr>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Assignment</td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Coordinator</td>
+                            <td>Mrs. Rebecca Gurap</td>
+                            <td>English</td>
+                            <td>Assignment Guidelines</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Ms. Gauri Bhagat</td>
+                            <td>Mathematics</td>
+                            <td>Science Assignments</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mr. Anandrao Patil</td>
+                            <td>History/Political Science</td>
+                            <td>Arts Assignments</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Ms. Geetu Chattani</td>
+                            <td>Commerce</td>
+                            <td>Commerce Assignments</td>
+                        </tr>
+                        
+                        <!-- Library Committee -->
+                        <tr>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Library</td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Librarian</td>
+                            <td>Mrs. Sujata Nair</td>
+                            <td>English</td>
+                            <td>Library Management</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Assistant</td>
+                            <td>Mrs. Amita Mahajan</td>
+                            <td>Information Technology</td>
+                            <td>Digital Resources</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mrs. Sakshi Gole</td>
+                            <td>Hindi</td>
+                            <td>Book Acquisition</td>
+                        </tr>
+                        
+                        <!-- Discipline Committee -->
+                        <tr>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Discipline</td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Chairperson</td>
+                            <td>Dr. Rajesh Kumar</td>
+                            <td>Physics</td>
+                            <td>Overall Discipline Management</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Prof. Sunita Sharma</td>
+                            <td>Mathematics</td>
+                            <td>Student Grievance Handling</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mr. Umesh Sonawane</td>
+                            <td>Physical Education</td>
+                            <td>Disciplinary Hearings</td>
+                        </tr>
+                        
+                        <!-- Cultural Committee -->
+                        <tr>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Cultural</td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Coordinator</td>
+                            <td>Mrs. Bindu Shynu</td>
+                            <td>English</td>
+                            <td>Drama & Literature</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mrs. Jyoti Shirke</td>
+                            <td>Marathi</td>
+                            <td>Traditional Arts</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mrs. Sakshi Gole</td>
+                            <td>Hindi</td>
+                            <td>Poetry & Music</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mr. Umesh Sonawane</td>
+                            <td>Physical Education</td>
+                            <td>Sports Events</td>
+                        </tr>
+                        
+                        <!-- Student Welfare Committee -->
+                        <tr>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Student Welfare</td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Coordinator</td>
+                            <td>Mrs. Supriya Salagre</td>
+                            <td>Economics</td>
+                            <td>Student Counseling</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mr. Umesh Sonawane</td>
+                            <td>Physical Education</td>
+                            <td>Sports & Health</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: 600; color: var(--jr-primary);">Member</td>
+                            <td>Mrs. Vaishali Baniya</td>
+                            <td>Computer Science</td>
+                            <td>Digital Literacy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/jr_college.js"></script>
+<script>
+    function showTab(tabName) {
+        // Hide all tab contents
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // Remove active class from all buttons
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Show selected tab content
+        document.getElementById(tabName).classList.add('active');
+
+        // Add active class to clicked button
+        event.target.classList.add('active');
+    }
+
+    function showSyllabus(syllabusName) {
+        // Hide all syllabus contents
+        const syllabusContents = document.querySelectorAll('.syllabus-content');
+        syllabusContents.forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // Remove active class from all syllabus buttons
+        const syllabusButtons = document.querySelectorAll('.syllabus-button');
+        syllabusButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Show selected syllabus content
+        document.getElementById(syllabusName).style.display = 'block';
+
+        // Add active class to clicked button
+        event.target.classList.add('active');
+    }
+
+    // Load Jr College examination notices
+    async function loadExamNotices() {
+        try {
+            const response = await fetch('/api/jr-college/notices?type=exam');
+            const data = await response.json();
+            const container = document.getElementById('exam-notices-container');
+            
+            if (data.notices && data.notices.length > 0) {
+                container.innerHTML = data.notices.map(notice => `
+                    <div class="notice-item" style="border: 1px solid var(--jr-outline-variant); border-radius: 8px; padding: 15px; margin-bottom: 15px; background: var(--jr-surface-bright);">
+                        <h5 style="color: var(--jr-primary); margin-bottom: 8px;">${notice.title}</h5>
+                        <p style="color: var(--jr-on-surface-variant); font-size: 14px; margin-bottom: 10px;">
+                            <span class="material-icons" style="font-size: 16px; vertical-align: middle; margin-right: 5px;">calendar_today</span>
+                            ${new Date(notice.date_uploaded).toLocaleDateString()}
+                            ${notice.priority === 'high' ? '<span class="material-icons" style="color: #e74c3c; font-size: 16px; vertical-align: middle; margin-left: 10px;">priority_high</span>' : ''}
+                        </p>
+                        <a href="${notice.url}" target="_blank" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 5px;">
+                            <span class="material-icons">file_download</span>
+                            View Notice
+                        </a>
+                    </div>
+                `).join('');
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: var(--jr-on-surface-variant);">
+                        <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">description</span>
+                        <p>No Jr College examination notices available at the moment.</p>
+                    </div>
+                `;
+            }
+        } catch (error) {
+            console.error('Error loading Jr College exam notices:', error);
+            document.getElementById('exam-notices-container').innerHTML = `
+                <div style="text-align: center; padding: 20px; color: var(--jr-on-surface-variant);">
+                    <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">error</span>
+                    <p>Error loading Jr College examination notices.</p>
+                </div>
+            `;
+        }
+    }
+
+    // Load Jr College notices
+    async function loadJrNotices(type = 'all') {
+        try {
+            const url = type === 'all' ? '/api/jr-college/notices' : `/api/jr-college/notices?type=${type}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            const container = document.getElementById('jr-notices-container');
+            
+            if (data.notices && data.notices.length > 0) {
+                container.innerHTML = data.notices.map(notice => `
+                    <div class="notice-item" style="border: 1px solid var(--jr-outline-variant); border-radius: 8px; padding: 15px; margin-bottom: 15px; background: var(--jr-surface-bright);">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                            <h5 style="color: var(--jr-primary); margin: 0; flex-grow: 1;">${notice.title}</h5>
+                            <span class="notice-type" style="background: var(--jr-secondary-container); color: var(--jr-on-secondary-container); padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">${notice.notice_type}</span>
+                        </div>
+                        <p style="color: var(--jr-on-surface-variant); font-size: 14px; margin-bottom: 10px;">
+                            <span class="material-icons" style="font-size: 16px; vertical-align: middle; margin-right: 5px;">calendar_today</span>
+                            ${new Date(notice.date_uploaded).toLocaleDateString()}
+                            ${notice.priority === 'high' ? '<span class="material-icons" style="color: #e74c3c; font-size: 16px; vertical-align: middle; margin-left: 10px;">priority_high</span>' : ''}
+                        </p>
+                        <a href="${notice.url}" target="_blank" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 5px;">
+                            <span class="material-icons">file_download</span>
+                            View Notice
+                        </a>
+                    </div>
+                `).join('');
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: var(--jr-on-surface-variant);">
+                        <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">announcement</span>
+                        <p>No notices available for this category.</p>
+                    </div>
+                `;
+            }
+        } catch (error) {
+            console.error('Error loading Jr College notices:', error);
+            document.getElementById('jr-notices-container').innerHTML = `
+                <div style="text-align: center; padding: 20px; color: var(--jr-on-surface-variant);">
+                    <span class="material-icons" style="font-size: 48px; margin-bottom: 10px;">error</span>
+                    <p>Error loading notices.</p>
+                </div>
+            `;
+        }
+    }
+
+    // Filter notices
+    function filterNotices(type) {
+        const filters = document.querySelectorAll('.notice-filter');
+        filters.forEach(filter => filter.classList.remove('active'));
+        
+        document.querySelector(`[data-type="${type}"]`).classList.add('active');
+        loadJrNotices(type);
+    }
+
+    // Gallery filter
+    function showGalleryCategory(category) {
+        const filters = document.querySelectorAll('.gallery-filter');
+        const items = document.querySelectorAll('.gallery-item');
+        
+        filters.forEach(filter => filter.classList.remove('active'));
+        document.querySelector(`[data-category="${category}"]`).classList.add('active');
+        
+        items.forEach(item => {
+            if (category === 'all' || item.dataset.category === category) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    // Load content when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        loadExamNotices();
+        loadJrNotices();
+    });
+</script>
+{% endblock %}

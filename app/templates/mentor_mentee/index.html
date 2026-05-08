@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="margin-top: 40px;">
+    <div style="text-align: center; padding: 60px 20px;">
+        <h1 style="color: var(--m3-primary); margin-bottom: 20px;">Mentor-Mentee Portal</h1>
+        <p style="font-size: 18px; color: var(--m3-on-surface-variant); margin-bottom: 30px;">
+            Connect with your mentor or mentees for guidance and growth
+        </p>
+        
+        {% if session.user_id %}
+            <p style="margin-bottom: 20px;">
+                <a href="{{ url_for('mentor_mentee.logout') }}" style="color: var(--m3-error); text-decoration: none; font-weight: 600;">Logout</a>
+            </p>
+        {% else %}
+            <a href="{{ url_for('mentor_mentee.login') }}" style="display: inline-block; padding: 12px 30px; background: var(--m3-primary); color: white; text-decoration: none; border-radius: 4px; font-weight: 600;">Login</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

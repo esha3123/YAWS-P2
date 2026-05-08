@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}About - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+section li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+section li b {
+    font-weight: bold;
+}
+
+section p {
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">About</h1>
+  
+  <section>
+      <h3>About Our Library</h3>
+      <p>
+          Library is the brain of any Institution and the books and visitors in the Library makes the Institute rich. Our privilege college Library is situated at ground floor with reading hall, main collection and Teachers reading section. Online Public Access Catalogue [OPAC] is provided to the users at the entrance of the library [OPAC section] where students can use OPAC extensively for searching the required books and periodicals. The students extensively use Library Reading Hall and around 80 students are availing this facility. 
+      </p>
+  </section>
+  
+  <section>
+      <h3>Objectives of the Library</h3>
+      <ul>
+          <li>Develop and maintain reading habits among students.</li>
+          <li>Aid students in personal growth and intellectual curiosity.</li>
+          <li>Provide information sources necessary for teaching and learning.</li>
+          <li>Support teachers in the latest developments in their specialization.</li>
+      </ul>
+  </section>
+
+  <section>
+      <h3>Sections of the Library</h3>
+      <ul>
+          <li>Circulation Section</li>
+          <li>Newspaper Reading Section</li>
+          <li>OPAC Section</li>
+          <li>New Arrivals</li>
+          <li>Periodicals Section</li>
+          <li>Reference Collection Section</li>
+          <li>Reading Hall</li>
+          <li>E-zone Section</li>
+          <li>Teacher's Reading Section</li>
+      </ul>
+  </section>
+
+  <section>
+      <h3>Library Collections</h3>
+      <ul>
+          <li><b>Junior College</b></li>
+          <li><b>Book Bank</b></li>
+          <li><b>Text Books</b></li>
+          <li><b>Reference Books</b></li>
+          <li><b>Masters Books</b></li>
+          <li><b>Journals</b></li>
+          <li><b>Magazines</b></li>
+          <li><b>Newspapers</b></li>
+          <li><b>CDs</b></li>
+          <li><b>Donated Books</b></li>
+      </ul>
+  </section>
+
+  <section>
+      <h3>Library Services</h3>
+      <ul>
+          <li><b>Library Orientation:</b> Orientation for new students and staff to help them use the library efficiently.</li>
+          <li><b>OPAC:</b> Online Public Access Catalogue for easy access to resources.</li>
+          <li><b>Circulation of Books and Reading Materials:</b>
+              <ul>
+                  <li><b>Students:</b> One book at a time for 7 days.</li>
+                  <li><b>Teachers:</b> Allotted subjects' textbooks till the term end.</li>
+                  <li><b>Reference Books:</b> 3 books for 15 days.</li>
+                  <li><b>Journals/Magazines:</b> 2 for 7 days.</li>
+              </ul>
+          </li>
+          <li><b>Reference and Information Services:</b>
+                  <ul>
+                      <li><b>Book-Bank Facility:</b> Available for economically weak students and SC, ST, NT, OBC candidates with proper documents.</li>
+                      <li><b>Inter-Library Loan:</b> Access books from 'Management College Library' and 'College of Education Library.'</li>
+                      <li><b>Issue of Identity Smart Cards:</b> For all students and staff members of the college.</li>
+                      <li><b>E-Zone Facility:</b> 5 computers with internet for students; 2 for teachers in the Teacher's Reading Section.</li>
+                  </ul>
+          </li>
+      </ul>
+  </section>
+
+  <section>
+      <h3>Best Practices Followed by the Library</h3>
+      <ul>
+          <li>Use of koha open-source library management software for automation.</li>
+          <li>Attendance of students and teachers in Research, Reference, and Reading Hall is recorded daily.</li>
+          <li>Newspaper clippings displayed regularly.</li>
+          <li>Competitive Examination Section for students.</li>
+          <li>Open access in all library sections.</li>
+          <li>Suggestion box for students' recommendations.</li>
+          <li>CCTV surveillance for security.</li>
+          <li>Book displays/exhibitions held regularly.</li>
+      </ul>
+  </section>
+
+  <section>
+      <h3>Library Time Schedule</h3>
+      <ul>
+          <li><b>Working Days:</b> Monday to Saturday</li>
+          <li><b>Library Timings:</b> 9:30 AM - 6:00 PM</li>
+          <li><b>Issue/Return Timings:</b> 10:00 AM - 5:30 PM</li>
+          <li><b>Reading Room Timings:</b> 9:30 AM - 6:00 PM</li>
+      </ul>
+  </section>
+</div>
+{% endblock %}

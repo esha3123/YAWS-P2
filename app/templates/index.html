@@ -1,0 +1,549 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Saket College{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-carousel">
+        <div class="carousel-item">
+      <img src="/static/slide1.jpeg" alt="Campus View" class="hero-video">
+      <!-- <div class="hero-content">
+        <h1 style="color: rgb(167, 130, 27);">State-of-the-Art Campus</h1>
+        <p style="color: rgb(65, 40, 0);">Modern facilities for the modern learner</p>
+        <button>Learn More</button>
+      </div> -->
+    </div>
+    <div class="carousel-item">
+      <img src="/static/slide2.jpeg" alt="Library" class="hero-video">
+      <!-- <div class="hero-content">
+        <h1 style="color: rgb(167, 130, 27);">World-Class Education</h1>
+        <p style="color: rgb(125, 107, 78,0.5);">Experience excellence in every classroom</p>
+        <button>Discover</button>
+      </div> -->
+    </div>
+    <div class="carousel-item">
+      <img src="static/thirdslide3.jpeg" alt="Library" class="hero-video" >
+      <!-- <div class="hero-content">
+        <h1 style="color: rgb(167, 130, 27);">World-Class Education</h1>
+        <p style="color: rgb(125, 107, 78,0.5);">Experience excellence in every classroom</p>
+        <button>Discover</button> -->
+    </div>
+    <div class="carousel-item active">
+      <video autoplay muted loop class="hero-video" playsinline>
+        <source src="{{ url_for('static', filename='0506.webm') }}" type="video/webm" media="(min-width: 1200px)">
+        <source src="{{ url_for('static', filename='0506.webm') }}" type="video/mp4" media="(max-width: 1199px)">
+        Your browser does not support the video tag.
+      </video>
+      <!-- <div class="hero-content">
+        <h1 id="caption-title" style="color: rgb(167, 130, 27);">Welcome to Saket College</h1>
+        <p id="caption-text" style="color: rgb(65, 40, 0);">Empowering minds and shaping futures through excellence in education since 1975</p>
+        <a href="https://saketcollege.edu.in/contact/"><button>Apply Now</button></a>
+      </div> -->
+    </div>
+
+    <div class="carousel-indicators">
+    </div>
+  </div>
+</section>
+
+<div class="caption-card">
+  <marquee id="caption-text" direction="left" scrollamount="13">
+    <span class="caption-text">Welcome to Saket College of Arts, Science and Commerce. Empowering minds and shaping futures through excellence in education since 2002.NAAC Re-Accrediated , Admissions Open For 2025-2026. For Details Contact:-8356901298. </span>
+    
+  </marquee>
+</div>
+
+<div class="noticesvisionmission">
+  <div class="notices">
+    <div class="notice-board">
+      <div class="notice-title">Notices</div>
+      <div class="date-time" id="dateTime"></div>
+      <div class="notice-tabs">
+        <button id="generalNoticeTab" class="notice-tab active" onclick="switchNoticeTab('general')">General Notices</button>
+        <button id="examNoticeTab" class="notice-tab" onclick="switchNoticeTab('exam')">Examination Notices</button>
+      </div>
+      <div id="generalNoticesContainer" class="notices-wrapper active-tab">
+        <div class="notices-content" id="generalNoticeContent">
+          <div class="loading" id="generalNoticeLoading" style="display: none;">Loading...</div>
+        </div>
+        <button id="loadMoreGeneralButton" class="load-more-btn" style="display:none;">Load More</button>
+      </div>
+      <div id="examNoticesContainer" class="notices-wrapper" style="display:none;">
+        <div class="notices-content" id="examNoticeContent">
+          <div class="loading" id="examNoticeLoading" style="display: none;">Loading...</div>
+        </div>
+        <button id="loadMoreExamButton" class="load-more-btn" style="display:none;">Load More</button>
+      </div>
+    </div>
+  </div>
+  <div class="vision">
+    <h1>Our Vision & Mission</h1>
+    <div class="vision-mission-container">
+      <div class="vision-mission-content">
+        <div class="vm-box">
+          <div class="content" id="vision">
+            <h2>Our Vision</h2>
+            <div class="expandable-content">
+              <p>To develop young citizens into competent individuals with moral responsibility.</p>
+              <div class="expanded-content">
+                <p>We envision Saket College as a center of excellence that transforms students into leaders.</p>
+              </div>
+              <button class="expand-btn" onclick="toggleContent('vision')">Read More</button>
+            </div>
+          </div>
+          <div class="content" id="mission">
+            <h2>Our Mission</h2>
+            <div class="expandable-content">
+              <ul class="mission-list">
+                <li>To equip students with advanced knowledge and skills.</li>
+              </ul>
+              <div class="expanded-content">
+                <ul class="mission-list">
+                  <li>To provide education opportunities to financially weaker sections of society.</li>
+                  <li>To provide value-based education that molds students into responsible citizens.</li>
+                  <li>To make education job-oriented and foster an inclusive environment.</li>
+                </ul>
+              </div>
+              <button class="expand-btn" onclick="toggleContent('mission')">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="message-carousel">
+        <div class="message-slides">
+          <div class="message-slide active">
+            <div class="message-image">
+              <img src="{{ url_for('static', filename='babuji.jpeg') }}" alt="Prof. Dr. Ram Ujagar Tiwari">
+            </div>
+            <div class="message-content">
+              <h3>Late - Dr.Ram Ujagar Tiwari</h3>
+              <h4>Founder Chairman</h4>
+              <div class="message-text">
+                <p>My Dear Friends,</p>
+
+              <p>    I have great pleasure and sincere gratitude towards GOD, who made me instrumental to establish this great Institution. I feel that SERVICE THROUGH EDUCATION IS SERVICE TO HUMANITY AND THIS SERVICE TO MANKIND IS SERVICE TO GOD. 
+                Our passion is to excel in 'QUALITY EDUCATION'. Quality never comes by accident. It is always the result of High Intention, Sincere effort towards right direction and skillful Execution.</p>
+                  <p>  Our Programme is “Move To Grow” – focus on students’ 'Personality Development', who are responsible leaders of tomorrow.</p>
+              </div>
+            </div>
+          </div>
+          <div class="message-slide">
+            <div class="message-image">
+              <img src="{{ url_for('static', filename='Pramod.R.t.jpeg') }}" alt="Dr. Pramod R. Tiwari">
+            </div>
+            <div class="message-content">
+              <h3>Late - Pramod R. Tiwari</h3>
+              <h4>FounderHon. Secretary</h4>
+              <div class="message-text">
+                <p>"Let us be the wings of others' dreams"
+                  Welcome to Saket Gyanpeeth established in 1994 with our motto "Gyanam Anantam". A "vibrant innovative temple of service".
+                   The main purpose of this trust is to render untiring selfless service to the society through value based education.</p>
+                   <p>चाहे थक जाये पर राह नहीं थकती,
+                    चाहे थक जाये पर चाह नहीं थकती।
+                    हुये आज इनके कितने साल पर सेवा से इनकी चाह नहीं थकती।।</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/vision-mission.css') }}">
+
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Excellence in Education</h2>
+      <p>Saket College of Arts, Science & Commerce, affiliated with the University of Mumbai, was established in 2002
+        and has been dedicated to providing quality education. The college offers a diverse range of undergraduate and
+        postgraduate programs, including B.A., B.Com., B.M.S., B.Com. (B&I), B.Com. (A&F), B.Com. (IM), B.Com. (FM),
+        B.Sc. (I.T.), B.Sc. (C.S.), M.Sc. (I.T.), M.Com. (Advanced Accountancy), and M.A. (Hindi).</p>
+      <p> With a student base of over 5,000, we take pride in maintaining high academic standards, a disciplined campus
+        environment, and a strong focus on the holistic development of our students. Beyond academics, the college
+        actively encourages participation in extracurricular activities such as sports and cultural events, along with
+        co-curricular initiatives like NSS and DLLE, providing students with ample opportunities to grow and excel.</p>
+    </div>
+    <div class="about-image">
+      <img src="{{ url_for('static', filename='images/home-page.png') }}"
+        alt="Campus Life" style="width: 100%; border-radius: 10px;">
+    </div>
+  </div>
+</section>
+
+<section class="stats parallax-section">
+  <div class="parallax-overlay"></div>
+  <div class="stats-container">
+    <div class="stats-grid">
+      <div class="stat-card" style="--index: 0">
+        <div class="stat-number">2000+</div>
+        <div class="stat-label">Students</div>
+      </div>
+      <div class="stat-card" style="--index: 1">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Faculty Members</div>
+      </div>
+      <div class="stat-card" style="--index: 2">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Courses</div>
+      </div>
+      <div class="stat-card" style="--index: 3">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Placement Assistance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🏆</div>
+      <h3>NAAC B Grade</h3>
+      <p>Highest accreditation for academic excellence</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔬</div>
+      <h3>Research Excellence</h3>
+      <p>State-of-the-art research facilities and innovation centers</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌍</div>
+      <h3>Campus Environment</h3>
+      <p>College where you feel comfort and can thrive socially and academically.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎓</div>
+      <h3>Quality Education</h3>
+      <p>College known for excellence to ensure a high-quality education that aligns with your career goals.</p>
+    </div>
+  </div>
+</section>
+
+<section class="achievements parallax-section">
+  <div class="parallax-overlay"></div>
+  <div class="achievement-grid">
+    <div class="achievement-card">
+      <div class="achievement-icon">💼</div>
+      <h3>Student Support Services</h3>
+      <p>Counselling Services, Career Guidance, Extracurricular Activities, Internships and Job Placement Opportunities provided by the college.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon">🎓</div>
+      <h3>Teaching Method</h3>
+      <p>At Saket College, we blend traditional learning with modern techniques like smart classrooms, virtual labs, and practical exposure to develop real-world skills and critical thinking.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon">🌟</div>
+      <h3>Facilities And Resources</h3>
+      <p>Library, IT Laboratories, Gymkhana, Sports Ground, Yoga Hall, . These resources can significantly impact your educational experience.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon">🤝</div>
+      <h3>Certificate Courses</h3>
+      <p>A certificate program is considered continuing education in some cases because it builds on your knowledge of a particular career or industry.</p>
+    </div>
+  </div>
+</section>
+
+<section class="publications-magazines">
+  <div class="container">
+    <h2 class="section-title">UGC Sponsored Centers</h2>
+    <div class="ugc-centers-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+      <div class="ugc-section" style="flex: 1;">
+        <div class="ugcsponsoredbox" style="flex: 1; min-width: 300px; position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 10px;">
+          <img src="{{ url_for('static', filename='ugc-sponsored/cover.jpg') }}" alt="Purvanchal Utthan Trust" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="ugcsponsoredboxcont" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 15px;">
+            <h5 style="color: #cccccc; margin-top: 0; margin-bottom: 5px;">Purvanchal Utthan Trust</h5> 
+            <div style="color: #cccccc; font-size: 13px;">4th Reading Room inaugurated by Ashok Shingare IAS</div>
+            <a href="{{ url_for('frontend.purvanchal_trust') }}" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #4a89dc; color: white; text-decoration: none; border-radius: 4px;">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-carousel-container" style="flex: 1;">
+        <div class="testimonial-carousel">
+          <div class="testimonial-slide active">
+            <img src="{{ url_for('static', filename='testimonal(1).jpg') }}" alt="Testimonial 1">
+          </div>
+          <div class="testimonial-slide">
+            <img src="{{ url_for('static', filename='testimonal(2).jpg') }}" alt="Testimonial 2">
+          </div>
+          <div class="testimonial-slide">
+            <img src="{{ url_for('static', filename='testimonal(3).jpg') }}" alt="Testimonial 3">
+          </div>
+          <div class="testimonial-slide">
+            <img src="{{ url_for('static', filename='testimonal(4).jpg') }}" alt="Testimonial 4">
+          </div>
+        </div>
+        <div class="testimonial-dot">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="campus-life">
+  <h2>Campus Life</h2>
+  <div class="campus-grid">
+    <div class="campus-card">
+      <img src="{{ url_for('static', filename='images/cultural.png') }}"
+        alt="Cultural Events">
+      <div class="campus-overlay">
+        <h3>Cultural Events</h3>
+        <p>Vibrant cultural festivals and celebrations</p>
+        <a href="javascript:void(0);" onclick="ViewCampusImages('cultural', 'Cultural Events')"><span>View</span></a>
+      </div>
+    </div>
+    <div class="campus-card">
+      <img src="{{ url_for('static', filename='images/sports.jpg') }}"
+        alt="Sports Activities">
+      <div class="campus-overlay">
+        <h3>Sports Activities</h3>
+        <p>State-level tournaments and fitness facilities</p>
+        <a href="javascript:void(0);" onclick="ViewCampusImages('sports', 'Sports Activities')"><span>View</span></a>
+      </div>
+    </div>
+    <div class="campus-card">
+      <img src="{{ url_for('static', filename='images/student-club.png') }}"
+        alt="Student Clubs">
+      <div class="campus-overlay">
+        <h3>Student Clubs</h3>
+        <p>Over 30 active student clubs and societies</p>
+        <a href="javascript:void(0);" onclick="ViewCampusImages('clubs', 'Student Clubs')"><span>View</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/campus-life.js') }}"></script>
+<script>
+  function ViewCampusImages(category, title) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center; z-index:1000;';
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+    modalContent.style.cssText = 'background-color:#fff; border-radius:8px; width:80%; max-width:1200px; max-height:90vh; overflow-y:auto; padding:20px; position:relative;';
+
+    const closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.className = 'close-button';
+    closeBtn.style.cssText = 'position:absolute; top:10px; right:20px; font-size:28px; font-weight:bold; cursor:pointer; color:#333;';
+    closeBtn.onclick = function() {
+      document.body.removeChild(modal);
+    };
+    
+    const header = document.createElement('h2');
+    header.textContent = title;
+    header.style.cssText = 'margin-bottom:20px; color:#333; border-bottom:1px solid #ddd; padding-bottom:10px;';
+
+    const imageGrid = document.createElement('div');
+    imageGrid.className = 'image-grid';
+    imageGrid.style.cssText = 'display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:15px; margin-top:20px;';
+
+    const loadingDiv = document.createElement('div');
+    loadingDiv.textContent = 'Loading images...';
+    loadingDiv.style.cssText = 'text-align:center; padding:20px; width:100%;';
+    
+    modalContent.appendChild(closeBtn);
+    modalContent.appendChild(header);
+    modalContent.appendChild(loadingDiv);
+    modalContent.appendChild(imageGrid);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+    
+    fetch(`/api/images?category=${category}&per_page=20`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch images');
+        }
+        return response.json();
+      })
+      .then(data => {
+        loadingDiv.style.display = 'none';
+        
+        if (!data.images || data.images.length === 0) {
+          const noImagesMsg = document.createElement('p');
+          noImagesMsg.textContent = `No ${title.toLowerCase()} images available.`;
+          noImagesMsg.style.cssText = 'text-align:center; padding:20px; width:100%;';
+          imageGrid.appendChild(noImagesMsg);
+          return;
+        }
+        data.images.forEach(image => {
+          const imgContainer = document.createElement('div');
+          imgContainer.className = 'image-item';
+          imgContainer.style.cssText = 'border-radius:8px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1); position:relative;';
+          
+          const img = document.createElement('img');
+          img.src = image.url;
+          img.alt = image.title;
+          img.style.cssText = 'width:100%; height:200px; object-fit:cover; display:block;';
+          const overlay = document.createElement('div');
+          overlay.className = 'image-overlay';
+          overlay.style.cssText = 'position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.7); color:white; padding:10px; transition:all 0.3s ease;';
+          
+          const imageTitle = document.createElement('h4');
+          imageTitle.textContent = image.title;
+          imageTitle.style.cssText = 'margin:0 0 5px 0; font-size:16px;';
+          
+          overlay.appendChild(imageTitle);
+          
+          if (image.description) {
+            const imageDesc = document.createElement('p');
+            imageDesc.textContent = image.description;
+            imageDesc.style.cssText = 'margin:0; font-size:14px;';
+            overlay.appendChild(imageDesc);
+          }
+          
+          img.onclick = function() {
+            const fullView = document.createElement('div');
+            fullView.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); display:flex; justify-content:center; align-items:center; z-index:1100;';
+            
+            const fullImg = document.createElement('img');
+            fullImg.src = image.url;
+            fullImg.alt = image.title;
+            fullImg.style.cssText = 'max-width:90%; max-height:90%; object-fit:contain;';
+            
+            fullView.appendChild(fullImg);
+            fullView.onclick = function() {
+              document.body.removeChild(fullView);
+            };
+            
+            document.body.appendChild(fullView);
+          };
+          
+          imgContainer.appendChild(img);
+          imgContainer.appendChild(overlay);
+          imageGrid.appendChild(imgContainer);
+        });
+        if (data.has_next) {
+          const loadMoreBtn = document.createElement('button');
+          loadMoreBtn.textContent = 'Load More';
+          loadMoreBtn.style.cssText = 'grid-column:1/-1; padding:10px 20px; background-color:#4a89dc; color:white; border:none; border-radius:4px; margin-top:15px; cursor:pointer; font-weight:bold;';
+          let currentPage = 1;
+          
+          loadMoreBtn.onclick = function() {
+            currentPage++;
+    
+            loadMoreBtn.textContent = 'Loading...';
+            loadMoreBtn.disabled = true;
+            
+            fetch(`/api/images?category=${category}&per_page=20&page=${currentPage}`)
+              .then(response => response.json())
+              .then(moreData => {
+                moreData.images.forEach(image => {
+                  const imgContainer = document.createElement('div');
+                  imgContainer.className = 'image-item';
+                  imgContainer.style.cssText = 'border-radius:8px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1); position:relative;';
+                  
+                  const img = document.createElement('img');
+                  img.src = image.url;
+                  img.alt = image.title;
+                  img.style.cssText = 'width:100%; height:200px; object-fit:cover; display:block;';
+                  
+                  const overlay = document.createElement('div');
+                  overlay.className = 'image-overlay';
+                  overlay.style.cssText = 'position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.7); color:white; padding:10px;';
+                  
+                  const imageTitle = document.createElement('h4');
+                  imageTitle.textContent = image.title;
+                  imageTitle.style.cssText = 'margin:0 0 5px 0; font-size:16px;';
+                  
+                  overlay.appendChild(imageTitle);
+                  
+                  if (image.description) {
+                    const imageDesc = document.createElement('p');
+                    imageDesc.textContent = image.description;
+                    imageDesc.style.cssText = 'margin:0; font-size:14px;';
+                    overlay.appendChild(imageDesc);
+                  }
+
+                  img.onclick = function() {
+                    const fullView = document.createElement('div');
+                    fullView.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); display:flex; justify-content:center; align-items:center; z-index:1100;';
+                    
+                    const fullImg = document.createElement('img');
+                    fullImg.src = image.url;
+                    fullImg.alt = image.title;
+                    fullImg.style.cssText = 'max-width:90%; max-height:90%; object-fit:contain;';
+                    
+                    fullView.appendChild(fullImg);
+                    fullView.onclick = function() {
+                      document.body.removeChild(fullView);
+                    };
+                    
+                    document.body.appendChild(fullView);
+                  };
+                  
+                  imgContainer.appendChild(img);
+                  imgContainer.appendChild(overlay);
+                  imageGrid.appendChild(imgContainer);
+                });
+                
+                loadMoreBtn.disabled = false;
+                loadMoreBtn.textContent = 'Load More';
+                
+                if (!moreData.has_next) {
+                  loadMoreBtn.style.display = 'none';
+                }
+              })
+              .catch(error => {
+                console.error('Error loading more images:', error);
+                loadMoreBtn.textContent = 'Error Loading More';
+                setTimeout(() => {
+                  loadMoreBtn.textContent = 'Try Again';
+                  loadMoreBtn.disabled = false;
+                }, 2000);
+              });
+          };
+          
+          imageGrid.appendChild(loadMoreBtn);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching images:', error);
+        loadingDiv.textContent = 'Error loading images. Please try again later.';
+        loadingDiv.style.color = 'red';
+      });
+  
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        document.body.removeChild(modal);
+      }
+    });
+    
+    document.body.style.overflow = 'hidden';
+    
+    closeBtn.addEventListener('click', function() {
+      document.body.style.overflow = '';
+    });
+    
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        document.body.style.overflow = '';
+      }
+    });
+  } 
+</script>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

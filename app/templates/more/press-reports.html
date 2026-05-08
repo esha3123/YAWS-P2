@@ -1,0 +1,270 @@
+{% extends "base.html" %}
+
+{% block title %}Press Reports - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.press-card {
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  overflow: hidden;
+  box-shadow: var(--m3-shadow-1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.press-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--m3-shadow-3);
+}
+
+.press-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background-color: var(--m3-surface-variant-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.press-image::after {
+  content: "Click to enlarge";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.press-card:hover .press-image::after {
+  opacity: 1;
+}
+
+.image-placeholder {
+  color: var(--m3-outline);
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Modal styles for enlarged image */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.enlarged-image {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 5px solid white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.zoom-btn {
+  background-color: var(--m3-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.zoom-btn:hover {
+  background-color: var(--m3-primary-dark);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .press-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .press-image {
+    height: 250px;
+  }
+  
+  .zoom-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Press Reports</h1>
+  
+  <div class="press-grid">
+    <div class="press-card" onclick="openModal('image1')">
+      <div class="press-image">
+        <div class="image-placeholder">Press Report Image 1</div>
+      </div>
+    </div>
+    
+    <div class="press-card" onclick="openModal('image2')">
+      <div class="press-image">
+        <div class="image-placeholder">Press Report Image 2</div>
+      </div>
+    </div>
+    
+    <div class="press-card" onclick="openModal('image3')">
+      <div class="press-image">
+        <div class="image-placeholder">Press Report Image 3</div>
+      </div>
+    </div>
+    
+    <div class="press-card" onclick="openModal('image4')">
+      <div class="press-image">
+        <div class="image-placeholder">Press Report Image 4</div>
+      </div>
+    </div>
+    
+    <div class="press-card" onclick="openModal('image5')">
+      <div class="press-image">
+        <div class="image-placeholder">Press Report Image 5</div>
+      </div>
+    </div>
+    
+    <div class="press-card" onclick="openModal('image6')">
+      <div class="press-image">
+        <div class="image-placeholder">Press Report Image 6</div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="enlargedImage" class="enlarged-image" alt="Enlarged Press Report">
+      <div class="zoom-controls">
+        <button class="zoom-btn" onclick="zoomIn()"><span class="material-icons">add</span></button>
+        <button class="zoom-btn" onclick="zoomOut()"><span class="material-icons">remove</span></button>
+        <button class="zoom-btn" onclick="resetZoom()"><span class="material-icons">refresh</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal functionality
+  const modal = document.getElementById('imageModal');
+  const enlargedImage = document.getElementById('enlargedImage');
+  let currentZoom = 1;
+  
+  function openModal(imageId) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+    
+    // In production, replace with actual image path
+    // For now using placeholder logic
+    enlargedImage.src = "path/to/" + imageId + ".jpg";
+    enlargedImage.alt = "Press Report " + imageId;
+    
+    currentZoom = 1;
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+  
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // Re-enable scrolling
+  }
+  
+  function zoomIn() {
+    currentZoom += 0.2;
+    if (currentZoom > 3) currentZoom = 3; // Maximum zoom
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+  
+  function zoomOut() {
+    currentZoom -= 0.2;
+    if (currentZoom < 0.5) currentZoom = 0.5; // Minimum zoom
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+  
+  function resetZoom() {
+    currentZoom = 1;
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+  
+  // Close modal when clicking outside the image
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,950 @@
+in the format: href="{{ url_for('frontend.serve_docs', filepath='path/after/docs') }}"
+EXAMPLE: href="{{ url_for('frontend.serve_docs', filepath='/misc/Grievence Redressal Committee.pdf') }}"
+
+app/docs
+app/docs/misc
+app/docs/misc/Grievence Redressal Committee.pdf
+app/docs/misc/Student Grievance Redressal Committee.pdf
+app/docs/misc/ACTION TAKEN REPORT.pdf
+app/docs/misc/Bakri ID Notice.pdf
+app/docs/misc/Academic Calender 2023-24.pdf
+app/docs/misc/Code of Conduct.pdf
+app/docs/misc/6.5.2Action taken Report.pdf
+app/docs/misc/ADMISSION PROCEDURE.pdf
+app/docs/misc/6.2.1 Startgic plan.pdf
+app/docs/misc/Best Practices 2021-22.pdf
+app/docs/misc/Anti Ragging, High Level Committee.pdf
+app/docs/misc/ICC, Anti Sexual Committee.pdf
+app/docs/committees
+app/docs/committees/Institutional Committee.pdf
+app/docs/committees/Library Committee.pdf
+app/docs/committees/Institutional Committees.pdf
+app/docs/committees/Alumni Committee.pdf
+app/docs/committees/Student Grievance Redressal Committee.pdf
+app/docs/committees/college-development
+app/docs/committees/college-development/COLLEGE DEVELOPMENT COMMITTEE MoM 2024-25.pdf
+app/docs/committees/Examination Committee.pdf
+app/docs/committees/statutory
+app/docs/committees/statutory/2024-25
+app/docs/committees/statutory/2024-25/Anti-Ragging Committee 2023-24.pdf
+app/docs/committees/statutory/2024-25/ICC & Anti Sexual Harassment Committee.pdf
+app/docs/committees/statutory/2024-25/Examination Committee 2023-24.pdf
+app/docs/committees/statutory/2024-25/Students Grievance Redressal Committee2023-24.pdf
+app/docs/committees/statutory/2024-25/SC, ST & OBC Cell.pdf
+app/docs/committees/statutory/2023-24
+app/docs/committees/statutory/2023-24/Examination Committee.pdf
+app/docs/committees/statutory/2023-24/College Development Committe.pdf
+app/docs/committees/statutory/2023-24/Students Grievance Redressal Committee.pdf
+app/docs/committees/statutory/2023-24/Anti-Ragging Committee.pdf
+app/docs/committees/statutory/2023-24/ICC, Anti Sexual Committee.pdf
+app/docs/committees/statutory/2023-24/SC, ST & OBC Cell.pdf
+app/docs/committees/Internal Complaints Committee.pdf
+app/docs/committees/Traning & Placement Committee.pdf
+app/docs/committees/Statutory Committee.pdf
+app/docs/committees/institutional
+app/docs/committees/institutional/Attendance Committee.pdf
+app/docs/committees/institutional/Green Club.pdf
+app/docs/committees/institutional/2023---24
+app/docs/committees/institutional/2023---24/IQAC Committe 2023-24.pdf
+app/docs/committees/institutional/2023---24/NSS Unit  2023-24.pdf
+app/docs/committees/institutional/2023---24/Staff WelfareCommittee 2023-24.pdf
+app/docs/committees/institutional/2023---24/Research Cell 2023-24.pdf
+app/docs/committees/institutional/2023---24/Student Council 2023-24.pdf
+app/docs/committees/institutional/2023---24/Committee for Discipline  2023-24.pdf
+app/docs/committees/institutional/2023---24/Sports Committee 2023-24.pdf
+app/docs/committees/institutional/2023---24/Training & Placement Committee2023-24.pdf
+app/docs/committees/institutional/2023---24/IT Committee2023-24.pdf
+app/docs/committees/institutional/2023---24/Unfair means Enquiry Committee 2023-24.pdf
+app/docs/committees/institutional/2023---24/Committee for Discipline.pdf
+app/docs/committees/institutional/2023---24/DLLE Committee 2023-24.pdf
+app/docs/committees/institutional/2023---24/Alumni Committee 2023-24.pdf
+app/docs/committees/institutional/2023---24/Library Committee 2023-24.pdf
+app/docs/committees/institutional/2023---24/Wdc 2023-2024.pdf
+app/docs/committees/institutional/2023---24/Cultural Committee 2023-24.pdf
+app/docs/committees/institutional/2023---24/Time Table Committee 2023-24.pdf
+app/docs/committees/institutional/2023---24/Green Club 2023-24.pdf
+app/docs/committees/institutional/2023---24/Attendance Committee 2023-24.pdf
+app/docs/committees/institutional/Alumni Committee.pdf
+app/docs/committees/institutional/Unfair means Enquiry Committee.pdf
+app/docs/committees/institutional/IQAC Committee.pdf
+app/docs/committees/institutional/Training & Placement Committee.pdf
+app/docs/committees/institutional/Cultural Committee.pdf
+app/docs/committees/institutional/Staff WelfareCommittee.pdf
+app/docs/committees/institutional/Committee for Discipline.pdf
+app/docs/committees/institutional/Sports Committee.pdf
+app/docs/committees/institutional/NSS Unit.pdf
+app/docs/committees/institutional/Student Council.pdf
+app/docs/committees/institutional/Library Committee (1).pdf
+app/docs/committees/institutional/IT Committee.pdf
+app/docs/committees/institutional/Time Table Committee.pdf
+app/docs/committees/institutional/DLLE Committee.pdf
+app/docs/committees/institutional/Research Cell.pdf
+app/docs/committees/Anti-Ragging Committee.pdf
+app/docs/committees/Statutory Committees.pdf
+app/docs/student
+app/docs/student/dlle
+app/docs/student/dlle/DLLE.pdf
+app/docs/student/placements
+app/docs/student/placements/Placement Record.pdf
+app/docs/student/nss
+app/docs/student/nss/NSS.pdf
+app/docs/student/nss/NSS_compressed-1.pdf
+app/docs/student/best-practices
+app/docs/student/best-practices/Best practices 2023 - 24.pdf
+app/docs/student/best-practices/BP 2019-20.pdf
+app/docs/student/best-practices/BP 2020-21.pdf
+app/docs/student/best-practices/BP 2022-23.pdf
+app/docs/departments
+app/docs/departments/Anti- Ragging MOM 2023-24.pdf
+app/docs/departments/Examination Committee.pdf
+app/docs/departments/IQAC Committee.pdf
+app/docs/departments/Anti Ragging & High Level Standing Committee.pdf
+app/docs/departments/Code of Conduct.pdf
+app/docs/departments/Grievance MoM 22-23.pdf
+app/docs/departments/SC,ST,OBC MoM 22-23.pdf
+app/docs/departments/Grievance MoM 23-24.pdf
+app/docs/departments/Anti ragging MOM 22-23.pdf
+app/docs/departments/Minority MoM 23-24.pdf
+app/docs/departments/ICC & Anti Sexual Harassment Committee.pdf
+app/docs/departments/activities
+app/docs/departments/activities/ICC.pdf
+app/docs/departments/activities/BBI_compressed.pdf
+app/docs/departments/activities/Economics.pdf
+app/docs/departments/activities/BMS_compressed-1.pdf
+app/docs/departments/activities/Students-Council.pdf
+app/docs/departments/activities/Alumni.pdf
+app/docs/departments/activities/2021-22
+app/docs/departments/activities/2021-22/Economics.pdf
+app/docs/departments/activities/2021-22/Women-Devlopement-cell.pdf
+app/docs/departments/activities/2021-22/BAF.pdf
+app/docs/departments/activities/2021-22/BMS.pdf
+app/docs/departments/activities/2021-22/Student-Council.pdf
+app/docs/departments/activities/2021-22/Cultural.pdf
+app/docs/departments/activities/2021-22/Alumni-1.pdf
+app/docs/departments/activities/2021-22/History.pdf
+app/docs/departments/activities/2021-22/Commerce.pdf
+app/docs/departments/activities/2021-22/IT-CS.pdf
+app/docs/departments/activities/2021-22/Arts-1.pdf
+app/docs/departments/activities/2021-22/BBI.pdf
+app/docs/departments/activities/2020-21
+app/docs/departments/activities/2020-21/Commerce-Dept-.-Activities-1.pdf
+app/docs/departments/activities/2020-21/Arts-Activities.pdf
+app/docs/departments/activities/2020-21/BAF-Dept.Activities-2.pdf
+app/docs/departments/activities/2020-21/IT-CS-Activities.pdf
+app/docs/departments/activities/2020-21/BMS-Activity-report-rotated-1.pdf
+app/docs/departments/activities/2020-21/Cultural-Activity-2-2.pdf
+app/docs/departments/activities/2020-21/IM-FM-Activities.pdf
+app/docs/departments/activities/2020-21/BBI-Activities-.pdf
+app/docs/departments/activities/Arts.pdf
+app/docs/departments/activities/BAF_compressed.pdf
+app/docs/departments/activities/History.pdf
+app/docs/departments/activities/Nature-Club.pdf
+app/docs/departments/activities/Commerce.pdf
+app/docs/departments/activities/IT-CS.pdf
+app/docs/departments/activities/WDC-2.pdf
+app/docs/departments/ICC-Anti Sexual MOM 22-23.pdf
+app/docs/departments/Grievance Redressal Committee.pdf
+app/docs/departments/Non-Teaching Staff List for the year 2023-24.pdf
+app/docs/departments/Statutory Declaration RTI Act.pdf
+app/docs/departments/Minority MoM 22-23.pdf
+app/docs/departments/ICC-Anti Sexual MoM 23-24.pdf
+app/docs/departments/Teaching Staff List (Degree) for the year 2023-24.pdf
+app/docs/departments/Minority Cell.pdf
+app/docs/departments/pg
+app/docs/departments/pg/Master of Commerce in Advanced Accountancy.pdf
+app/docs/departments/pg/Master of Arts in Hindi.pdf
+app/docs/departments/pg/Master of Science in Information Technology.pdf
+app/docs/departments/ug
+app/docs/departments/ug/Bachelor of Commerce in Investment Management.pdf
+app/docs/departments/ug/Bachelor of Commerce (Banking & Insurance).pdf
+app/docs/departments/ug/Bachelor of Commerce in Financial Management.pdf
+app/docs/departments/ug/Bachelor of Science in Information Technology.pdf
+app/docs/departments/ug/Bachelor of Commerce (Accounting and Finance).pdf
+app/docs/departments/ug/Bachelor of Management Studies.pdf
+app/docs/departments/ug/Bachelor of Science in Computer Science.pdf
+app/docs/departments/ug/Bachelor of Commerce.pdf
+app/docs/departments/ug/Bachelor of Arts.pdf
+app/docs/departments/SC,ST,OBC MoM 23-24.pdf
+app/docs/departments/Statutory Committees.pdf
+app/docs/departments/SC, ST & OBC Cell.pdf
+app/docs/academics
+app/docs/academics/program-outcomes
+app/docs/academics/program-outcomes/programe outcomes of BMS.pdf
+app/docs/academics/program-outcomes/B.Com. (B. & I.).pdf
+app/docs/academics/program-outcomes/T.Y.B.Com.pdf
+app/docs/academics/program-outcomes/M.Com Part I.pdf
+app/docs/academics/program-outcomes/programe outcomes of Computer Science.pdf
+app/docs/academics/program-outcomes/M.Com Part II.pdf
+app/docs/academics/program-outcomes/F.Y.B.A..pdf
+app/docs/academics/program-outcomes/B.Sc.I.T..pdf
+app/docs/academics/program-outcomes/programe outcomes of BSC.IT.pdf
+app/docs/academics/program-outcomes/T.Y.B.A. Hist.pdf
+app/docs/academics/program-outcomes/S.Y.B.Com. (I. M..).pdf
+app/docs/academics/program-outcomes/F.Y.B.Com.(F.Mg.).pdf
+app/docs/academics/program-outcomes/S.Y.BMS.pdf
+app/docs/academics/program-outcomes/T.Y.B.Sc.I.T..pdf
+app/docs/academics/program-outcomes/S.Y.B.Com (B. & I.).pdf
+app/docs/academics/program-outcomes/programe outcomes of BCOM.pdf
+app/docs/academics/program-outcomes/S.Y.B.Com.(F.Mg.).pdf
+app/docs/academics/program-outcomes/T.Y.B.A. Economics.pdf
+app/docs/academics/program-outcomes/S.Y.B.Com.-1.pdf
+app/docs/academics/program-outcomes/F.Y. B.Sc.I.T..pdf
+app/docs/academics/program-outcomes/BMS.pdf
+app/docs/academics/program-outcomes/T.Y.B.Sc.C.S..pdf
+app/docs/academics/program-outcomes/B.A. Economics.pdf
+app/docs/academics/program-outcomes/F.Y.B.Com. (I.M.).pdf
+app/docs/academics/program-outcomes/F.Y. B.Sc.C.S..pdf
+app/docs/academics/program-outcomes/T.Y.B.Com (B. & I.).pdf
+app/docs/academics/program-outcomes/S.Y.B.Sc.C.S..pdf
+app/docs/academics/program-outcomes/M.Com.pdf
+app/docs/academics/program-outcomes/B.A..pdf
+app/docs/academics/program-outcomes/program outcomes of BBI.pdf
+app/docs/academics/program-outcomes/S.Y.B.A. Eco.pdf
+app/docs/academics/program-outcomes/programe outcomes of HINDI.pdf
+app/docs/academics/program-outcomes/F.Y.B.Com.pdf
+app/docs/academics/program-outcomes/T.Y.BMS.pdf
+app/docs/academics/program-outcomes/programe outcomes of Economics.pdf
+app/docs/academics/program-outcomes/M.Sc.I.T. Part I.pdf
+app/docs/academics/program-outcomes/B.Com. (A .& F.).pdf
+app/docs/academics/program-outcomes/programe outcomes of BFM.pdf
+app/docs/academics/program-outcomes/programe outcomes of BAF.pdf
+app/docs/academics/program-outcomes/T.Y.B.Com.(F.Mg.).pdf
+app/docs/academics/program-outcomes/F.Y.BMS.pdf
+app/docs/academics/program-outcomes/Program Outcomes of History.pdf
+app/docs/academics/program-outcomes/M.Sc.I.T. Part II.pdf
+app/docs/academics/program-outcomes/S.Y.B.Sc.I.T..pdf
+app/docs/academics/calendar
+app/docs/academics/calendar/2017-18.pdf
+app/docs/academics/calendar/2021-22.pdf
+app/docs/academics/calendar/2022-23.pdf
+app/docs/academics/calendar/2018-19.pdf
+app/docs/academics/calendar/2019-20.pdf
+app/docs/academics/calendar/2023-24.pdf
+app/docs/academics/calendar/2020-21.pdf
+app/docs/academics/calendar/2024-25.pdf
+app/docs/results
+app/docs/results/SEM IV Regular and ATKT Exam March 2024 Revaluation Notice.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBCOM SEM I ATKT 10 Poin Dec 2023.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBA SEM I ATKT 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBSC (Computer Science) SEM I ATKT  10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBSC (Information Technology) SEM I ATKT 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBCOM (Banking & Insurance) SEM I ATKT 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBMS SEM I ATKT 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBCOM (Accounting & Finance) SEM I ATKT 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBCOM (Financial Mnagaement) SEM I ATKT 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I ATKT 10 Point Dec 2023/FYBCOM (Investment Management) SEM I ATKT 10 Point Dec 2023.pdf
+app/docs/results/SY.BSc(IT) Sem IV ATKT(10 Point) Notice Board List sept 2024.pdf
+app/docs/results/SY.BCom (A & F) Sem IV ATKT(10 Point) Notice Board List sept 2024.pdf
+app/docs/results/SY SEM III Regular Exam Oct 2024 Result Notice Board Copy.pdf
+app/docs/results/SEM II ATKT Exam April 2024 Results Notice Board Copy.pdf
+app/docs/results/SEM II Exam April 2024 Result Notice Board Copy.pdf
+app/docs/results/SY.BMS Sem IV ATKT(10 Point) Notice Board List sept 2024.pdf
+app/docs/results/SY.BSc (CS) Sem IV ATKT(10 Point) Notice Board List sept 2024.pdf
+app/docs/results/SEM IV Regular and ATKT Exam March 2024 Results Declared Notice.pdf
+app/docs/results/First Year Sem I Regular 10 Point Dec 2023
+app/docs/results/First Year Sem I Regular 10 Point Dec 2023/FYBA SEM I Regular 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I Regular 10 Point Dec 2023/FYBCOM (Banking & Insurance) SEM I Regular 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I Regular 10 Point Dec 2023/FYBSC (Information Technology)  SEM I Regular 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I Regular 10 Point Dec 2023/FYBMS SEM I Regular 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I Regular 10 Point Dec 2023/FYBSC (Computer Science)  SEM I Regular 10 Point Dec 2023.pdf
+app/docs/results/First Year Sem I Regular 10 Point Dec 2023/FYBCOM SEM I Regular 10 Poin Dec 2023.pdf
+app/docs/results/First Year Sem I Regular 10 Point Dec 2023/FYBCOM (Accounting & Finance) SEM I Regular 10 Point Dec 2023.pdf
+app/docs/results/SEM IV ATKT Exam March 2024 Results Notice Board Copy.pdf
+app/docs/results/SY.BA Sem IV(10 point) Notice Board list september 2024.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBCOM SEM IV ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBCOM SEM IV 6040 ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBSC IT SEM IV ATKT  OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBSC CS SEM IV REV 16 ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBCOM SEM IV C7525 ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBA SEM IV ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBMS SEM IV ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBSC CS SEM IV OLD ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBCOM (Fin.Mgt) SEM IV ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBCOM (B&I) SEM IV ATKT OCT 2023.pdf
+app/docs/results/SY SEM IV  ATKT OCT 2023/SYBCOM (A&F) SEM IV ATKT OCT 2023.pdf
+app/docs/results/212. Result of Sem III Regular, Additional & ATKT Examination Ocotober 2024 Notice..pdf
+app/docs/results/merit-list
+app/docs/results/merit-list/Bachelor of commerce Accounting & Finance.pdf
+app/docs/results/merit-list/Bachelor of science ( Comp. Sci).pdf
+app/docs/results/merit-list/Bachelar commerce Management studies.pdf
+app/docs/results/merit-list/Bachelor of commerce Banking & Insurance.pdf
+app/docs/results/merit-list/Bachelor of science ( information Technology).pdf
+app/docs/results/merit-list/Bachelor of Commerce.pdf
+app/docs/results/merit-list/Bachelor of Arts.pdf
+app/docs/results/SEM IV Regular Exam March 2024 Results Notice Board Copy.pdf
+app/docs/results/SY SEM III Additional Exam Nov 2024 Result Notice Board copy.pdf
+app/docs/results/SEM IV ATKT Exam March 2024 Results Notice Board Copy_3.pdf
+app/docs/results/SY SEM III ATKT Exam Oct 2024 Result Notice Board Copy.pdf
+app/docs/results/First Year Sem II ATKT Oct 2023
+app/docs/results/First Year Sem II ATKT Oct 2023/FYBSC CS SEM II Rev 16 ATKT OCT 2023.pdf
+app/docs/results/First Year Sem II ATKT Oct 2023/FYBCOM (A&F) SEM II ATKT OCT 2023.pdf
+app/docs/results/First Year Sem II ATKT Oct 2023/FYBSC IT SEM II ATKT OCT 2023.pdf
+app/docs/results/First Year Sem II ATKT Oct 2023/FYBCOM (B&I) SEM II ATKT OCT 2023.pdf
+app/docs/results/First Year Sem II ATKT Oct 2023/FYBMS SEM II ATKT OCT 2023.pdf
+app/docs/results/First Year Sem II ATKT Oct 2023/FYBSC CS SEM II OLD ATKT OCT 2023.pdf
+app/docs/results/First Year Sem II ATKT Oct 2023/FYBA SEM II ATKT OCT 2023.pdf
+app/docs/results/First Year Sem II ATKT Oct 2023/FYBCOM SEM II ATKT OCT 2023.pdf
+app/docs/results/SY.BCom Sem IV ATKT(10 Point) Notice Board List sept 2024.pdf
+app/docs/results/SEM II Regular and ATKT Exam April 2024 Revaluation Notice.pdf
+app/docs/naac
+app/docs/naac/appeal
+app/docs/naac/aqar
+app/docs/naac/aqar/2017-18.pdf
+app/docs/naac/aqar/2022-2023.pdf
+app/docs/naac/aqar/2019-2020.pdf
+app/docs/naac/aqar/2020-2021.pdf
+app/docs/naac/aqar/AQAR 203-24.pdf
+app/docs/naac/aqar/2018-2019.pdf
+app/docs/naac/aqar/2021-2022.pdf
+app/docs/naac/dvv
+app/docs/naac/dvv/6.5.2.pdf
+app/docs/naac/dvv/5.1.1.pdf
+app/docs/naac/dvv/2.1.2.pdf
+app/docs/naac/dvv/2.1.1.pdf
+app/docs/naac/dvv/4.1.2.pdf
+app/docs/naac/dvv/NAAC Pending Doc.rar
+app/docs/naac/dvv/5.3.1.pdf
+app/docs/naac/dvv/2.2.1.pdf
+app/docs/naac/dvv/4.3.2.pdf
+app/docs/naac/dvv/3.3.1.pdf
+app/docs/naac/dvv/3.4.3.pdf
+app/docs/naac/dvv/7.1.2.pdf
+app/docs/naac/dvv/1.2.1.pdf
+app/docs/naac/dvv/3.5.1.pdf
+app/docs/naac/dvv/4.4.1.pdf
+app/docs/naac/dvv/5.1.3.pdf
+app/docs/naac/dvv/2.4.2.pdf
+app/docs/naac/dvv/5.3.2.pdf
+app/docs/naac/dvv/2.1.pdf
+app/docs/naac/dvv/5.2.1.pdf
+app/docs/naac/dvv/2.2.pdf
+app/docs/naac/dvv/6.3.2.pdf
+app/docs/naac/dvv/1.1.pdf
+app/docs/naac/dvv/2.6.3.pdf
+app/docs/naac/dvv/5.1.2.pdf
+app/docs/naac/dvv/2.4.1.pdf
+app/docs/naac/dvv/5.1.4.pdf
+app/docs/naac/dvv/3.3.2.pdf
+app/docs/naac/dvv/1.4.1.pdf
+app/docs/naac/dvv/3.1.pdf
+app/docs/naac/dvv/3.2.2.pdf
+app/docs/naac/dvv/3.1.1.pdf
+app/docs/naac/dvv/7.1.3.pdf
+app/docs/naac/dvv/6.3.3.pdf
+app/docs/naac/dvv/5.2.2.pdf
+app/docs/naac/dvv/1.3.2.pdf
+app/docs/naac/dvv/1.2.2.pdf
+app/docs/naac/dvv/6.2.2.pdf
+app/docs/naac/iqac
+app/docs/naac/iqac/composition
+app/docs/naac/iqac/composition/IQAC-Composition 2020-21.pdf
+app/docs/naac/iqac/composition/IQAC-COMPOSITION-2023-2024-1.pdf
+app/docs/naac/iqac/composition/IQAC-Composition-2021-22.pdf
+app/docs/naac/iqac/composition/IQAC-Composition-2022-23-1.pdf
+app/docs/naac/iqac/feedback
+app/docs/naac/iqac/feedback/Student-feedback-2021-22.pdf
+app/docs/naac/iqac/feedback/Student-feedback-2019-20.pdf
+app/docs/naac/iqac/feedback/Student-feedback-2018-19.pdf
+app/docs/naac/iqac/feedback/Student-feedback-2020-21.pdf
+app/docs/naac/iqac/minutes
+app/docs/naac/iqac/minutes/IQAC-Minutes-7-7-2020.pdf
+app/docs/naac/iqac/minutes/6.5.1 IQAC Meeting Minutes 2021-22.pdf
+app/docs/naac/iqac/minutes/IQAC-Minutes-11-2-2021.pdf
+app/docs/naac/iqac/minutes/IQAC-ATR-7-7-2020.pdf
+app/docs/naac/iqac/minutes/IQAC-ATR-11-2-2021-.pdf
+app/docs/naac/iqac/minutes/6.1.2 IQAC Minutes.pdf
+app/docs/naac/iqac/minutes/IQAC-Minutes-19-5-2021.pdf
+app/docs/naac/iqac/minutes/IQAC MINUTES OF MEETING 2024-25.pdf
+app/docs/naac/iqac/minutes/IQAC 2023-24.pdf
+app/docs/naac/ssr
+app/docs/naac/ssr/SSR
+app/docs/naac/ssr/SSR/SSR Pdf.pdf
+app/docs/naac/ssr/SSR/SSR 2023-24.pdf
+app/docs/naac/criteria
+app/docs/naac/criteria/2022-23
+app/docs/naac/criteria/2022-23/7.1.8.pdf
+app/docs/naac/criteria/2022-23/6.5.2.pdf
+app/docs/naac/criteria/2022-23/7.1.9.pdf
+app/docs/naac/criteria/2022-23/2.7.1.pdf
+app/docs/naac/criteria/2022-23/Feedback Form for Students(On Curriculum, Course, Teaching-Learning and Evaluation).pdf
+app/docs/naac/criteria/2022-23/2.5.2.pdf
+app/docs/naac/criteria/2022-23/6.3.1.pdf
+app/docs/naac/criteria/2022-23/1.2.3.pdf
+app/docs/naac/criteria/2022-23/4.4.2.pdf
+app/docs/naac/criteria/2022-23/4.2.4.pdf
+app/docs/naac/criteria/2022-23/4.1.2.pdf
+app/docs/naac/criteria/2022-23/7. 1. 11 Comorative Days Celebration.pdf
+app/docs/naac/criteria/2022-23/1.1.2.pdf
+app/docs/naac/criteria/2022-23/College Website.pdf
+app/docs/naac/criteria/2022-23/2.3.1.pdf
+app/docs/naac/criteria/2022-23/3.2.1.pdf
+app/docs/naac/criteria/2022-23/2.2.1.pdf
+app/docs/naac/criteria/2022-23/1.3.1.pdf
+app/docs/naac/criteria/2022-23/4.3.2.pdf
+app/docs/naac/criteria/2022-23/3.4.1.pdf
+app/docs/naac/criteria/2022-23/4.2.2.pdf
+app/docs/naac/criteria/2022-23/5.4.1.pdf
+app/docs/naac/criteria/2022-23/1.1.1.pdf.bak
+app/docs/naac/criteria/2022-23/4.2.1.pdf
+app/docs/naac/criteria/2022-23/5.3.4.pdf
+app/docs/naac/criteria/2022-23/3.5.1.pdf
+app/docs/naac/criteria/2022-23/4.4.1.pdf
+app/docs/naac/criteria/2022-23/4.3.1.pdf
+app/docs/naac/criteria/2022-23/6.1.2.pdf.bak
+app/docs/naac/criteria/2022-23/5.1.3.pdf
+app/docs/naac/criteria/2022-23/1.1.3.pdf
+app/docs/naac/criteria/2022-23/5.3.2.pdf
+app/docs/naac/criteria/2022-23/6.3.5.pdf
+app/docs/naac/criteria/2022-23/7.1.7.pdf
+app/docs/naac/criteria/2022-23/7.1.5 Green Campus.jpeg
+app/docs/naac/criteria/2022-23/5.1.5.pdf
+app/docs/naac/criteria/2022-23/6.4.3.pdf
+app/docs/naac/criteria/2022-23/7.1.5 Path.jpeg
+app/docs/naac/criteria/2022-23/5.2.1.pdf
+app/docs/naac/criteria/2022-23/6.5.3.pdf
+app/docs/naac/criteria/2022-23/1.1.1.pdf
+app/docs/naac/criteria/2022-23/2.5.1.pdf
+app/docs/naac/criteria/2022-23/4.1.1.pdf
+app/docs/naac/criteria/2022-23/7.3.1.pdf
+app/docs/naac/criteria/2022-23/6.4.1.pdf
+app/docs/naac/criteria/2022-23/6.5.1.pdf
+app/docs/naac/criteria/2022-23/6.1.2.pdf
+app/docs/naac/criteria/2022-23/5.1.5.pdf.bak
+app/docs/naac/criteria/2022-23/3.3.2.pdf
+app/docs/naac/criteria/2022-23/7.1.1.pdf
+app/docs/naac/criteria/2022-23/7.1.3 Photo of Composit Pit.jpeg
+app/docs/naac/criteria/2022-23/6.1.1.pdf
+app/docs/naac/criteria/2022-23/3.2.2.pdf
+app/docs/naac/criteria/2022-23/3.5.2.pdf
+app/docs/naac/criteria/2022-23/7.1.3.pdf
+app/docs/naac/criteria/2022-23/6.3.3.pdf
+app/docs/naac/criteria/2022-23/5.2.1.pdf.bak
+app/docs/naac/criteria/2022-23/6.2.1.pdf
+app/docs/naac/criteria/2022-23/1.3.2.pdf
+app/docs/naac/criteria/2022-23/7.1.4 Borewell.jpeg
+app/docs/naac/criteria/2022-23/4.3.2 Computer Lab Photo.docx.jpeg
+app/docs/naac/criteria/2022-23/2.3.3.pdf
+app/docs/naac/criteria/2022-23/1.2.2.pdf
+app/docs/naac/criteria/2022-23/3.3.3.pdf
+app/docs/naac/criteria/2022-23/6.2.2.pdf
+app/docs/naac/criteria/2019-20
+app/docs/naac/criteria/2019-20/MOM 19-20.pdf
+app/docs/naac/criteria/2018-19
+app/docs/naac/criteria/2018-19/Minutes of Meetings 2018-19.pdf
+app/docs/naac/criteria/2021-22
+app/docs/naac/criteria/2021-22/7.1.9.pdf
+app/docs/naac/criteria/2021-22/2.7.1.pdf
+app/docs/naac/criteria/2021-22/5.3.3.pdf
+app/docs/naac/criteria/2021-22/2.5.2.pdf
+app/docs/naac/criteria/2021-22/6.3.1.pdf
+app/docs/naac/criteria/2021-22/3.2.2.pdf.bak
+app/docs/naac/criteria/2021-22/1.2.3.pdf
+app/docs/naac/criteria/2021-22/4.2.4.pdf
+app/docs/naac/criteria/2021-22/1.1.2.pdf
+app/docs/naac/criteria/2021-22/2.3.1.pdf
+app/docs/naac/criteria/2021-22/7.1.6.pdf
+app/docs/naac/criteria/2021-22/3.2.1.pdf
+app/docs/naac/criteria/2021-22/2.2.1.pdf
+app/docs/naac/criteria/2021-22/3.2.1.pdf.bak
+app/docs/naac/criteria/2021-22/1.3.1.pdf
+app/docs/naac/criteria/2021-22/3.4.1.pdf
+app/docs/naac/criteria/2021-22/7.1.11.pdf
+app/docs/naac/criteria/2021-22/3.4.2.pdf
+app/docs/naac/criteria/2021-22/5.4.1.pdf
+app/docs/naac/criteria/2021-22/1.1.1.pdf.bak
+app/docs/naac/criteria/2021-22/5.3.4.pdf
+app/docs/naac/criteria/2021-22/Timetable-Workload-Lesson Plan.pdf
+app/docs/naac/criteria/2021-22/3.5.1.pdf
+app/docs/naac/criteria/2021-22/1.1.3.pdf
+app/docs/naac/criteria/2021-22/5.3.2.pdf
+app/docs/naac/criteria/2021-22/6.3.5.pdf
+app/docs/naac/criteria/2021-22/5.3.3.pdf.bak
+app/docs/naac/criteria/2021-22/2.5.1.pdf.bak
+app/docs/naac/criteria/2021-22/5.1.5.pdf
+app/docs/naac/criteria/2021-22/5.2.1.pdf
+app/docs/naac/criteria/2021-22/1.1.1.pdf
+app/docs/naac/criteria/2021-22/6.3.4.pdf
+app/docs/naac/criteria/2021-22/2.5.1.pdf
+app/docs/naac/criteria/2021-22/6.4.1.pdf
+app/docs/naac/criteria/2021-22/5.1.4.pdf
+app/docs/naac/criteria/2021-22/6.5.1.pdf
+app/docs/naac/criteria/2021-22/6.1.2.pdf
+app/docs/naac/criteria/2021-22/7.1.1.pdf
+app/docs/naac/criteria/2021-22/6.1.1.pdf
+app/docs/naac/criteria/2021-22/3.2.2.pdf
+app/docs/naac/criteria/2021-22/BMS-Orientation-rotated-1.pdf
+app/docs/naac/criteria/2021-22/FC Project - Student Internships Drive.pdf
+app/docs/naac/criteria/2021-22/6.2.1.pdf
+app/docs/naac/criteria/2021-22/1.3.2.pdf.bak
+app/docs/naac/criteria/2021-22/1.3.2.pdf
+app/docs/naac/criteria/2021-22/4.1.3.pdf
+app/docs/naac/criteria/2021-22/2.3.3.pdf
+app/docs/naac/criteria/2021-22/3.3.3.pdf
+app/docs/naac/criteria/2021-22/6.2.2.pdf
+app/docs/naac/criteria/2020-21
+app/docs/naac/criteria/2020-21/7.1.8.pdf
+app/docs/naac/criteria/2020-21/3.4.4.pdf
+app/docs/naac/criteria/2020-21/4.1.4.pdf
+app/docs/naac/criteria/2020-21/7.1.9.pdf
+app/docs/naac/criteria/2020-21/2.5.2.pdf
+app/docs/naac/criteria/2020-21/4.1.2.pdf
+app/docs/naac/criteria/2020-21/1.1.2.pdf
+app/docs/naac/criteria/2020-21/7.1.5.pdf
+app/docs/naac/criteria/2020-21/2.3.1.pdf
+app/docs/naac/criteria/2020-21/5.3.1.pdf
+app/docs/naac/criteria/2020-21/2.2.1.pdf
+app/docs/naac/criteria/2020-21/3.3.1.pdf
+app/docs/naac/criteria/2020-21/3.4.2.pdf
+app/docs/naac/criteria/2020-21/5.4.1.pdf
+app/docs/naac/criteria/2020-21/1.1.1.pdf.bak
+app/docs/naac/criteria/2020-21/4.2.1.pdf
+app/docs/naac/criteria/2020-21/5.1.3.pdf
+app/docs/naac/criteria/2020-21/1.1.3.pdf
+app/docs/naac/criteria/2020-21/6.1.1.pdf.bak
+app/docs/naac/criteria/2020-21/5.3.2.pdf
+app/docs/naac/criteria/2020-21/7.1.7.pdf
+app/docs/naac/criteria/2020-21/5.1.5.pdf
+app/docs/naac/criteria/2020-21/6.4.3.pdf
+app/docs/naac/criteria/2020-21/5.2.1.pdf
+app/docs/naac/criteria/2020-21/7.1.10.pdf
+app/docs/naac/criteria/2020-21/1.1.1.pdf
+app/docs/naac/criteria/2020-21/7.1.4.pdf
+app/docs/naac/criteria/2020-21/2.5.1.pdf
+app/docs/naac/criteria/2020-21/4.1.1.pdf
+app/docs/naac/criteria/2020-21/2.4.1.pdf
+app/docs/naac/criteria/2020-21/6.4.1.pdf
+app/docs/naac/criteria/2020-21/5.1.4.pdf
+app/docs/naac/criteria/2020-21/6.5.1.pdf
+app/docs/naac/criteria/2020-21/6.1.1.pdf
+app/docs/naac/criteria/2020-21/3.2.2.pdf
+app/docs/naac/criteria/2020-21/7.1.3.pdf
+app/docs/naac/criteria/2020-21/6.2.1.pdf
+app/docs/naac/criteria/2020-21/6.5.1.pdf.bak
+app/docs/naac/criteria/2020-21/1.3.2.pdf
+app/docs/naac/criteria/2020-21/complaince-report-iqac-new.pdf
+app/docs/naac/criteria/2020-21/4.2.3.pdf
+app/docs/naac/criteria/2020-21/3.3.3.pdf
+app/docs/naac/criteria/2020-21/6.2.2.pdf
+app/docs/naac/criteria/2023-24
+app/docs/naac/criteria/2023-24/3.2.xlsx
+app/docs/naac/criteria/2023-24/3.1.xlsx
+app/docs/naac/criteria/2023-24/2.2.xlsx
+app/docs/naac/criteria/2023-24/2.1.xlsx
+app/docs/naac/criteria/2023-24/1.1.xlsx
+app/docs/naac/criteria/2023-24/2.3.xlsx
+app/docs/notices
+app/docs/notices/timetable
+app/docs/notices/timetable/171. FYBSC(CS), (IT), FYBcom practical exam (1).pdf
+app/docs/notices/timetable/TY.BSc (CS) (SEM VI) ONLINE ADDITIONAL INTERNAL (MEDICAL GROUND) EXAM-MARCH-2025-TIMETABLE (10POINTS).pdf
+app/docs/notices/timetable/FY SEM I ATKT Exam Time Table March 2024.pdf
+app/docs/notices/timetable/283. Sem VI Computer System Application Practical Exam Notice.pdf
+app/docs/notices/timetable/Notice No. 261 (S.Y.B.Sc. IT Sem III ATKT Student Practical Exam Timetable Feb 2025).pdf
+app/docs/notices/timetable/SELF FINANCE SEM VI REGULAR INTERNAL EXAM TIME TABLE – February – 2025 (10 Points).pdf
+app/docs/notices/timetable/SELF FINANCE SEM IV REV.16 REGULAR ADDITIONAL (MEDICAL GROUND) EXAM TIME TABLE APR-2025 (10POINTS).pdf
+app/docs/notices/timetable/SYBA-and-SYBCom-Sem-IV-ATKT-10-Point-Exam-Time-Table-Oct-2023.pdf
+app/docs/notices/timetable/FYBSc IT sem II practical exam Notice & Timetable March 24 19-Mar-2024 11-31-41.pdf
+app/docs/notices/timetable/FYBSc CS Sem II Internal assignment Notice & Timetable 19-Mar-2024 11-38-46.pdf
+app/docs/notices/timetable/SY BSc (SEM IV) ONLINE ADDITIONAL INTERNAL (MEDICAL GROUND)EXAM-MARCH-2025-TIMETABLE(10POINTS).pdf
+app/docs/notices/timetable/SY SEM IV Regular & ATKT Exam Time Table March 2024.pdf
+app/docs/notices/timetable/SEM II ATKT Exam September-2024 Results Notice Board Copy.pdf
+app/docs/notices/timetable/MSc.IT Part I Sem I Internal Class test time table- December 2024.pdf
+app/docs/notices/timetable/M.Com PG Sem III Repeater Exam Notice.pdf
+app/docs/notices/timetable/SY SEM III ATKT Exam Time Table March 2024.pdf
+app/docs/notices/timetable/TIME TABLE SEM  III ATKT EXAM  FEBRUARY 2025.pdf
+app/docs/notices/timetable/SY Sem VI Regular Additional (Medical Ground) Exam Time Table April 2024.pdf
+app/docs/notices/timetable/SYBSc CS sem IV practical exam Notice & Timetable March 24 19-Mar-2024 11-33-43.pdf
+app/docs/notices/timetable/S.Y.B.Sc. (CS) SEM IV REGULAR ONLINE INTERNAL EXAM TIME TABLE – February – 2025 (10 Points).pdf
+app/docs/notices/timetable/286. SEM IV &VI Rev. 16 Additional Internal (Medical Ground) Examination Notice..pdf
+app/docs/notices/timetable/SELF FINANCE SEM IV Rev.16  REGULAR & ATKT EXAM TIME TABLE MARCH-2025(10 POINTS).pdf
+app/docs/notices/timetable/Self-Finance-Sem-II-ATKT-Exam-Time-Table-October-2023-10-points.pdf
+app/docs/notices/timetable/TYBMS , TYBAF, TYBBI,TYBSC (IT) SEM VI ADDITIONAL INTERNAL (MEDICAL GROUND) EXAM TIMETABLE MARCH - 2025 (10POINTS).pdf
+app/docs/notices/timetable/SYBSc IT sem IV practical Exam Notice & Timetable 19-Mar-2024 11-36-35.pdf
+app/docs/notices/timetable/Self-Finance-Sem-IV-ATKT-Exam-Time-Table-October-2023-10-points.pdf
+app/docs/notices/timetable/TYBCom-Sem-V-Choice-Based-Program-Code-2C00145.pdf
+app/docs/notices/timetable/M.com Part- II Internal Class Test Time Table December 2024.pdf
+app/docs/notices/timetable/F.Y.B.COM &B.Sc. (IT & CS) SEM II NEP 2020 REGULAR EXAM TIME TABLE APRIL 2025 (1).pdf
+app/docs/notices/timetable/Additional Medical Ground Examination Time Table Jan 2024.pdf
+app/docs/notices/timetable/284. Practical Examination Timetable for TY.B.Com SEM VI FEB 2025 Notice..pdf
+app/docs/notices/timetable/TYBCom-Sem-V-Perliminary-Exam-Oct-2023.pdf
+app/docs/notices/timetable/MSc.IT Part II Sem III Internal Class test Time Table-December 2024.pdf
+app/docs/notices/timetable/SELF FINANCE SEM II Rev.16 ATKT EXAM TIME TABLE FEB-2025(10 POINTS).pdf
+app/docs/notices/timetable/SELF FINANCE SEM IV REGULAR INTERNAL EXAM TIME TABLE – February – 2025 (10 Points).pdf
+app/docs/notices/timetable/T.Y. B.Sc I.T. Preliminary exam Notice & TT.pdf
+app/docs/notices/timetable/TY SEM VI Additional (medical Ground) Internal Exam Time Table March 2024.pdf
+app/docs/notices/timetable/F.Y.B.A & F.Y.BCom SEM II Rev.16 ATKT EXAM TIME TABLE- FEB- 2025 (10POINTS).pdf
+app/docs/notices/timetable/F.Y.B.A. SEM II NEP 2020 REGULAR EXAM TIME TABLE APR 2025.TIMETABLE.pdf
+app/docs/notices/timetable/SYBCom-Sem-IV-ATKT-7-Point-C7525-Exam-Time-Table-Oct-2023.pdf
+app/docs/notices/timetable/Notice for FY SEM II Regular & ATKT Exam April 2024.pdf
+app/docs/notices/timetable/Sem-III-Regular-and-ATKT-Exam-Time-Table-Oct-Nov-2023-4.pdf
+app/docs/notices/timetable/FYBSC CS Sem II practical Exam Notice & Timetable 19-Mar-2024 11-29-32.pdf
+app/docs/notices/timetable/F.Y.B.Com. (M.S., A&F , B&I,  FM ) SEM II NEP 2020 REGULAR EXAM TIME TABLE APR 2025_.pdf
+app/docs/notices/timetable/FY SEM II Regular and ATKT Exam Time Table April 2024.pdf
+app/docs/notices/timetable/F.Y.B.COM &B.Sc. (IT & CS) SEM II NEP 2020 REGULAR EXAM TIME TABLE APRIL 2025.pdf
+app/docs/notices/timetable/Schedule of Project Work Viva Voce April 2024.pdf
+app/docs/notices/timetable/Notice No. 262 (IT & CS Sem III ATKT Practical Examination Commence Date Notice).pdf
+app/docs/notices/timetable/SYBA & SYBCOM SEM IV Rev. 16 REGULAR & ATKT EXAM TIME TABLE MARCH- 2025 (10 POINTS).pdf
+app/docs/notices/timetable/SYBMS, SYBAF, SYBBI, SYBSC(IT) SEM IV ADDITIONAL INTERNAL (MEDICAL GROUND) EXAM TIMETABLE MARCH-2025 (10POINTS).pdf
+app/docs/notices/timetable/Notice No. 260 (S.Y.B.Sc. CS Sem III  ATKT Student Practical Exam Timetable Feb 2025).pdf
+app/docs/notices/timetable/SY.B.A & S.Y.B.Com SEM IV REV.16 REGULAR ADDITIONAL (MEDICAL GROUND)EXAM TIME TABLE APR 2025-(10POINTS).pdf
+app/docs/notices/timetable/TYBSc (CS ) Sem V  Revised Practical Examination Time Table Dec 2023.pdf
+app/docs/notices/timetable/T.Y. Students Internal & External Viva Notice.pdf
+app/docs/notices/timetable/FY SEM II Internal Exam Time Table March 2024.pdf
+app/docs/notices/timetable/FYBSC COMPUTER SCIENCE (SEM II ATKT) PRACTICAL EXAMINATION TIMETABLE FEB 2025.pdf
+app/docs/notices/timetable/TIME TABLE SEM I ATKT EXAM  FEBRUARY 2025.pdf
+app/docs/notices/timetable/M.com Part I SEM I Internal class Test Time Table december 2024.pdf
+app/docs/notices/timetable/SY SEM IV Additional (medical Ground) Internal Exam Time Table March 2024.pdf
+app/docs/notices/timetable/T.Y. B.Sc C.S. Preliminary exam Notice & TT.pdf
+app/docs/notices/timetable/FY Regular Additional(Medical Ground) Exam Time Table April 2024.pdf
+app/docs/notices/timetable/SYBCom-Sem-IV-ATKT-7-Point-6040-Exam-Time-Table-Oct-2023.pdf
+app/docs/notices/timetable/T.Y.B.Sc. (CS) SEM VI REGULAR ONLINE INTERNAL EXAM TIME TABLE – February – 2025 (10 Points).pdf
+app/docs/notices/student
+app/docs/notices/student/Female Students Free education Notice.pdf
+app/docs/notices/student/190.Resume Writing-Dept of Commerce Notice.pdf
+app/docs/notices/student/172. Mahaparinirvan Din Holiday Notice.pdf
+app/docs/notices/student/276. Library Notice..pdf
+app/docs/notices/student/193.Best Out of Waste Competition- Green Club Commitee Notice.pdf
+app/docs/notices/student/Magzine Cover Page Designing Competition Library Notice.pdf
+app/docs/notices/student/228. DLLE Notice..pdf
+app/docs/notices/student/Blood Donation Camp Notice.pdf
+app/docs/notices/student/183. Seminar on Basic Financial Awareness Notice..pdf
+app/docs/notices/student/57th Inter Collegiate cultural youth festival notice.pdf
+app/docs/notices/student/Basic Financial awareness Seminar Notice.pdf
+app/docs/notices/student/Guru nanak jayanti holiday notice-1.pdf
+app/docs/notices/student/BAF Mentor Mentee meeting Notice.pdf
+app/docs/notices/student/Mutual Fund Awareness Program.pdf
+app/docs/notices/student/Teachers Day Celebration Notice.pdf
+app/docs/notices/student/Cloth Donation Drive Notice.pdf
+app/docs/notices/student/Caste Admission Fee Letter.pdf
+app/docs/notices/student/Freshers Party Notice.pdf
+app/docs/notices/student/178. Msc.IT Part I Sem I & part II sem III Internal Class Test Exam Notice..pdf
+app/docs/notices/student/TY Student Placement Registration Notice.pdf
+app/docs/notices/student/Guest Lecture Project Implementation Notice.pdf
+app/docs/notices/student/288.TY ATKT SEM V (Rev.16) Examination Hall Tickets Notice..pdf
+app/docs/notices/student/299. TY.BMS, TY.BCom ( A & F), TY.BCom (B & I) SEM VI (REV.16) Regular Examination Halltickets Notice.pdf
+app/docs/notices/student/169. Career orientstionsession notice.pdf
+app/docs/notices/student/Library Orientation Session Notice.pdf
+app/docs/notices/student/Health Check up camp notice.pdf
+app/docs/notices/student/De Addiction Notice.pdf
+app/docs/notices/student/Dasehra Holiday Notice.pdf
+app/docs/notices/student/Notice No. 258 (Industrial Visit-Parents' Meeting).pdf
+app/docs/notices/student/307.  F.Y.B.Sc (I.T.) SEM II NEP 2020 Internal Assessment March 2025 Notice..pdf
+app/docs/notices/student/IT CS Mentor Mentee meeting Notice.pdf
+app/docs/notices/student/Skill Enhancement Program Notice.pdf
+app/docs/notices/student/Rakshabandhan Holiday Notice.pdf
+app/docs/notices/student/205.Accounting Connection Games competition Winners Notice..pdf
+app/docs/notices/student/NOTICE SEM I & III ATKT EXAM  FEBRUARY 2025.pdf
+app/docs/notices/student/231. Poster Making Competition Notice..pdf
+app/docs/notices/student/204.Debate Competition Winners Notice..pdf
+app/docs/notices/student/230. Road Safety NSS Notice..pdf
+app/docs/notices/student/Notice No. 250 (S.y.B.Sc. CS Sem IV & T.Y.B.Sc. CS Sem VI Submission of Internal Assignment).pdf
+app/docs/notices/student/Street Play and Theatre Arts.pdf
+app/docs/notices/student/Commerce Mentor Mentee meeting Notice.pdf
+app/docs/notices/student/297. Magazine Creativity Notice..pdf
+app/docs/notices/student/203.Logo Making Competition Winners Notice.pdf
+app/docs/notices/student/FYIT SEM I NEP 2020 Assignment Topics Oct.  2024.pdf
+app/docs/notices/student/Notice No. 242 (Goodies distribution).pdf
+app/docs/notices/student/187.Quiz Competition- Dept of Economics Notice.pdf
+app/docs/notices/student/GST Awareness program Notice.pdf
+app/docs/notices/student/Hindi Pakhavada Notice.pdf
+app/docs/notices/student/268 Power Point Presentations (National Science Day).pdf
+app/docs/notices/student/Orientation Program Notice.pdf
+app/docs/notices/student/Blood group and Eye check up camp notice.pdf
+app/docs/notices/student/Inter colligiate  one act play competition Audition Notice.pdf
+app/docs/notices/student/191.Debate Competition- Dept of Commerce Notice.pdf
+app/docs/notices/student/Election Holiday Notice.pdf
+app/docs/notices/student/Notice No. 244 (Technoutsav).pdf
+app/docs/notices/student/266.मराठी भाषा दिवस Notice.pdf
+app/docs/notices/student/194.Guest Lect on Career In Data Science& Analysis Industry Notice.pdf
+app/docs/notices/student/174.Health Camp Notice.pdf
+app/docs/notices/student/Ganesh Chaturthi Holiday Notice Non Teaching.pdf
+app/docs/notices/student/ICC Orientation Program Notice.pdf
+app/docs/notices/student/DLLE Orientation Session Notice.pdf
+app/docs/notices/student/170.Poster Making & Rangoli Making Competition Notice.pdf
+app/docs/notices/student/275.Session on Eat Right, Feel Right Notice..pdf
+app/docs/notices/student/281. Mahindra Gurukul Campus Drive Notice..pdf
+app/docs/notices/student/S.Y. programme offered Notice.pdf
+app/docs/notices/student/SWC and RCC FDP Notice.pdf
+app/docs/notices/student/189.Accounting Connection Games Notice.pdf
+app/docs/notices/student/176.N.S.S Seven Days Special Residential Camp Notice..pdf
+app/docs/notices/student/268. Power Point Presentation Competition Notice..pdf
+app/docs/notices/student/270. Session on Personal Style and Confidence by Lakme Notice..pdf
+app/docs/notices/student/Holiday Notice.pdf
+app/docs/notices/student/179. Msc.IT Sem I& III Submission of Internal Assignment Notice..pdf
+app/docs/notices/student/activities
+app/docs/notices/student/activities/WDC.pdf
+app/docs/notices/student/activities/Values Rights Responsiblity.pdf
+app/docs/notices/student/Cyber Crime Session Notice.pdf
+app/docs/notices/student/303. F.Y.B.Com (M.S.)SEM II NEP 2020 Internal Assessment March 2025 Notice.pdf
+app/docs/notices/student/226. Alumini Interaction Session Notice..pdf
+app/docs/notices/student/Library Notice.pdf
+app/docs/notices/student/272. Session on Cyber Security in Banking & Finance Notice..pdf
+app/docs/notices/student/T.Y. Programme offered Notice.pdf
+app/docs/notices/student/FYCS SEM I NEP 2020 Assignment Topics Oct.  2024.pdf
+app/docs/notices/student/289. One Day Industrial Visit Notice..pdf
+app/docs/notices/student/Cyber Crime Session Notice-1.pdf
+app/docs/notices/student/Notice No. 264 (T.Y. Students Project Submission Notice).pdf
+app/docs/notices/student/267.Session on Prevention of Sexual Harassment (POSH). Notice.pdf
+app/docs/notices/student/Green Club Orientation Session Notice.pdf
+app/docs/notices/student/293. T.Y.B.Com Regular & ATKT Examination Hall Tickets Notice..pdf
+app/docs/notices/student/302. F.Y.B.Com (A & F)SEM II NEP 2020 Internal Assessment March 2025 Notice..pdf
+app/docs/notices/student/Mock Interview Notice.pdf
+app/docs/notices/student/Research methodology Certificate Course registration Notice.pdf
+app/docs/notices/student/206. Quiz Competition Winners Notice.pdf
+app/docs/notices/student/Financial Markets Orientation Session Notice.pdf
+app/docs/notices/student/F.Y. programme Offered Notice.pdf
+app/docs/notices/student/209. Library Reading Activity.pdf
+app/docs/notices/student/Research Cell Orientation Session Notice.pdf
+app/docs/notices/student/Girls Education Fees return Letter.pdf
+app/docs/notices/student/Certificate Distribution Notice.pdf
+app/docs/notices/student/NSS foundation Day Celebration Notice.pdf
+app/docs/notices/student/Voter Awareness Rally Notice.pdf
+app/docs/notices/student/Elocution Competition Notice History Department.pdf
+app/docs/notices/student/Blood Donation Camp 30th March 2024.pdf
+app/docs/notices/student/271.Session on Mental Strengths Notice..pdf
+app/docs/notices/student/173. Online Lecture schedule Notice.pdf
+app/docs/notices/student/Independence day notice.pdf
+app/docs/notices/student/BBI Mentor Mentee meeting Notice.pdf
+app/docs/notices/student/Notice No. 245 (Career Guidance Session).pdf
+app/docs/notices/student/280.Chhatrapati Shivaji Maharaj Jayanti Celebration Notice..pdf
+app/docs/notices/student/Articles Publish Notice.pdf
+app/docs/notices/student/223. Degree College Students Notice..pdf
+app/docs/notices/student/222. Cyber Crime Awareness Session Noitce..pdf
+app/docs/notices/student/Scholarship Form Notice.pdf
+app/docs/notices/student/Notice No. 252 (Organizing a SEEDSPIRE activity).pdf
+app/docs/notices/student/Notice No 257 (ATKT FY Sem I & SY Sem III Foundation course-project submssion).pdf
+app/docs/notices/student/188.Bank Simulation Notice.pdf
+app/docs/notices/student/New Voters Regestration  Camp Notice.pdf
+app/docs/notices/student/Eco Friendly Ganapati Making Notice.pdf
+app/docs/notices/student/Yoga Certificate Course Registration Notice.pdf
+app/docs/notices/student/FY Students Halltickets Notice.pdf
+app/docs/notices/student/Foundation Couse Project Submission Notice.pdf
+app/docs/notices/student/225. Mentor Mentee Meeting Notice.(FY Degree College).pdf
+app/docs/notices/student/Organ Donation Notice NSS.pdf
+app/docs/notices/student/Organic Compost Creation reschedule Notice.pdf
+app/docs/notices/student/BMS Mentor Mentee meeting Notice.pdf
+app/docs/notices/student/Parents Meeting Notice SY, TY students.pdf
+app/docs/notices/student/Intercolligiate Cricket Tournament Selection Trial Notice.pdf
+app/docs/notices/student/Garba Raas Notice.pdf
+app/docs/notices/student/Photography Competition notice.pdf
+app/docs/notices/student/229.National Employability Test Notice..pdf
+app/docs/notices/student/Clay Modelling Workshop Notice.pdf
+app/docs/notices/student/331. TY. BSC.IT Hallticket for SEM VI (Rev.16) Regular & ATKT Examination Notice..pdf
+app/docs/notices/student/292 mahashivratri non teaching staff.pdf
+app/docs/notices/student/202.PPT Showdown Competition Winner List.pdf
+app/docs/notices/student/FY Students Exam Commence & Fees Paid Notice.pdf
+app/docs/notices/student/Shri Ganesh Chaturthi Holiday Notice Students and Teaching.pdf
+app/docs/notices/student/GGC Orientation Session Notice.pdf
+app/docs/notices/student/300. SY HALLTICKETS SEM IV (REV.16) Regular & ATKT Examination Notice..pdf
+app/docs/notices/student/100 mahashivratri teaching & non teaching notice.pdf
+app/docs/notices/student/Notice No. 254 (Sem I & III ATKT Students Hall-Ticket Distribution).pdf
+app/docs/notices/student/201.Rangoli Competition Winners Notice.pdf
+app/docs/notices/student/First year students lecture notice.pdf
+app/docs/notices/student/305. F.Y.Bcom (F.M.) SEM II NEP 2020 Internal Assessment March 2025 Notice..pdf
+app/docs/notices/student/211. Cultrual Fest-MAGNOTSSAV &ROHAK 2K25 Notice.pdf
+app/docs/notices/student/Sports Notice.pdf
+app/docs/notices/student/273. Degree College Students Parents Meeting Notice..pdf
+app/docs/notices/student/Notice No. 251 (Magic Bus India Foundation is organizing Open Job Fair).pdf
+app/docs/notices/student/330.T.Y.B.Sc C.S  Hallticket for SEM VI Regular & ATKT Examination Notice..pdf
+app/docs/notices/student/Arts Mentor Mentee meeting Notice.pdf
+app/docs/notices/student/Notice No. 263 (STEP UP Academy Session).pdf
+app/docs/notices/student/200.Bank Simulation Competition Winners Notice..pdf
+app/docs/notices/student/232.Student Council Meeting Notice..pdf
+app/docs/notices/student/184.Digital Logo Making Competition Notice..pdf
+app/docs/notices/student/Notice No. 256 (Foundation Course-IV Project Submission).pdf
+app/docs/notices/student/197.Christmas Vacation Notice.students and Teaching Staff.pdf
+app/docs/notices/student/Life Insurance and Equity Session Notice.pdf
+app/docs/notices/student/Parents Meeting (FY) Notice.pdf
+app/docs/notices/student/273.Parents Meeting Notice..pdf
+app/docs/notices/student/306. F.Y.SEM II NEP 2020 Internal Assessment March 2025 Notice..pdf
+app/docs/notices/student/Gopalkala Holiday Notice.pdf
+app/docs/notices/student/301. F.Y.B.Com SEM II NEP 2020 Internal Assessment March 2025.pdf
+app/docs/notices/student/District level Inter Colligiate Competition NSS Notice.pdf
+app/docs/notices/student/308. F.Y.B.A SEM II NEP 2020 Internal Assessment March 2025 Notice..pdf
+app/docs/notices/student/192. Powerpoint Presentation Competition-Dept of BMS Notice..pdf
+app/docs/notices/student/185.Rangoli Making Competition- Dept of Economics Notice.pdf
+app/docs/notices/student/304. F.Y.B.Com (B & I) SEM II NEP 2020 Internal Assessment March 2025 Notice..pdf
+app/docs/notices/student/Poshan Maah Notice.pdf
+app/docs/notices/student/Gandhi Jayanti Holiday Notice.pdf
+app/docs/notices/student/Notice No. 246 (Art's Fest-Beyond the Boundaries).pdf
+app/docs/notices/student/FYBAF SEM I NEP 2020 Assignment Topics Oct.  2024.pdf
+app/docs/notices/student/Research cell registration Notice.pdf
+app/docs/notices/exam
+app/docs/notices/exam/296. F.Y SEM II NEP 2020 Internal Examination Notice..pdf
+app/docs/notices/exam/SEM II, III & IV ATKT EXAM NOTICE.pdf
+app/docs/notices/exam/Notice for Sem I,II,III and IV ATKT Internal assignment topic .pdf
+app/docs/notices/exam/Notice for Self Finance Internal Exam August 2024.pdf
+app/docs/notices/exam/M.Com Part I Sem II NEP 2020 Internal examination .pdf
+app/docs/notices/exam/SYBA FC-IV Project Topics for Sem IV ATKT Internal Exam Oct.23.pdf
+app/docs/notices/exam/TYBSc CS Sem V Practical Exam.pdf
+app/docs/notices/exam/F.Y.B.Com & B.Sc. (IT & CS) SEM II NEP 2020 INTERNAL EXAM TIME TABLE MARCH 2025.pdf
+app/docs/notices/exam/Notice SEM II and IV ATKT Exam Sept- Oct 2024.pdf
+app/docs/notices/exam/Time Table Sem I ATKT Exam August- September 2024.pdf
+app/docs/notices/exam/FY SEM I ATKT September 2024  Result.pdf
+app/docs/notices/exam/Sem V BAF ATKT Exam Notice Mar-Apr 2024.pdf
+app/docs/notices/exam/216. Mentor Mentee Meeting Notice..pdf
+app/docs/notices/exam/SYBCom SEM III ATKT 10 Point OCT 2023.pdf
+app/docs/notices/exam/Revised Exam Time Table SEM I for FY Classes.pdf
+app/docs/notices/exam/FY Sem II NEP 2020 - Assignment Topics (1).pdf
+app/docs/notices/exam/Sem VI ATKT Exam Notice Mar-Apr 2024.pdf
+app/docs/notices/exam/Additional Internal Examination Rescheduled Notice.pdf
+app/docs/notices/exam/PG repeatersem 1 M.Sc IT Part 1 Notice.pdf
+app/docs/notices/exam/M.COM  Part-I SEM I NEP 2020 Assignment Questions.pdf
+app/docs/notices/exam/SY Sem III Medical Ground -Additional Exam Time Table November 2024.pdf
+app/docs/notices/exam/Assignment_Questions_FYCS.docx-1 (1).pdf
+app/docs/notices/exam/SYBMS Project Topics for Sem IV ATKT Internal Exam Oct.23.pdf
+app/docs/notices/exam/178. Msc.IT Part I Sem I & part II sem III Internal Class Test Exam Notice..pdf
+app/docs/notices/exam/FYIT SEM - II  Project Topics For Internal.pdf
+app/docs/notices/exam/FYBA - FC-II Project Topics for Sem II ATKT Internal Exam Oct.23.pdf
+app/docs/notices/exam/Notice - TY B.SC CS Sem V Practical Exam Dec 2023.pdf
+app/docs/notices/exam/TYB.Com (A&F) Sem VI Internal ATKT Assignment Submission Notice.pdf
+app/docs/notices/exam/SY SEM III ATKT  INTERNAL ASSIGNMENT TOPIC FEB 2025.pdf
+app/docs/notices/exam/219. SEM III Regular Examination (Rev.16) Notice.pdf
+app/docs/notices/exam/CS ATKT INTERNAL ASSIGNMENT TOPICS SEM I.pdf
+app/docs/notices/exam/FYBMS Internal Assesment (Quizzes) SEM I.pdf
+app/docs/notices/exam/Notice - FY B.SC CS Sem I Practical Exam Dec 2023.pdf
+app/docs/notices/exam/234. Repeater Students Exam Mar, 2025 PG- Sem I,II,III, IV Notice..pdf
+app/docs/notices/exam/S-T-DOC-Winter-23.pdf
+app/docs/notices/exam/Sem II & IV ATKT Exam Notice.pdf
+app/docs/notices/exam/TYBSc IT Sem V Practical Exam.pdf
+app/docs/notices/exam/F.Y.B.Sc.I.T. SEM I ATKT Internal Assignment.pdf
+app/docs/notices/exam/SYBAF SEM III ATKT 10 Point OCT 2023.pdf
+app/docs/notices/exam/SYBBI SEM III ATKT 10 Point OCT 2023.pdf
+app/docs/notices/exam/FYBSC (CS) Internal Assesment (Quizzes).pdf
+app/docs/notices/exam/FYIT SEM II ATKT  Assignment Topics Sept. 2024 (1).pdf
+app/docs/notices/exam/FY BSC CS Sem II ATKT Practical Exam Notice.pdf
+app/docs/notices/exam/FY.Bom(A&F) Practical Examination sem I.pdf
+app/docs/notices/exam/295. F.Y SEM II NEP 2020 Submission of Internal Assignment Notice..pdf
+app/docs/notices/exam/Notice Sem II ATKT Exam February 2025.pdf
+app/docs/notices/exam/SYBCOM SEM III 10 Point OCT 2023.pdf
+app/docs/notices/exam/Notice Sem I ATKT Exam August September 2024.pdf
+app/docs/notices/exam/FYBA Sem I NEP 2020 Revised Regular Exam Time Table.pdf
+app/docs/notices/exam/Additional Internal Examination  Third year Sem V Notice.pdf
+app/docs/notices/exam/SYBMS SEM III ATKT 10 Point OCT 2023.pdf
+app/docs/notices/exam/M.Com PG II Repeater Exam Notice.pdf
+app/docs/notices/exam/PG repeater sem 1 M.Sc IT Part 1 Notice.pdf
+app/docs/notices/exam/FYBMS Project Topics for Sem II ATKT Internal Exam Oct.23.pdf
+app/docs/notices/exam/Assignment-Questions-SY_CS.pdf
+app/docs/notices/exam/Notice for FY Sem I Medical Ground Examination Jan 2024.pdf
+app/docs/notices/exam/SYBCom (FM) Sem III Rev. 16 ATKT Exam Oct. 2024 Time Table.pdf
+app/docs/notices/exam/Marksheet Distribution Sem I, III, IV ATKT and Sem IV Regular Notice.pdf
+app/docs/notices/exam/placement Workshop Notice.pdf
+app/docs/notices/exam/M.Com PG IV Repeater Exam Notice.pdf
+app/docs/notices/exam/SYBSC IT SEM III 10 Point OCT 2023.pdf
+app/docs/notices/exam/332. SEM I NEP 2020 REGULAR EXAMINATION REVALUATION NOTICE..pdf
+app/docs/notices/exam/Self finance Sem II Internal Medical Ground exam Notice and Time Table.pdf
+app/docs/notices/exam/F.Y.B.Com. (M.S., A&F , B&I,  FM ) SEM II NEP 2020 INTERNAL EXAM TIME TABLE MARCH 2025.pdf
+app/docs/notices/exam/Additional Internal Examination Second year Sem III Notice.pdf
+app/docs/notices/exam/FY BSc CS ATKT practical exam Notice.pdf
+app/docs/notices/exam/SYBSc CS SEM IV Project Topics For Internal.pdf
+app/docs/notices/exam/Notice for  Result Declared of SY SEM III Regular & ATKT Exam OCT 2023.pdf
+app/docs/notices/exam/TYBAF Sem 6 Internal assignment.pdf
+app/docs/notices/exam/T.Y. Admission Notice.pdf
+app/docs/notices/exam/TYB.Com External project work submission notice.pdf
+app/docs/notices/exam/Notice for Result Declared of SEM II & IV ATKT Dec 2023.pdf
+app/docs/notices/exam/FYBFM Practical Examination sem I.pdf
+app/docs/notices/exam/FY ATKT Sem I Internal assignment Submission Notice.pdf
+app/docs/notices/exam/BA ATKT INTERNAL ASSIGNMENT TOPICS SEM I II.pdf
+app/docs/notices/exam/M.Com Part II Sem IV Internal & External Viva Notice.pdf
+app/docs/notices/exam/333. ALL THE F.Y CLASS UNDER NEP 2020 REVISED SCHEDULE SEM II EXAMINATION OF HINDI NOTICE..pdf
+app/docs/notices/exam/278.ATKT Examination FY Sem II Hall tickets Notice..pdf
+app/docs/notices/exam/SYBA SEM III 10 Point OCT 2023.pdf
+app/docs/notices/exam/SYBA SEM III ATKT 10 Point OCT 2023.pdf
+app/docs/notices/exam/FYBcom Practical Examination sem I.pdf
+app/docs/notices/exam/TYB.Com (A&F) Sem V ATKT Assignment Submission Notice.pdf
+app/docs/notices/exam/Exam Commencement Dates Mar-Apr 2024.pdf
+app/docs/notices/exam/SEM V ATKT EXAM NOTICE - MAR-APR - 2024.pdf
+app/docs/notices/exam/First Year Hall Tickets Distribution Notice.pdf
+app/docs/notices/exam/N.S.S. Students Enrolment Notice.pdf
+app/docs/notices/exam/SYBCom SEM III ATKT 7 Point (7525) OCT 2023.pdf
+app/docs/notices/exam/FYBA Sem-II.pdf
+app/docs/notices/exam/Extended Date for ATKT Exam Sem II, III & IV Feb-Mar 2024.pdf
+app/docs/notices/exam/MA Hindi Sem IV Viva Notice.pdf
+app/docs/notices/exam/334. F.Y SEM I ATKT EXAMINATION APR-MAY 2025 NOTICE..pdf
+app/docs/notices/exam/S.Y.B.Sc.C.S. Sem IV Internal Assignment Topics 2024.pdf
+app/docs/notices/exam/BMS ATKT INTERNAL ASSIGNMENT TOPICS SEM I II III IV.pdf
+app/docs/notices/exam/FY B.com sem I ATKT Internal assignment.pdf
+app/docs/notices/exam/SYBFM SEM III ATKT 10 Point OCT 2023.pdf
+app/docs/notices/exam/MA Hindi 2nd year Assignment & Project Submission Notice.pdf
+app/docs/notices/exam/SEM III ATKT March 2024 Results Notice Board Copy.pdf
+app/docs/notices/exam/SEM II Regular and ATKT Exam April 2024 Results Declared Notice.pdf
+app/docs/notices/exam/215. Career Orientation Session Notice..pdf
+app/docs/notices/exam/Date-of-Commencement-of-Second-Half-Exams-2023-94.pdf
+app/docs/notices/exam/274.ATKT FY Sem I & III Internal Assignment Submission Notice..pdf
+app/docs/notices/exam/FYBSC(IT) Internal assesment.pdf
+app/docs/notices/exam/FYBMS Practical Examination sem I.pdf
+app/docs/notices/exam/SYBSC.IT PRACTICAL EXAM SEM III.pdf
+app/docs/notices/exam/Revised Time Table Notice for FY Classes.pdf
+app/docs/notices/exam/Prelim Exam Sem V Notice.pdf
+app/docs/notices/exam/C-M-DOC-winter-23.pdf
+app/docs/notices/exam/Internal Assignment notice sem III and V.pdf
+app/docs/notices/exam/Form Filing Notice Sem I,II, III and IV ATKT Exam Sept-Oct. 2024.pdf
+app/docs/notices/exam/FYBcom(A&F) SEM Internal Assesment (Quizzes).pdf
+app/docs/notices/exam/FYBcom(B&I) Practical Examination sem I.pdf
+app/docs/notices/exam/SYBAF SEM III 10 Point OCT 2023.pdf
+app/docs/notices/exam/Time Table Sem III Internal Exam August 2024.pdf
+app/docs/notices/exam/SYBSc CS SEM III ATKT 10 Point OCT 2023.pdf
+app/docs/notices/exam/ATKT External exam Rescheduled Notice.pdf
+app/docs/notices/exam/FY BA Sem I Internal Assignment.pdf
+app/docs/notices/exam/Sem V ATKT Notice for BMS, BBI & B.SC IT Mar-Apr 2024.pdf
+app/docs/notices/exam/Time Table Sem V Internal Exam August 2024.pdf
+app/docs/notices/exam/BCOM ATKT INTERNAL ASSIGNMENT TOPICS SEM I II.pdf
+app/docs/notices/exam/Sem III Regular and ATKT Exam October 2024 Time Table.pdf
+app/docs/notices/exam/SEM III ATKT Exam March 2024 Results Failure List.pdf
+app/docs/notices/exam/ISHA Netralay Session Notice.pdf
+app/docs/notices/exam/SYIT SEM IV ATKT  Assignment Topics Sept. 2024.pdf
+app/docs/notices/exam/SEM II Regular and ATKT Revaluation Results Declaration Notice and Report List.pdf
+app/docs/notices/exam/FYBBI Project Topics for Sem II ATKT Internal Exam Oct.23.pdf
+app/docs/notices/exam/FY SEM I ATKT September 2024  Notice.pdf
+app/docs/notices/exam/SY Self Finance Internal Exam Time Table.pdf
+app/docs/notices/exam/Time Table Sem II and IV ATKT Exam Sept - Oct 2024.pdf
+app/docs/notices/exam/FYBcom(B&I)Internal Assesment SEM I (Quizzes).pdf
+app/docs/notices/exam/S.Y. B.com   SEM IV (1) (1).pdf
+app/docs/notices/exam/196.Sem II ATKT Examination September 2024.pdf
+app/docs/notices/exam/FY BMS Sem I ATKT Internal assignment.pdf
+app/docs/notices/exam/F.Y. B.A. SEM II.pdf
+app/docs/notices/exam/T.Y.B.Com Sem V Rev.16 Additional (Medical Ground) Practical Exam.pdf
+app/docs/notices/exam/FY SEM I ATKT  INTERNAL ASSIGNMENT TOPIC FEB 2025.pdf
+app/docs/notices/exam/FY.Bsc(CS) Practical Examination sem I.pdf
+app/docs/notices/exam/Notice For Result Declaration of FY SEM I Regular & ATKT Dec 2023.pdf
+app/docs/notices/exam/FY.BA Internal Assesment (Quizzes) SEM I.pdf
+app/docs/notices/exam/SEM I Notice of Revaluation & Photo Copy - 2024.pdf
+app/docs/notices/exam/Sem V ATKT Extended Date Notice for B.A, B.Com & B.Com FM Mar-Apr 2024.pdf
+app/docs/notices/exam/Sem I ATKT Exam Notice For March 2024.pdf
+app/docs/notices/exam/T.Y.B.Sc.C.S. Sem VI Internal Assignment Topics 2024.pdf
+app/docs/notices/exam/Assignment-Questions-TYCS-1.pdf
+app/docs/notices/exam/SYBSc IT Rev.16 Old Syllabus ATKT Exam Oct. 2024Time Table.pdf
+app/docs/notices/exam/FYBSc IT Practical Examination sem I.pdf
+app/docs/notices/exam/sem IV BMS.pdf
+app/docs/notices/exam/BFM Internal Assesment SEM I(Quizzes).pdf
+app/docs/notices/exam/214. Session on Secret Mantra For High Growth Salary Notice..pdf
+app/docs/notices/exam/PG NEP2020 Repeaters' Examform Notice.pdf
+app/docs/notices/exam/FY Sem I Regular Exam Time Table.pdf
+app/docs/notices/exam/180.MCom SEM I& III Submission of Internal Assignment Notice..pdf
+app/docs/notices/exam/M.Com Part-II SEM III NEP 2020 Assignment Question (1).pdf
+app/docs/notices/exam/SYBMS SEM III 10 Point OCT 2023.pdf
+app/docs/notices/exam/FYB.Com (Management Studies) Sem I Internal Exam Notice.pdf
+app/docs/notices/exam/Sem III Regular & ATKT Exam Commence Notice.pdf
+app/docs/notices/exam/FYBAF Project Topics for Sem II ATKT Internal Exam Oct.23.pdf
+app/docs/notices/exam/TY Self Finance Internal Exam Time  Table.pdf
+app/docs/notices/exam/SYBSc IT SEM III ATKT 10 Point OCT 2023.pdf
+app/docs/notices/exam/FC-II Project Topics for Sem II ATKT Internal Exam Oct.23.pdf
+app/docs/notices/exam/Humanities-DOC-winter-23.pdf
+app/docs/notices/exam/Assignment_Questions_FYCS.docx-1.pdf
+app/docs/notices/exam/T. Y. Repeater form fill notice.pdf
+app/docs/notices/exam/ATKT Exam Extended date Notice(Sem I, II, III, IV).pdf
+app/docs/notices/exam/FY Regular Additional(Medical Ground) Exam Time Table April 2024.pdf
+app/docs/notices/exam/Preliminary Exam TYIT & CS Sem V.pdf
+app/docs/notices/exam/FYBCOM Internal Assesment SEM I(Quizzes).pdf
+app/docs/notices/exam/TYB.Com Sem V Computer Practical Notice.pdf
+app/docs/notices/exam/Sem III Rev.16 Additional (Medical Ground) Exam Commence Notice.pdf
+app/docs/notices/exam/FY BAF AUDITING SEM II ATKT  Assignment Topics Sept. 2024.pdf
+app/docs/notices/exam/SYBA SEM-IV.pdf
+app/docs/notices/exam/SYBBI SEM III 10 Point OCT 2023.pdf
+app/docs/notices/exam/218.ATKT Examination February-March 2025 Notice..pdf
+app/docs/notices/exam/SEM III ATKT Exam March 2024 Results Declaration Notice.pdf
+app/docs/notices/exam/294.T.Y.B.Com sem VI Rev.16 Additional (Medical Ground) Computer System & Application Practical Examination Notice..pdf
+app/docs/notices/exam/TY Self Finance ATKT Hall Ticket Issue Notice.pdf
+app/docs/notices/exam/SYBSC CS SEM III 10 Point OCT 2023.pdf
+app/docs/notices/exam/285. SEM IV Regular & ATKT Examination March 2025  Notice.pdf

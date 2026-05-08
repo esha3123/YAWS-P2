@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Best Practices - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+/* Specify content container h3 to prevent affecting footer headings */
+.content-container h3 {
+  font-size: 2rem;
+  color: #493303;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+th {
+  background-color: #BD8E06;
+  color: #FBFBFB;
+}
+
+td a {
+  text-decoration: none;
+  color: #e6bc009c;
+}
+
+td a:hover {
+  color: #005bb5;
+}
+
+td button {
+  background-color: #BD8E06;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: .3s;
+  width: auto;
+}
+
+td button:hover {
+  background-color: #a97a05;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px;
+  }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Best Practices</h1>
+  
+  <table>
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th>Link</th>
+      </tr>
+      <tr>
+        <td>Best Practices-2019-20</td>
+        <td><a class="view-button" href="{{ url_for('frontend.serve_docs', filepath='student/best-practices/BP 2019-20.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>Best Practices-2020-21</td>
+        <td><a class="view-button" href="{{ url_for('frontend.serve_docs', filepath='student/best-practices/BP 2020-21.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>Best Practices-2021-22</td>
+        <td><a class="view-button" href="{{ url_for('frontend.serve_docs', filepath='misc/Best Practices 2021-22.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>Best Practices-2022-23</td>
+        <td><a class="view-button" href="{{ url_for('frontend.serve_docs', filepath='student/best-practices/BP 2022-23.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>Best Practices-2023-24</td>
+        <td><a class="view-button" href="{{ url_for('frontend.serve_docs', filepath='student/best-practices/Best practices 2023 - 24.pdf') }}" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

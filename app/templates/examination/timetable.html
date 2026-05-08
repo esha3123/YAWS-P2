@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}Timetable - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.timetable-header {
+  margin: 20px 0 10px;
+  color: var(--m3-primary);
+}
+
+.timetable-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.timetable-table th,
+.timetable-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--m3-outline-variant);
+}
+
+.timetable-table th {
+  background-color: var(--m3-secondary-container);
+  color: var(--m3-on-secondary-container);
+}
+
+.view-button {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: var(--m3-primary-hover);
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Examination Timetable</h1>
+  
+  <table class="timetable-table">
+    <thead>
+      <tr>
+        <th>Notice</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TYBMS, TYBAF, TYBBI, TYBSC (IT) SEM VI ADDITIONAL INTERNAL (MEDICAL GROUND) EXAM TIMETABLE MARCH - 2025 (10POINTS)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/tybms-tybaf-tybbi-tybsc-it-sem-vi-additional-internal-march-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>TY.BSc (CS) (SEM VI) ONLINE ADDITIONAL INTERNAL (MEDICAL GROUND) EXAM-MARCH-2025-TIMETABLE (10POINTS)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/tybsc-cs-sem-vi-online-additional-internal-march-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBMS, SYBAF, SYBBI, SYBSC(IT) SEM IV ADDITIONAL INTERNAL (MEDICAL GROUND) EXAM TIMETABLE MARCH-2025 (10POINTS)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/sybms-sybaf-sybbi-sybsc-it-sem-iv-additional-internal-march-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SY BSc (SEM IV) ONLINE ADDITIONAL INTERNAL (MEDICAL GROUND)EXAM-MARCH-2025-TIMETABLE(10POINTS)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/sybsc-sem-iv-online-additional-internal-march-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC COMPUTER SCIENCE (SEM II ATKT) PRACTICAL EXAMINATION TIMETABLE FEB 2025</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/fybsc-cs-sem-ii-atkt-practical-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBA & SYBCOM SEM IV Rev. 16 REGULAR & ATKT EXAM TIME TABLE MARCH- 2025 (10 POINTS)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/syba-sybcom-sem-iv-rev16-regular-atkt-march-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SELF FINANCE SEM IV Rev.16 REGULAR & ATKT EXAM TIME TABLE MARCH-2025(10 POINTS)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/self-finance-sem-iv-rev16-regular-atkt-march-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SEM IV &VI Rev. 16 Additional Internal (Medical Ground) Examination Notice.</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/sem-iv-vi-rev16-additional-internal-notice.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>Practical Examination Timetable for TY.B.Com SEM VI FEB 2025 Notice.</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/practical-exam-timetable-tybcom-sem-vi-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>Sem VI Computer System Application Practical Exam Notice</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/sem-vi-computer-system-application-practical-exam.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SELF FINANCE SEM II Rev.16 ATKT EXAM TIME TABLE FEB-2025(10 POINTS)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/self-finance-sem-ii-rev16-atkt-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>F.Y.B.A & F.Y.BCom SEM II Rev.16 ATKT EXAM TIME TABLE- FEB- 2025 (10POINTS)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/fyba-fybcom-sem-ii-rev16-atkt-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>(IT & CS Sem III ATKT Practical Examination Commence Date Notice)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/it-cs-sem-iii-atkt-practical-exam-commence-date.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>(S.Y.B.Sc. IT Sem III ATKT Student Practical Exam Timetable Feb 2025)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/sybsc-it-sem-iii-atkt-practical-exam-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>(S.Y.B.Sc. CS Sem III ATKT Student Practical Exam Timetable Feb 2025)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/sybsc-cs-sem-iii-atkt-practical-exam-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>TIME TABLE SEM III ATKT EXAM FEBRUARY 2025</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/timetable-sem-iii-atkt-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>TIME TABLE SEM I ATKT EXAM FEBRUARY 2025</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/timetable-sem-i-atkt-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>T.Y.B.Sc. (CS) SEM VI REGULAR ONLINE INTERNAL EXAM TIME TABLE – February – 2025 (10 Points)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/tybsc-cs-sem-vi-regular-online-internal-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SELF FINANCE SEM VI REGULAR INTERNAL EXAM TIME TABLE – February – 2025 (10 Points)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/self-finance-sem-vi-regular-internal-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SELF FINANCE SEM IV REGULAR INTERNAL EXAM TIME TABLE – February – 2025 (10 Points)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/self-finance-sem-iv-regular-internal-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>S.Y.B.Sc. (CS) SEM IV REGULAR ONLINE INTERNAL EXAM TIME TABLE – February – 2025 (10 Points)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/sybsc-cs-sem-iv-regular-online-internal-feb-2025.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>M.com Part I SEM I Internal class Test Time Table december 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/mcom-part-i-sem-i-internal-class-test-dec-2024.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>M.com Part- II Internal Class Test Time Table December 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/mcom-part-ii-internal-class-test-dec-2024.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>SEM II ATKT Exam September-2024 Results Notice Board Copy</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/sem-ii-atkt-exam-sep-2024-results.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>MSc.IT Part I Sem I Internal Class test time table- December 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/mscit-part-i-sem-i-internal-class-test-dec-2024.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC(CS), (IT), FYBcom practical exam</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/fybsc-cs-it-fybcom-practical-exam.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>MSc.IT Part II Sem III Internal Class test Time Table-December 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/mscit-part-ii-sem-iii-internal-class-test-dec-2024.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>April 2024 - T.Y. B.Sc C.S. Preliminary exam Notice & TT</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/april-2024-tybsc-cs-preliminary-exam.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>April 2024 - T.Y. B.Sc I.T. Preliminary exam Notice & TT</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/april-2024-tybsc-it-preliminary-exam.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>April 2024 - SY Sem IV Regular Additional (Medical Ground) Exam Time Table April 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/april-2024-sy-sem-iv-regular-additional-medical-ground.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>M.Com PG Sem III Repeater Exam Notice</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/mcom-pg-sem-iii-repeater-exam.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>Schedule of Project Work Viva Voce April 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/schedule-project-work-viva-voce-april-2024.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>TY Internal & External Viva Notice April 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/ty-internal-external-viva-notice-april-2024.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>FY Regular Additional(Medical Ground) Exam Time Table Sem - II April 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/fy-regular-additional-medical-ground-sem-ii-april-2024.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSc CS Sem II Internal assignment Notice & Timetable 19-Mar-2024 11-38-46</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/timetables/fybsc-cs-sem-ii-internal-assignment-mar-19-2024.pdf') }}" class="view-button" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

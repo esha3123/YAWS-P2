@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Examination Committee - Saket College{% endblock %}
+
+{% block styles %}
+/* No additional styles needed */
+{% endblock %}
+
+{% block content %}
+<script>
+  // Redirect directly to the PDF when the page loads
+  window.onload = function() {
+    window.location.href = "{{ url_for('frontend.serve_docs', filepath='committees/Examination Committee.pdf') }}";
+  }
+</script>
+{% endblock %}

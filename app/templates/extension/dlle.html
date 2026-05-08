@@ -1,0 +1,361 @@
+{% extends "base.html" %}
+
+{% block title %}Department of Lifelong Learning and Extension (DLLE) - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.section-heading {
+  color: var(--m3-secondary);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.dlle-mission {
+  background-color: var(--m3-surface-variant);
+  padding: 20px;
+  border-radius: var(--m3-shape-medium);
+  margin-bottom: 20px;
+}
+
+.dlle-mission h3 {
+  color: var(--m3-primary);
+  margin-bottom: 15px;
+}
+
+.dlle-motto {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--m3-tertiary);
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: var(--m3-surface-variant);
+  border-radius: var(--m3-shape-small);
+}
+
+.dlle-objectives {
+  margin: 20px 0;
+}
+
+.dlle-objectives ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.dlle-objectives li {
+  margin-bottom: 8px;
+}
+
+.dlle-activities {
+  margin: 20px 0;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.activity-card {
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  overflow: hidden;
+  box-shadow: var(--m3-shadow-1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--m3-shadow-2);
+}
+
+.activity-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.activity-content {
+  padding: 15px;
+}
+
+.activity-content h4 {
+  color: var(--m3-primary);
+  margin-bottom: 10px;
+}
+
+.view-button {
+  display: inline-block;
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--m3-shape-small);
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.view-button:hover {
+  background-color: var(--m3-primary-hover);
+}
+
+.dlle-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.dlle-table th, .dlle-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.dlle-table th {
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  font-weight: 500;
+}
+
+.dlle-table tr:hover {
+  background-color: var(--m3-surface-variant);
+}
+
+.dlle-committee {
+  margin: 20px 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: var(--m3-surface);
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 1000px;
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-4);
+}
+
+.close-button {
+  color: var(--m3-on-surface-variant);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: var(--m3-primary);
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--m3-shape-small);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Department of Lifelong Learning and Extension (DLLE)</h1>
+  
+  <div class="dlle-mission">
+    <h3>About DLLE</h3>
+    <p>The Department of Lifelong Learning and Extension (DLLE) is a statutory department established under the University of Mumbai to promote a meaningful and sustained rapport between universities and communities. DLLE offers various extension programs designed to address the needs of diverse sections of society while fostering holistic development of students.</p>
+    <p>At Saket College, the DLLE unit actively engages students in various social outreach programs, skill development activities, and community service initiatives that help in understanding societal issues while developing leadership qualities.</p>
+  </div>
+  
+  <div class="dlle-motto">
+    "REACH TO UNREACHED"
+  </div>
+  
+  <div class="dlle-objectives">
+    <h2 class="section-heading">Objectives of DLLE</h2>
+    <ul>
+      <li>To develop social responsibility and commitment among students</li>
+      <li>To enhance students' understanding of real-life issues through direct involvement with the community</li>
+      <li>To build capacity for leadership, teamwork, and communication skills</li>
+      <li>To foster intellectual development through reflective thinking and action</li>
+      <li>To promote community engagement for sustainable development</li>
+      <li>To complement classroom education with experiential learning</li>
+      <li>To develop professional and life skills through field-based activities</li>
+      <li>To sensitize students about social, economic, and educational challenges in society</li>
+    </ul>
+  </div>
+  
+  <h2 class="section-heading">DLLE Activities at Saket College</h2>
+  <p>The DLLE unit at Saket College conducts various extension activities focusing on community development and student engagement. Our key initiatives include:</p>
+  
+  <div class="activity-grid">
+    <div class="activity-card" onclick="openModal('winners')">
+      <img src="{{ url_for('static', filename='images/activities/dlle/udaan.png') }}" alt="Winners in UDAAN Festival" class="activity-image">
+      <div class="activity-content">
+        <h4>Winners in UDAAN Festival</h4>
+        <p>Celebrating the achievements of our students who won various competitions and showcased their talents during the annual UDAAN festival.</p>
+      </div>
+    </div>
+    
+    <div class="activity-card" onclick="openModal('orphanage')">
+      <img src="{{ url_for('static', filename='images/activities/dlle/orphanage.png') }}" alt="Field Visit to Orphanage" class="activity-image">
+      <div class="activity-content">
+        <h4>Field Visit to Orphanage</h4>
+        <p>Students engage in community service by visiting local orphanages, organizing activities for children, and contributing to their emotional and educational wellbeing.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="dlle-committee">
+    <h2 class="section-heading">DLLE Committee</h2>
+    <table class="dlle-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Role in DLLE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Prof. Madhvi Swami</td>
+          <td>Assistant Professor</td>
+          <td>DLLE Committee Member</td>
+        </tr>
+        <tr>
+          <td>Prof. Heer Bolakani</td>
+          <td>Associate Professor</td>
+          <td>DLLE chiar person</td>
+        </tr>
+        <tr>
+          <td>Prof. Malvika Nambiar</td>
+          <td>Assistant Professor</td>
+          <td>DLLE Committee Member</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <h2 class="section-heading">Annual Festival - UDAAN</h2>
+  <p>Every year, DLLE organizes an annual festival called UDAAN, which showcases projects undertaken by students throughout the academic year. The festival includes exhibitions, presentations, cultural performances, and competitions that highlight the learning experiences and achievements of DLLE volunteers.</p>
+  
+  <h2 class="section-heading">Benefits of Joining DLLE</h2>
+  <ul class="dlle-objectives">
+    <li>Development of practical skills in survey methods, data collection, and analysis</li>
+    <li>Enhancement of communication, leadership, and teamwork abilities</li>
+    <li>Certificate of completion from the University of Mumbai</li>
+    <li>Additional 10 marks for admission to postgraduate programs as per University guidelines</li>
+    <li>Exposure to real-world problems and developing problem-solving abilities</li>
+    <li>Opportunities to interact with various community stakeholders</li>
+    <li>Practical application of theoretical knowledge gained in classrooms</li>
+  </ul>
+  
+  <h2 class="section-heading">How to Join DLLE</h2>
+  <p>Students interested in joining the DLLE unit at Saket College can register at the beginning of the academic year by contacting the DLLE Program Coordinator. Participation in DLLE activities is recognized by the University of Mumbai, and students receive certificates upon successful completion of 120 hours of extension work.</p>
+</div>
+
+<div id="winnersModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal('winners')">&times;</span>
+    <h2>Winners in UDAAN Festival</h2>
+    <div class="photo-gallery">
+      <img src="{{ url_for('static', filename='images/activities/dlle/udaan.png') }}" alt="UDAAN Festival Winners" class="gallery-image">
+      <img src="{{ url_for('static', filename='images/activities/dlle/udaan2.png') }}" alt="UDAAN Festival Activities" class="gallery-image">
+    </div>
+  </div>
+</div>
+
+<div id="orphanageModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal('orphanage')">&times;</span>
+    <h2>Field Visit to Orphanage Activities</h2>
+    <div class="photo-gallery">
+      <img src="{{ url_for('static', filename='images/activities/dlle/orphanage.png') }}" alt="Orphanage Visit" class="gallery-image">
+      <img src="{{ url_for('static', filename='images/activities/dlle/orphanage2.png') }}" alt="Orphanage Activities" class="gallery-image">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(type) {
+  document.getElementById(type + 'Modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(type) {
+  document.getElementById(type + 'Modal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Close modals when clicking outside the content
+window.onclick = function(event) {
+  const modals = document.getElementsByClassName('modal');
+  for (let i = 0; i < modals.length; i++) {
+    if (event.target === modals[i]) {
+      modals[i].style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  }
+}
+</script>
+{% endblock %}

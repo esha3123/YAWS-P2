@@ -1,0 +1,613 @@
+{% extends "base.html" %}
+
+{% block title %}Results - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.results-table th,
+.results-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--m3-outline-variant);
+}
+
+.results-table th {
+  background-color: var(--m3-secondary-container);
+  color: var(--m3-on-secondary-container);
+}
+
+.results-category {
+  background-color: var(--m3-tertiary-container);
+  color: var(--m3-on-tertiary-container);
+  font-weight: 600;
+  padding: 15px 12px;
+  text-align: left;
+  font-size: 1.1em;
+  border-top: 2px solid var(--m3-outline);
+}
+
+.view-button {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: var(--m3-primary-hover);
+}
+
+.results-year {
+  background-color: var(--m3-primary-container);
+  color: var(--m3-on-primary-container);
+  font-weight: 700;
+  padding: 18px 12px;
+  text-align: center;
+  font-size: 1.2em;
+  border-top: 3px solid var(--m3-primary);
+  border-bottom: 3px solid var(--m3-primary);
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Examination Results</h1>
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 2025 Results -->
+      <tr>
+        <td colspan="2" class="results-year">Results 2025</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="results-category">Regular Examination Results (May 2025)</td>
+      </tr>
+      <tr>
+        <td>TYBA & TYBCOM SEM VI Regular Examination Results May 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/tyba-tybcom-sem-vi-regular-results-may-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>SYBA & SYBCOM SEM IV Regular Examination Results April 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/syba-sybcom-sem-iv-regular-results-april-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>FYBA & FYBCOM SEM II Regular Examination Results March 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fyba-fybcom-sem-ii-regular-results-march-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>TY Self Finance Programs SEM VI Regular Examination Results May 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/ty-self-finance-sem-vi-regular-results-may-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>SY Self Finance Programs SEM IV Regular Examination Results April 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sy-self-finance-sem-iv-regular-results-april-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>FY Self Finance Programs SEM II Regular Examination Results March 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fy-self-finance-sem-ii-regular-results-march-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>SY SEM III Additional Exam Nov 2024 Result Notice Board</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sy-sem-iii-additional-exam-nov-2024-result.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>TYBMS, TYBAF, TYBBI, TYBSC(IT) Additional Internal Results March 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/tybms-tybaf-tybbi-tybscit-additional-internal-results-march-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>SYBMS, SYBAF, SYBBI, SYBSC(IT) Additional Internal Results March 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybms-sybaf-sybbi-sybscit-additional-internal-results-march-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>FYBSC CS SEM II Rev 16 ATKT OCT 2023</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-cs-sem-ii-rev16-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>FYBSC IT SEM II ATKT OCT 2023</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-it-sem-ii-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>SEM II ATKT Exam September-2024 Results</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-ii-atkt-exam-sep-2024-results.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>FYBA & FYBCOM SEM II ATKT Results October 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fyba-fybcom-sem-ii-atkt-results-oct-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>SYBMS SYBAF SYBBI SEM III Results October 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybms-sybaf-sybbi-sem-iii-results-oct-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>TYBMS TYBAF TYBBI SEM V Results October 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/tybms-tybaf-tybbi-sem-v-results-oct-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>BSc IT & CS SEM III ATKT Results February 2025</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/bsc-it-cs-sem-iii-atkt-results-feb-2025.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>MCom Part I Sem I Results December 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/mcom-part-i-sem-i-results-dec-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>MCom Part II Sem III Results December 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/mcom-part-ii-sem-iii-results-dec-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>MSc IT Part I Sem I Results December 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/mscit-part-i-sem-i-results-dec-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>MSc IT Part II Sem III Results December 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/mscit-part-ii-sem-iii-results-dec-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>TYBSC CS Preliminary Examination Results April 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/tybsc-cs-preliminary-exam-results-april-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>TYBSC IT Preliminary Examination Results April 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/tybsc-it-preliminary-exam-results-april-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>TYBA & TYBCOM SEM V ATKT Results October 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/tyba-tybcom-sem-v-atkt-results-oct-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>SYBA & SYBCOM SEM III ATKT Results September 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/syba-sybcom-sem-iii-atkt-results-sep-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>FYBA & FYBCOM SEM I ATKT Results August 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fyba-fybcom-sem-i-atkt-results-aug-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>TYBSC IT & CS SEM V Regular Results October 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/tybsc-it-cs-sem-v-regular-results-oct-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>SYBSC IT & CS SEM III Regular Results September 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-it-cs-sem-iii-regular-results-sep-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>FYBSC IT & CS SEM I Regular Results August 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-it-cs-sem-i-regular-results-aug-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>BMS, BAF, BBI SEM I Regular Results August 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/bms-baf-bbi-sem-i-regular-results-aug-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>MSc IT Part II SEM IV Regular Results May 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/mscit-part-ii-sem-iv-regular-results-may-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+      <tr>
+        <td>MCom Part II SEM IV Regular Results May 2024</td>
+        <td>
+          <a href="{{ url_for('frontend.serve_docs', filepath='examination/results/mcom-part-ii-sem-iv-regular-results-may-2024.pdf') }}" target="_blank" class="view-button">View</a>
+        </td>
+      </tr>
+
+      <!-- SY Additional/Regular/ATKT Results 2024 -->
+      <tr>
+        <td colspan="2" class="results-year">Results 2024</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="results-category">SY Additional/Regular/ATKT Results (November-December 2024)</td>
+      </tr>
+      <tr>
+        <td>SY SEM III Additional Exam Nov 2024 Result Notice Board</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sy-sem-iii-additional-exam-nov-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SY SEM III ATKT Exam Oct 2024 Result Notice Board</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sy-sem-iii-atkt-exam-oct-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SY SEM III Regular Exam Oct 2024 Result Notice Board</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sy-sem-iii-regular-exam-oct-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>Result of Sem III Regular, Additional & ATKT Examination October 2024 Notice</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-iii-combined-results-oct-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- SY Sem IV ATKT Results September 2024 -->
+      <tr>
+        <td colspan="2" class="results-category">SY Sem IV ATKT Results (September 2024)</td>
+      </tr>
+      <tr>
+        <td>SY.BSc(IT) Sem IV ATKT(10 Point) Notice Board List Sept 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-it-sem-iv-atkt-10point-sep-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SY.BSc (CS) Sem IV ATKT(10 Point) Notice Board List Sept 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-cs-sem-iv-atkt-10point-sep-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SY.BMS Sem IV ATKT(10 Point) Notice Board List Sept 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybms-sem-iv-atkt-10point-sep-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SY.BCom Sem IV ATKT(10 Point) Notice Board List Sept 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-sem-iv-atkt-10point-sep-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SY.BCom (A & F) Sem IV ATKT(10 Point) Notice Board List Sept 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-af-sem-iv-atkt-10point-sep-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SY.BA Sem IV(10 point) Notice Board List September 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/syba-sem-iv-10point-sep-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- FY Results 2024 -->
+      <tr>
+        <td colspan="2" class="results-category">FY Results (2024)</td>
+      </tr>
+      <tr>
+        <td>FY SEM I ATKT September 2024 Result</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fy-sem-i-atkt-sep-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SEM II Regular and ATKT Exam April 2024 Revaluation Notice</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-ii-regular-atkt-revaluation-apr-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FY SEM II REGULAR RESULT MAY 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fy-sem-ii-regular-may-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FY SEM II ATKT RESULT MAY 2024</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fy-sem-ii-atkt-may-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- SEM IV Results March 2024 -->
+      <tr>
+        <td colspan="2" class="results-category">SEM IV Results (March 2024)</td>
+      </tr>
+      <tr>
+        <td>SEM IV Regular and ATKT Exam March 2024 Revaluation Notice</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-iv-regular-atkt-revaluation-mar-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SEM IV ATKT Exam March 2024 Results Notice Board Copy</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-iv-atkt-mar-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SEM IV Regular and ATKT Exam March 2024 Results Declared Notice</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-iv-regular-atkt-declared-mar-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SEM IV Regular Exam March 2024 Results Notice Board Copy</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-iv-regular-mar-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- SEM III Results March 2024 -->
+      <tr>
+        <td colspan="2" class="results-category">SEM III Results (March 2024)</td>
+      </tr>
+      <tr>
+        <td>SEM III ATKT Exam March 2024 Results Failure List</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-iii-atkt-failure-mar-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SEM III ATKT March 2024 Results Notice Board Copy</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sem-iii-atkt-mar-2024.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- First Year Sem I Regular Results December 2023 -->
+      <tr><td colspan="2" class="results-category">First Year Sem I Regular Results (December 2023)</td></tr>
+      <tr>
+        <td>FYBA SEM I Regular 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fyba-sem-i-regular-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM (Accounting & Finance) SEM I Regular 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-af-sem-i-regular-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM (Banking & Insurance) SEM I Regular 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-bi-sem-i-regular-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM SEM I Regular 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-sem-i-regular-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBMS SEM I Regular 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybms-sem-i-regular-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC (Computer Science) SEM I Regular 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-cs-sem-i-regular-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC (Information Technology) SEM I Regular 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-it-sem-i-regular-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- First Year Sem I ATKT Results December 2023 -->
+      <tr><td colspan="2" class="results-category">First Year Sem I ATKT Results (December 2023)</td></tr>
+      <tr>
+        <td>FYBA SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fyba-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM (Accounting & Finance) SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-af-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM (Banking & Insurance) SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-bi-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM (Financial Management) SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-fm-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM (Investment Management) SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-im-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBMS SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybms-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC (Computer Science) SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-cs-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC (Information Technology) SEM I ATKT 10 Point Dec 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-it-sem-i-atkt-10point-dec-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- Second Year Sem III Regular Results October 2023 -->
+      <tr><td colspan="2" class="results-category">Second Year Sem III Regular Results (October 2023)</td></tr>
+      <tr>
+        <td>SYBA SEM III 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/syba-sem-iii-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBAF SEM III 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybaf-sem-iii-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBBI SEM III 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybbi-sem-iii-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCOM SEM III 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-sem-iii-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBMS SEM III 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybms-sem-iii-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBSC CS SEM III 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-cs-sem-iii-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBSC IT SEM III 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-it-sem-iii-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- Second Year Sem III ATKT Results October 2023 -->
+      <tr><td colspan="2" class="results-category">Second Year Sem III ATKT Results (October 2023)</td></tr>
+      <tr>
+        <td>SYBA SEM III ATKT 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/syba-sem-iii-atkt-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBAF SEM III ATKT 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybaf-sem-iii-atkt-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBBI SEM III ATKT 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybbi-sem-iii-atkt-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCom SEM III ATKT 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-sem-iii-atkt-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCom SEM III ATKT 7 Point (7525) OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-sem-iii-atkt-7point-7525-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBFM SEM III ATKT 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybfm-sem-iii-atkt-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBMS SEM III ATKT 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybms-sem-iii-atkt-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBSc CS SEM III ATKT 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-cs-sem-iii-atkt-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBSc IT SEM III ATKT 10 Point OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-it-sem-iii-atkt-10point-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- First Year Sem II ATKT Results October 2023 -->
+      <tr><td colspan="2" class="results-category">First Year Sem II ATKT Results (October 2023)</td></tr>
+      <tr>
+        <td>FYBA SEM II ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fyba-sem-ii-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM (A&F) SEM II ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-af-sem-ii-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM (B&I) SEM II ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-bi-sem-ii-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBCOM SEM II ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybcom-sem-ii-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBMS SEM II ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybms-sem-ii-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC CS SEM II OLD ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-cs-sem-ii-old-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC CS SEM II Rev 16 ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-cs-sem-ii-rev16-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>FYBSC IT SEM II ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/fybsc-it-sem-ii-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+
+      <!-- Second Year Sem IV ATKT Results October 2023 -->
+      <tr><td colspan="2" class="results-category">Second Year Sem IV ATKT Results (October 2023)</td></tr>
+      <tr>
+        <td>SYBA SEM IV ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/syba-sem-iv-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCOM (A&F) SEM IV ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-af-sem-iv-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCOM (B&I) SEM IV ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-bi-sem-iv-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCOM (Fin.Mgt) SEM IV ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-fm-sem-iv-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCOM SEM IV 6040 ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-sem-iv-6040-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCOM SEM IV ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-sem-iv-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBCOM SEM IV C7525 ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybcom-sem-iv-c7525-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBMS SEM IV ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybms-sem-iv-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBSC CS SEM IV OLD ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-cs-sem-iv-old-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBSC CS SEM IV REV 16 ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-cs-sem-iv-rev16-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+      <tr>
+        <td>SYBSC IT SEM IV ATKT OCT 2023</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='examination/results/sybsc-it-sem-iv-atkt-oct-2023.pdf') }}" target="_blank" class="view-button">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

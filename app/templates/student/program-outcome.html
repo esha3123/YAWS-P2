@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+
+{% block title %}Program Outcome - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.program-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.program-table th,
+.program-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--m3-outline-variant);
+}
+
+.program-table th {
+  background-color: var(--m3-secondary-container);
+  color: var(--m3-on-secondary-container);
+  font-weight: 600;
+}
+
+.program-table tr:nth-child(even) {
+  background-color: var(--m3-surface-variant);
+}
+
+.program-table tr:hover {
+  background-color: var(--m3-surface-1);
+}
+
+.view-link {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  text-decoration: none;
+  border-radius: var(--m3-shape-small);
+  transition: background-color 0.3s ease;
+}
+
+.view-link:hover {
+  background-color: var(--m3-primary-hover);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.nav-button {
+  padding: 12px 24px;
+  background-color: var(--m3-surface-variant);
+  color: var(--m3-on-surface-variant);
+  border: none;
+  border-radius: var(--m3-shape-small);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-button.active {
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+}
+
+.nav-button:hover:not(.active) {
+  background-color: var(--m3-surface-variant-hover);
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <div class="nav-buttons">
+    <button class="nav-button active" onclick="showSection('program')">Program Outcomes</button>
+    <button class="nav-button" onclick="showSection('course')">Course Outcomes</button>
+  </div>
+
+  <div id="program-section" class="section active">
+    <h1 class="page-title">Program Outcomes</h1>
+    
+    <p>The following table presents the program outcomes for various academic programs offered at Saket College. Each program outcome document outlines the knowledge, skills, and competencies that students are expected to acquire upon successful completion of the respective program.</p>
+    
+    <table class="program-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Programme outcomes of B.COM</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of BCOM.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Programme outcomes of B.COM(Managment Studies)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of BMS.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Programme outcomes of B.COM(Finance Management)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of BFM.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Programme outcomes of B.COM(Accounting & Finance)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of BAF.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Program outcomes of B.COM(Banking & Insurance)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/program outcomes of BBI.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Programme outcomes of BSC(Information & Technology)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of BSC.IT.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Programme outcomes of BSC(Computer Science)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of Computer Science.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Programme outcomes of Economics</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of Economics.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Programme outcomes of Hindi</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of HINDI.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Programme outcomes of History</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/program-outcomes/programe outcomes of History.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="course-section" class="section">
+    <h1 class="page-title">Course Outcomes</h1>
+    <p>The following table presents the course-specific outcomes for various subjects offered at Saket College. Course outcomes define the specific knowledge and skills students should acquire after completing individual courses.</p>
+    
+    <table class="program-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Course Outcomes of (B.Com - Semester 1-2)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='/static/docs/FYBCOM SEM 1 & 2 COURSE OUTCOME NEP 2020.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        
+        <tr>
+          <td>Course Outcomes of (BSc(Information Technology) - Semester I)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/course-outcomes/bscit/python-programming-sem1.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Course Outcomes of (BSc(Computer Science) - Semester 3)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='academics/course-outcomes/bscit/dbms-sem3.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Course Outcomes of (B.Com(Management studies) - Semester 1-2)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='/static/docs/BMS CO OF FY SEM 1 AND 2.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+
+        <tr>
+          <td>Course Outcomes of(BA(Economics/Hindi/History) - Semester 1-2)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='/static/docs/Co BA (1).pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+        <tr>
+          <td>Course Outcomes of (B.Com(Accountancy & Finance) - Semester 1-2)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='/static/docs/FYBAF SEM 1 & 2 COURSE OUTCOME NEP 2020.pdf') }}" target="_blank" class="view-link">View</a></td>
+        <tr>
+          <td>Course Outcomes of (B.Com(Banking & Insurance) - Semester 2)</td>
+          <td><a href="{{ url_for('frontend.serve_docs', filepath='/static/docs/FYBBI  CO.pdf') }}" target="_blank" class="view-link">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+function showSection(sectionId) {
+  // Hide all sections
+  document.querySelectorAll('.section').forEach(section => {
+    section.classList.remove('active');
+  });
+  
+  // Show selected section
+  document.getElementById(sectionId + '-section').classList.add('active');
+  
+  // Update button states
+  document.querySelectorAll('.nav-button').forEach(button => {
+    button.classList.remove('active');
+  });
+  const activeButton = Array.from(document.querySelectorAll('.nav-button')).find(
+    button => button.textContent.toLowerCase().includes(sectionId)
+  );
+  if (activeButton) {
+    activeButton.classList.add('active');
+  }
+}
+</script>
+{% endblock %}

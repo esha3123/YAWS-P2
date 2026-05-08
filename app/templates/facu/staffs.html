@@ -1,0 +1,566 @@
+{% extends "base.html" %}
+
+{% block title %}Faculty & Staff - Saket College{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/staffs.css') }}">
+{% endblock %}
+
+{% block content %}
+<main class="staff-container">
+  <div class="staff-header">
+    <h1>Faculty & Staff</h1>
+    <p>Our institution takes pride in its distinguished faculty members and dedicated staff who are committed to academic excellence and student success.</p>
+  </div>
+
+  <nav class="staff-nav">
+    <ul class="m3-list">
+      <li><a href="#teaching-jr" class="view-btn">Junior College Faculty</a></li>
+      <li><a href="#teaching-degree" class="view-btn">Degree College Faculty</a></li>
+      <li><a href="#non-teaching" class="view-btn">Non-teaching Staff</a></li>
+    </ul>
+  </nav>
+
+  <div class="content-sections">
+    <section id="teaching-jr" class="staff-section">
+      <h2>Junior College Faculty</h2>
+      
+      <div class="search-container">
+        <input type="text" class="search-input" data-table="jr-staff-table" placeholder="Search by name, subject, or qualification...">
+      </div>
+      
+      <table id="jr-staff-table" class="data-table">
+        <thead>
+          <tr>
+            <th>Sr.No</th>
+            <th>Name of the Staff</th>
+            <th>Subject</th>
+            <th>Qualification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mrs. Rabecca R. Gurup</td>
+            <td>English</td>
+            <td>MA B.Ed.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Mrs. Sujatha Nair</td>
+            <td>English</td>
+            <td>MA B.Ed.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mrs. Bindu Shynu</td>
+            <td>English</td>
+            <td>MA B.Ed.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Mrs. Jyoti R. Shirke</td>
+            <td>Marathi</td>
+            <td>MA B.Ed.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Mrs. Shakshi S. Gole</td>
+            <td>Marathi</td>
+            <td>MA. M.Ed.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Mr. Anand Rao Patil</td>
+            <td>History / Political Science</td>
+            <td>MA B.Ed.</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Mr. Sanjay Choudhary</td>
+            <td>Geography</td>
+            <td>MA B.Ed.</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Mrs. Supriya Salagre</td>
+            <td>Economics</td>
+            <td>MA M COM B.Ed.</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Mrs. Reena Agrawal</td>
+            <td>Physics</td>
+            <td>M Sc. B.Ed.</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Mrs. Vandana S. Mahale</td>
+            <td>Physics</td>
+            <td>M Sc. B.Ed.</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Mrs. Rohini M. Bendre</td>
+            <td>Chemistry</td>
+            <td>M Sc. B.Ed.</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Mr. Arun Kirtidas</td>
+            <td>Chemistry</td>
+            <td>M Sc.</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Mrs. Vanshika Premchandani</td>
+            <td>Mathematics</td>
+            <td>M Sc. B.Ed.</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Ms. Gauri R. Bhagat</td>
+            <td>Mathematics</td>
+            <td>M Sc. B.Ed.</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Mrs. Peuli D. Bhattacharya</td>
+            <td>Biology</td>
+            <td>M Sc. B.Ed.</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Mrs. Amita S. Mahajan</td>
+            <td>Information Technology</td>
+            <td>M Sc. B.Ed.</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Mrs. Khushboo Singh</td>
+            <td>Information Technology</td>
+            <td>MCA</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>Mrs. Nayana I. Tayade</td>
+            <td>Book Keeping & Accountancy</td>
+            <td>M COM B.Ed.</td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>Mr. Ashok R. Singh</td>
+            <td>Book Keeping & Accountancy</td>
+            <td>M COM B.Ed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="teaching-degree" class="staff-section">
+      <h2>Degree College Faculty</h2>
+      
+      <div class="search-container">
+        <input type="text" class="search-input" data-table="degree-staff-table" placeholder="Search by name, designation, or qualification...">
+      </div>
+
+      <div class="tab-container">
+        
+        <div id="table-view">
+          <table id="degree-staff-table" class="data-table">
+            <thead>
+              <tr>
+                <th>Sr.No</th>
+                <th>Name of the Staff</th>
+                <th>Designation</th>
+                <th>Qualification</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>1</td>
+                <td>Dr. Praseena Biju</td>
+                <td>Incharge Principal</td>
+                <td>Ph.D., M.C.A.</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Dr. Hema Tiwari</td>
+                <td>IQAC Co-Coordinator</td>
+                <td>Ph.D. (Hindi)</td>
+              </tr>
+               <tr>
+                <td>3</td>
+                <td>Mr. Navnath Mule</td>
+                <td>Assistant Professor</td>
+                <td>B.Ed., M.A. (History,Economics)</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Dr. Shahaji Kamble</td>
+                <td>Assistant Professor & Exam Chairperson</td>
+                <td>B.Ed., M.A. History,M.Phil.,Ph.D</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Mrs. Rajeshree Mundhe</td>
+                <td>Academic Coordinator</td>
+                <td>M.Sc.IT</td>
+              </tr>
+               <tr>
+                <td>6</td>
+                <td>Mr. Sanjay Chaudhary</td>
+                <td>Assistant Professor</td>
+                <td>M.A(Geography,Economics)</td>
+              </tr>
+               <tr>
+                <td>7</td>
+                <td>Ms. Manjula S. Pillai</td>
+                <td>Assistant Professor</td>
+                <td>M.Com(Advanced Accountancy)</td>
+              </tr>
+               <tr>
+                <td>8</td>
+                <td>Mrs. Ritu Singh</td>
+                <td>Assistant Professor</td>
+                <td>M.Com(Marketing),MH-SET</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Mr. Sumit Sawant</td>
+                <td>Assistant Professor</td>
+                <td>M.Com (Advance Accountancy), MH-SET</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Ms. Sneha Menon</td>
+                <td>Assistant Professor</td>
+                <td>M. Sc. C.S.</td>
+              </tr>
+               <tr>
+                <td>11</td>
+                <td>Mrs. Ankita Gaikwad</td>
+                <td>Assistant Professor</td>
+                <td>MBA- HR</td>
+              </tr>
+               <tr>
+                <td>12</td>
+                <td>Mrs. Sanchita Panda</td>
+                <td>Assistant Professor</td>
+                <td>B. Ed M.Com(Advanced Accountancy)</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Ms. Mohini Singh</td>
+                <td>Assistant Professor</td>
+                <td>Master in Business Management(M.BMS)</td>
+              </tr>
+               <tr>
+                <td>14</td>
+                <td>Mrs. Padmaja S. Nair</td>
+                <td>Assistant Professor</td>
+                <td>M.Com(Advanced accountancy)</td>
+              </tr>
+               <tr>
+                <td>15</td>
+                <td>Mrs. Heer Bolakani</td>
+                <td>Assistant Professor</td>
+                <td>M.A in English</td>
+              </tr>
+               <tr>
+                <td>16</td>
+                <td>Ms. Agnus Idicula</td>
+                <td>Assistant Professor</td>
+                <td>M.Sc.(C.S)</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>Mr. Umesh Sonavane</td>
+                <td>Physical Director, Sports Coordinator</td>
+                <td>M.Com(Finance), Mp. Ed</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>Mrs.Pushpa Prajapati</td>
+                <td>Assistant Profeessor</td>
+                <td>MH-SET,GDCA,IRDA,M.Com(Advanced Accountancy)</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>Dr.Sheeba E.</td>
+                <td>Assistant Professor</td>
+                <td>M.Com(Marketing),Ph.D,TN-SET</td>
+              </tr>
+               <tr>
+                <td>20</td>
+                <td>Mrs. Minakshi Dhande</td>
+                <td>Assistant Professor,</td>
+                <td>M.Sc.(C.S.), B.Sc.(C.S.)</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>Mrs. Rajeshwari Bhandari</td>
+                <td>Assistant Professor</td>
+                <td>M.B.A.(HR)</td>
+              </tr>
+              <tr>
+                <td>22</td>
+                <td>Mrs. Manik Joshi</td>
+                <td>Assistant Professor</td>
+                <td>M.A. Theatre Performing Arts, UGC-NET, Ph.D</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>Mr. Shubham Kale</td>
+                <td>Assistant Professor</td>
+                <td>M.Sc.(I.T.)</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>Ms. Pratibha Dwivedi</td>
+                <td>Assistant Professor</td>
+                <td>M.Com. (Business Management), MH-SET</td>
+              </tr>
+              <tr>
+                <td>25</td>
+                <td>Ms. Roshni Yadav</td>
+                <td>Assistant Professor</td>
+                <td>M.Com. (Advanced Accountancy), UGC-NET</td>
+              </tr>
+              <tr>
+                <td>26</td>
+                <td>Mrs. Pournima Singh</td>
+                <td>Assistant Professor</td>
+                <td>M. Tech.</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td>Ms. Shikha Mourya</td>
+                <td>Assistant Professor</td>
+                <td>M.Com. (Advanced Accountancy), UGC-NET</td>
+              </tr>
+              <tr>
+                <td>28</td>
+                <td>Ms. Malvika Nambiar</td>
+                <td>Assistant Professor</td>
+                <td>M.Com. (Advanced Accountancy)</td>
+              </tr>
+              <tr>
+                <td>29</td>
+                <td>Mrs. Gauri Daud</td>
+                <td>Assistant Professor</td>
+                <td>M.Sc. (C.S.)</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td>Mrs. Hrutuja More</td>
+                <td>Assistant Professor</td>
+                <td>M.A.(Economics), MH-SET</td>
+              </tr>
+              <tr>
+                <td>31</td>
+                <td>Mrs. Manisha Kshirsagar</td>
+                <td>Assistant Professor</td>
+                <td>B.Ed., M.Sc.(Mathematics)</td>
+              </tr>
+              <tr>
+                <td>32</td>
+                <td>Mrs. Sujata Dhas</td>
+                <td>Assistant Professor</td>
+                <td>B.Ed., M.A.(Economics)</td>
+              </tr>
+              <tr>
+                <td>33</td>
+                <td>Mrs. Vegi Shyamla</td>
+                <td>Assistant Professor</td>
+                <td>M.Tech (CSE)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="non-teaching" class="staff-section">
+      <h2>Non-teaching Staff</h2>
+      
+      <div class="search-container">
+        <input type="text" class="search-input" data-table="non-teaching-table" placeholder="Search by name, designation, qualification or joining date...">
+      </div>
+      
+      <table id="non-teaching-table" class="data-table">
+        <thead>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Name of the Staff</th>
+            <th>Designation</th>
+            <th>Qualification</th>
+            <th>Date of Joining</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mr. Khade Kishor M.</td>
+            <td>Office Superintendent</td>
+            <td>B.Com</td>
+            <td>1-Dec-2011</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Mrs. Rema S Nair</td>
+            <td>Accounts Manager</td>
+            <td>PGDCA</td>
+            <td>29-Nov-2017</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mr. A. Damodaran Menon</td>
+            <td>Pur. & Main. Incharge</td>
+            <td>HSC</td>
+            <td>1-Apr-2016</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Mr. Santosh Dherange</td>
+            <td>Purchase Executive</td>
+            <td>B.Com</td>
+            <td>6-Sep-2022</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Mr. Mahesh Varma</td>
+            <td>Senior Clerk</td>
+            <td>M.Com</td>
+            <td>22-Aug-2005</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Mr. Pradip Gurav</td>
+            <td>Accounts Assistant</td>
+            <td>B.Com</td>
+            <td>1-Sep-2023</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Mr. Nanasaheb Shirole</td>
+            <td>Junior Clerk</td>
+            <td>B.Sc.</td>
+            <td>13-Sep-2005</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Mrs. Swati Chavan</td>
+            <td>Junior Clerk</td>
+            <td>B.Com</td>
+            <td>26-Apr-2022</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Ms. Supriya Vishe</td>
+            <td>Junior Clerk</td>
+            <td>B.Com</td>
+            <td>21-Jun-2022</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Ms. Sayali Vichare</td>
+            <td>Junior Clerk</td>
+            <td>B.A.</td>
+            <td>3-Apr-2023</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Ms. Namrata Ingle</td>
+            <td>Junior Clerk</td>
+            <td>M.Com</td>
+            <td>5-Sep-2023</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Mrs. Savita Attarde</td>
+            <td>Junior Clerk</td>
+            <td>B.Sc.</td>
+            <td>1-Dec-2023</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Mr. Kiran Burte</td>
+            <td>Junior Clerk</td>
+            <td>B.Com</td>
+            <td>13-Jun-2023</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Ms. Bhagyashree Gambhirrao</td>
+            <td>Junior Clerk</td>
+            <td>BCS</td>
+            <td>18-Dec-2023</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Mr. Nitesh Kadam</td>
+            <td>Comp. Lab. Asstt.</td>
+            <td>HSC with ITI</td>
+            <td>2-Dec-2019</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Mr. Sudarshan Mane</td>
+            <td>Comp. Lab. Asstt.</td>
+            <td>HSC with ITI</td>
+            <td>27-Sep-2022</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Ms. Kavita D Jaiswar</td>
+            <td>Lab. Assist</td>
+            <td>B.Sc.</td>
+            <td>9-Dec-2021</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Ms. Himanshi G Jaiswar</td>
+            <td>Lab. Assist</td>
+            <td>B.Sc.</td>
+            <td>9-Dec-2021</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Mr. Manish Gupta</td>
+            <td>Lab. Assist.</td>
+            <td>B.E.</td>
+            <td>18-Nov-2022</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Mr. Shyam M. Soure</td>
+            <td>Office Assistant</td>
+            <td>B.A.</td>
+            <td>7-Jun-2004</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>Mr. Rajendra Wagh</td>
+            <td>Peon</td>
+            <td>HSC</td>
+            <td>7-Aug-2006</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>Mrs. Shinde Sharda Haribhau</td>
+            <td>Peon</td>
+            <td>SSC</td>
+            <td>1-Aug-2015</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/staffs.js') }}" defer></script>
+{% endblock %}

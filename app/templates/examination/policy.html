@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Policy - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.policy-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.policy-item {
+  padding: 16px;
+  margin: 8px 0;
+  background-color: var(--m3-surface-container);
+  border-radius: var(--m3-shape-small);
+  color: var(--m3-on-surface);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.policy-title {
+  color: var(--m3-primary);
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Examination Policy</h1>
+  <h2 class="policy-title">Important Guidelines for Students</h2>
+  <ul class="policy-list">
+    <li class="policy-item">Be in time. A candidate who is late by more than 30 minutes shall not be admitted to the examination hall.</li>
+    <li class="policy-item">No candidate shall be permitted to leave until half an hour is over after the question papers have been distributed.</li>
+    <li class="policy-item">Enter on the title page the class, subject, section and seat number.</li>
+    <li class="policy-item">Write on both sides of the page, unless instructed. Rough work should be written on the left hand side or on a separate page. Answer each question on a new page and number it.</li>
+    <li class="policy-item">No pages shall be torn off from the answer-book given to the candidate.</li>
+    <li class="policy-item">Nothing shall be written on the question paper.</li>
+    <li class="policy-item">Exchange of written materials, stencils, mathematical instruments, etc. is strictly prohibited. Ask the supervisor in case any thing is needed but do not leave the seat on any account, at any time do not leave the Examination Hall during the last ten minutes.</li>
+    <li class="policy-item">A candidate is liable to disciplinary action for use of unfair-means e.g. if he/she –</li>
+    <li class="policy-item">Keeps with him/her any book, notes or any other written material.</li>
+    <li class="policy-item">Speaks to or communicates, in any other way with another candidate.</li>
+    <li class="policy-item">Disobey any instructions issued by the senior or junior supervisor or is guilty of rude or disobedient behavior.</li>
+    <li class="policy-item">Any use of unfair-means during the examination is liable to severe penalties as per the ordinance.</li>
+    <li class="policy-item">Ten minutes before the close, a warning bell will be rung, after which no candidate will be permitted to leave the hall. At the second bell, all must stop writing and be ready to handover the answer booklets to the supervisor.</li>
+  </ul>
+</div>
+{% endblock %}

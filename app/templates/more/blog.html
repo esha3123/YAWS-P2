@@ -1,0 +1,578 @@
+{% extends "base.html" %}
+
+{% block title %}Blog - Saket College{% endblock %}
+
+{% block styles %}
+<style>
+.blog-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, var(--m3-primary-container) 0%, var(--m3-secondary-container) 100%);
+}
+
+.blog-header h1 {
+  font-size: 3rem;
+  color: var(--m3-primary);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.blog-header p {
+  font-size: 1.2rem;
+  color: var(--m3-on-surface-variant);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.blog-card {
+  background-color: var(--m3-surface-container);
+  overflow: hidden;
+  box-shadow: var(--m3-shadow-2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--m3-shadow-4);
+}
+
+.blog-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--m3-primary-container) 0%, var(--m3-tertiary-container) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-image .material-icons {
+  font-size: 60px;
+  color: var(--m3-primary);
+  opacity: 0.5;
+}
+
+.blog-content {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.blog-category {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: var(--m3-tertiary-container);
+  color: var(--m3-on-tertiary-container);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.blog-date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--m3-on-surface-variant);
+  font-size: 0.875rem;
+}
+
+.blog-date .material-icons {
+  font-size: 16px;
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--m3-on-surface);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.blog-excerpt {
+  color: var(--m3-on-surface-variant);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.blog-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--m3-outline-variant);
+}
+
+.blog-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--m3-on-surface-variant);
+  font-size: 0.875rem;
+}
+
+.blog-author .material-icons {
+  font-size: 18px;
+}
+
+.read-more-btn {
+  padding: 10px 20px;
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.read-more-btn:hover {
+  background-color: var(--m3-secondary);
+  transform: translateX(4px);
+}
+
+.read-more-btn .material-icons {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+  
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-container {
+    padding: 20px 12px;
+  }
+  
+  .blog-header {
+    padding: 30px 16px;
+    margin-bottom: 30px;
+  }
+  
+  .blog-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .blog-content {
+    padding: 20px;
+  }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="blog-container">
+  <!-- Hero Style Blog Header with Sliding Cards -->
+  <div class="blog-hero">
+    <div class="blog-hero-carousel">
+      <!-- Blog Card 1 -->
+      <a href="{{ url_for('static', filename='docs/Saket_Gyanpeeth_Journey.pdf') }}" target="_blank" class="hero-blog-card active" data-blog="1">
+        <div class="hero-blog-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%), url('{{ url_for('static', filename='images/blog-header.png') }}');">
+          <div class="hero-blog-overlay"></div>
+          <div class="hero-blog-content">
+            <span class="material-icons hero-icon">menu_book</span>
+            <h2>Saket Gyanpeeth Journey</h2>
+            <p>Explore the rich history and inspiring journey of Saket Gyanpeeth. Discover the legacy, achievements, and milestones that have shaped our institution over the years.</p>
+            <div class="blog-badge">
+              <span class="blog-category">History</span>
+              <span class="blog-date">
+                <span class="material-icons">calendar_today</span>
+                December 3, 2025
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Blog Card 2 -->
+      <a href="{{ url_for('static', filename='docs/BCOMBLOG.pdf') }}" target="_blank" class="hero-blog-card" data-blog="2">
+        <div class="hero-blog-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%), url('{{ url_for('static', filename='images/blog-header.png') }}');">
+          <div class="hero-blog-overlay"></div>
+          <div class="hero-blog-content">
+            <span class="material-icons hero-icon">school</span>
+            <h2>B.Com Program Insights</h2>
+            <p>Discover the comprehensive Bachelor of Commerce program at Saket College. Learn about the curriculum, career opportunities, and success stories of our commerce students.</p>
+            <div class="blog-badge">
+              <span class="blog-category">Academics</span>
+              <span class="blog-date">
+                <span class="material-icons">calendar_today</span>
+                January 8, 2026
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Blog Card 3 -->
+      <a href="{{ url_for('static', filename='docs/BIMBLOG.pdf') }}" target="_blank" class="hero-blog-card" data-blog="3">
+        <div class="hero-blog-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%), url('{{ url_for('static', filename='images/blog-header.png') }}');">
+          <div class="hero-blog-overlay"></div>
+          <div class="hero-blog-content">
+            <span class="material-icons hero-icon">business_center</span>
+            <h2>BIM Program Excellence</h2>
+            <p>Explore the Bachelor of Information Management program and its innovative approach to preparing students for the digital business world with cutting-edge skills.</p>
+            <div class="blog-badge">
+              <span class="blog-category">Programs</span>
+              <span class="blog-date">
+                <span class="material-icons">calendar_today</span>
+                January 8, 2026
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <!-- Carousel Indicators -->
+    <div class="blog-carousel-indicators">
+      <button class="indicator active" data-slide="1"></button>
+      <button class="indicator" data-slide="2"></button>
+      <button class="indicator" data-slide="3"></button>
+    </div>
+  </div>
+
+  <!-- Blog Grid -->
+  <div class="blog-grid">
+    <!-- Blog Post 1 -->
+    <article class="blog-card">
+      <div class="blog-image" style="background-image: url('{{ url_for('static', filename='images/blog-header.png') }}'); background-size: cover; background-position: center;">
+        <span class="material-icons">menu_book</span>
+      </div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="blog-category">History</span>
+          <div class="blog-date">
+            <span class="material-icons">calendar_today</span>
+            December 3, 2025
+          </div>
+        </div>
+        <h2 class="blog-title">Saket Gyanpeeth Journey</h2>
+        <p class="blog-excerpt">
+          Explore the rich history and inspiring journey of Saket Gyanpeeth. Discover the legacy, achievements, and milestones that have shaped our institution over the years.
+        </p>
+        <div class="blog-footer">
+          <div class="blog-author">
+            <span class="material-icons">person</span>
+            Admin
+          </div>
+          <a href="{{ url_for('static', filename='docs/Saket_Gyanpeeth_Journey.pdf') }}" class="read-more-btn" target="_blank">
+            Read More
+            <span class="material-icons">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Blog Post 2 -->
+    <article class="blog-card">
+      <div class="blog-image" style="background-image: url('{{ url_for('static', filename='images/blog-header.png') }}'); background-size: cover; background-position: center;">
+        <span class="material-icons">school</span>
+      </div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="blog-category">Academics</span>
+          <div class="blog-date">
+            <span class="material-icons">calendar_today</span>
+            January 8, 2026
+          </div>
+        </div>
+        <h2 class="blog-title">B.Com Program Insights</h2>
+        <p class="blog-excerpt">
+          Discover the comprehensive Bachelor of Commerce program at Saket College. Learn about the curriculum, career opportunities, and success stories of our commerce students.
+        </p>
+        <div class="blog-footer">
+          <div class="blog-author">
+            <span class="material-icons">person</span>
+            Admin
+          </div>
+          <a href="{{ url_for('static', filename='docs/BCOMBLOG.pdf') }}" class="read-more-btn" target="_blank">
+            Read More
+            <span class="material-icons">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Blog Post 3 -->
+    <article class="blog-card">
+      <div class="blog-image" style="background-image: url('{{ url_for('static', filename='images/blog-header.png') }}'); background-size: cover; background-position: center;">
+        <span class="material-icons">business_center</span>
+      </div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="blog-category">Programs</span>
+          <div class="blog-date">
+            <span class="material-icons">calendar_today</span>
+            January 8, 2026
+          </div>
+        </div>
+        <h2 class="blog-title">BIM Program Excellence</h2>
+        <p class="blog-excerpt">
+          Explore the Bachelor of Information Management program and its innovative approach to preparing students for the digital business world with cutting-edge skills.
+        </p>
+        <div class="blog-footer">
+          <div class="blog-author">
+            <span class="material-icons">person</span>
+            Admin
+          </div>
+          <a href="{{ url_for('static', filename='docs/BIMBLOG.pdf') }}" class="read-more-btn" target="_blank">
+            Read More
+            <span class="material-icons">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+
+<style>
+/* Hero Blog Carousel Styles */
+.blog-hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.blog-hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-blog-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  text-decoration: none;
+  display: block;
+}
+
+.hero-blog-card.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-blog-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-blog-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+  transition: background 0.3s ease;
+}
+
+.hero-blog-card:hover .hero-blog-overlay {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.hero-blog-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  padding: 30px;
+}
+
+.hero-icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.hero-blog-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-blog-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.blog-badge {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-badge .blog-category {
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 600;
+}
+
+.blog-badge .blog-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  font-weight: 500;
+}
+
+.blog-badge .material-icons {
+  font-size: 18px;
+}
+
+/* Carousel Indicators */
+.blog-carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border: 2px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator.active {
+  background-color: white;
+  width: 40px;
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .blog-hero {
+    height: 250px;
+  }
+  
+  .hero-blog-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-blog-content p {
+    font-size: 0.9rem;
+  }
+  
+  .hero-icon {
+    font-size: 50px;
+  }
+  
+  .hero-blog-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-hero {
+    height: 200px;
+  }
+  
+  .hero-blog-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .hero-blog-content p {
+    font-size: 0.85rem;
+  }
+}
+</style>
+
+<script>
+// Auto-slide blog carousel
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-blog-card');
+const indicators = document.querySelectorAll('.indicator');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (indicators[i]) indicators[i].classList.remove('active');
+  });
+  
+  if (slides[index]) {
+    slides[index].classList.add('active');
+    if (indicators[index]) indicators[index].classList.add('active');
+  }
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Auto-advance slides every 5 seconds
+if (slides.length > 1) {
+  setInterval(nextSlide, 5000);
+}
+
+// Manual indicator control
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    currentSlide = index;
+    showSlide(currentSlide);
+  });
+});
+</script>
+{% endblock %}

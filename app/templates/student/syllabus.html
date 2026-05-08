@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+
+{% block title %}Syllabus - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.syllabus-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.syllabus-table th, .syllabus-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.syllabus-table th {
+  background-color: var(--m3-surface-variant);
+  color: var(--m3-on-surface-variant);
+  font-weight: 500;
+}
+
+.syllabus-table tr:hover {
+  background-color: var(--m3-surface-variant-lightest);
+}
+
+.syllabus-table a {
+  color: var(--m3-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.syllabus-table a:hover {
+  text-decoration: underline;
+}
+
+.section-heading {
+  color: var(--m3-primary);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Syllabus</h1>
+  
+  <h2 class="section-heading">B.Com</h2>
+  <table class="syllabus-table">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Department</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>B.Com (First Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BCom/FYBCom-Sem-I-II.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>B.Com (Second Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BCom/SYBCom-Sem-III-IV.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>B.Com (Third Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BCom/TYBCom-Sem-V-VI.pdf') }}" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2 class="section-heading">BMS</h2>
+  <table class="syllabus-table">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Department</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>BMS (First Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BMS/FYBMS-Sem-I-II.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>BMS (Second Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BMS/SYBMS-Sem-III-IV.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>BMS (Third Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BMS/TYBMS-Sem-V-VI.pdf') }}" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2 class="section-heading">BBI</h2>
+  <table class="syllabus-table">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Department</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>BBI (First Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BBI/FYBBI-Sem-I-II.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>BBI (Second Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BBI/SYBBI-Sem-III-IV.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>BBI (Third Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BBI/TYBBI-Sem-V-VI.pdf') }}" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2 class="section-heading">BAF</h2>
+  <table class="syllabus-table">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Department</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>BAF (First Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BAF/FYBAF-Sem-I-II.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>BAF (Second Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BAF/SYBAF-Sem-III-IV.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>BAF (Third Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BAF/TYBAF-Sem-V-VI.pdf') }}" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2 class="section-heading">BSc IT</h2>
+  <table class="syllabus-table">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Department</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>BSc IT (First Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BSc-IT/FYBScIT-Sem-I-II.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>BSc IT (Second Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BSc-IT/SYBScIT-Sem-III-IV.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>BSc IT (Third Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BSc-IT/TYBScIT-Sem-V-VI.pdf') }}" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2 class="section-heading">BSc CS</h2>
+  <table class="syllabus-table">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Department</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>BSc CS (First Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BSc-CS/FYBScCS-Sem-I-II.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>BSc CS (Second Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BSc-CS/SYBScCS-Sem-III-IV.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>BSc CS (Third Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BSc-CS/TYBScCS-Sem-V-VI.pdf') }}" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2 class="section-heading">BA</h2>
+  <table class="syllabus-table">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Department</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>BA (First Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BA/FYBA-Sem-I-II.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>BA (Second Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BA/SYBA-Sem-III-IV.pdf') }}" target="_blank">View</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>BA (Third Year)</td>
+        <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/syllabus/BA/TYBA-Sem-V-VI.pdf') }}" target="_blank">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,454 @@
+{% extends "base.html" %}
+
+{% block title %}Committee - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+  text-align: center;
+}
+
+/* Committee button styling */
+.committee-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.committee-btn {
+  padding: 12px 24px;
+  background-color: var(--m3-primary);
+  color: white;
+  border: none;
+  border-radius: var(--m3-shape-medium);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: var(--m3-shadow-1);
+  min-width: 200px;
+}
+
+.committee-btn:hover {
+  background-color: var(--m3-tertiary);
+  box-shadow: var(--m3-shadow-2);
+  transform: translateY(-2px);
+}
+
+.committee-btn.active {
+  background-color: var(--m3-primary-container);
+}
+
+/* Committee sections */
+.committee-section {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.committee-section.active {
+  display: block;
+}
+
+/* Year buttons */
+.year-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 15px;
+}
+
+.year-btn {
+  padding: 8px 16px;
+  background-color: var(--m3-surface-variant);
+  color: var(--m3-on-surface-variant);
+  border: 1px solid var(--m3-outline);
+  border-radius: var(--m3-shape-small);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.year-btn:hover {
+  background-color: var(--m3-tertiary-container);
+  color: var(--m3-on-tertiary-container);
+}
+
+.year-btn.active {
+  background-color: var(--m3-primary-container);
+  color: var(--m3-on-primary-container);
+}
+
+/* Committee tables */
+.year-content {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.year-content.active {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: var(--m3-shadow-1);
+}
+
+thead {
+  background-color: var(--m3-secondary-container);
+  color: var(--m3-on-secondary-container);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+th {
+  font-weight: 500;
+}
+
+tbody tr:hover {
+  background-color: var(--m3-surface-variant);
+}
+
+/* Button in tables */
+table button {
+  padding: 6px 12px;
+  background-color: var(--m3-primary);
+  color: white;
+  border: none;
+  border-radius: var(--m3-shape-small);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+table button:hover {
+  background-color: var(--m3-tertiary);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">College Committees</h1>
+  
+  <div class="committee-buttons">
+    <button class="committee-btn active" onclick="showCommitteeSection('statutory')">Statutory Committee</button>
+    <button class="committee-btn" onclick="showCommitteeSection('institutional')">Institutional Committee</button>
+  </div>
+  
+  <div id="statutory-section" class="committee-section active">
+    <h2>Statutory Committee</h2>
+    <div class="year-buttons">
+      <button class="year-btn active" onclick="showYearContent('statutory', '2023-2024')">2023-2024</button>
+      <button class="year-btn" onclick="showYearContent('statutory', '2024-2025')">2024-2025</button>
+    </div>
+    
+    <div id="statutory-2023-2024" class="year-content active">
+      <table>
+        <thead>
+          <tr>
+            <th>Committee Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Anti Ragging / High Level Standing Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2023-24/Anti-Ragging Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Examination Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2023-24/Examination Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Grievance Redressal Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2023-24/Students Grievance Redressal Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>ICC / Anti Sexual Harassment Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2023-24/ICC, Anti Sexual Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>SC / ST / OBC Cell</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2023-24/SC, ST & OBC Cell.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>College Development Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2023-24/College Development Committe.pdf') }}">View Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div id="statutory-2024-2025" class="year-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Committee Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Anti Ragging / High Level Standing Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2024-25/Anti-Ragging Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Examination Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2024-25/Examination Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Grievance Redressal Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2024-25/Students Grievance Redressal Committee2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>ICC / Anti Sexual Harassment Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2024-25/ICC & Anti Sexual Harassment Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>SC / ST / OBC Cell</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/statutory/2024-25/SC, ST & OBC Cell.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>College Development Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/college-development/COLLEGE DEVELOPMENT COMMITTEE MoM 2024-25.pdf') }}">View Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  <div id="institutional-section" class="committee-section">
+    <h2>Institutional Committee</h2>
+    <div class="year-buttons">
+      <button class="year-btn active" onclick="showYearContent('institutional', '2023-2024')">2023-2024</button>
+      <button class="year-btn" onclick="showYearContent('institutional', '2024-2025')">2024-2025</button>
+    </div>
+    
+    <div id="institutional-2023-2024" class="year-content active">
+      <table>
+        <thead>
+          <tr>
+            <th>Committee Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alumni Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Alumni Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Attendance Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Attendance Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Cultural Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Cultural Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Discipline Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Committee for Discipline 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>DLLE Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/DLLE Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Green Club Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Green Club 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>IT Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/IT Committee2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Library Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Library Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>NSS Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/NSS Unit  2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Research Cell</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Research Cell 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Sports Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Sports Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Staff Welfare Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Staff WelfareCommittee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Student Council Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Student Council 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Time Table committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Time Table Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Training and Placement Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Training & Placement Committee2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Unfair Means Enquiry Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Unfair means Enquiry Committee 2023-24.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>WDC Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/2023---24/Wdc 2023-2024.pdf') }}">View Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div id="institutional-2024-2025" class="year-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Committee Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alumni Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Alumni Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Attendance Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Attendance Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Cultural Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Cultural Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Discipline Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Committee for Discipline.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>DLLE Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/DLLE Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Green Club Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Green Club.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>IT Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/IT Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Library Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Library Committee (1).pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>NSS Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/NSS Unit.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Research Cell</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Research Cell.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Sports Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Sports Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Staff Welfare Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Staff WelfareCommittee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Student Council Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Student Council.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Time Table committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Time Table Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Training and Placement Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Training & Placement Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>Unfair Means Enquiry Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/committees/institutional/Unfair means Enquiry Committee.pdf') }}">View Details</a></td>
+          </tr>
+          <tr>
+            <td>WDC Committee</td>
+            <td><a href="{{ url_for('frontend.serve_docs', filepath='app/docs/departments/activities/WDC-2.pdf') }}">View Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Function to show committee section
+  function showCommitteeSection(sectionName) {
+    // Hide all sections
+    document.querySelectorAll('.committee-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    
+    // Show selected section
+    document.getElementById(sectionName + '-section').classList.add('active');
+    
+    // Update buttons
+    document.querySelectorAll('.committee-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+  }
+  
+  // Function to show year content
+  function showYearContent(sectionName, year) {
+    // Hide all year content in the current section
+    document.querySelectorAll('#' + sectionName + '-section .year-content').forEach(content => {
+      content.classList.remove('active');
+    });
+    
+    // Show selected year content
+    document.getElementById(sectionName + '-' + year).classList.add('active');
+    
+    // Update year buttons in current section
+    document.querySelectorAll('#' + sectionName + '-section .year-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+  }
+</script>
+{% endblock %}

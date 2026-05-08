@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+
+{% block title %}Program Courses - Saket College{% endblock %}
+
+{% block styles %}
+<style>
+.programs-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.programs-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.program-button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 2rem;
+    background-color: var(--m3-primary-container);
+    color: var(--m3-on-primary-container);
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.program-button:hover {
+    background-color: var(--m3-primary);
+    color: var(--m3-on-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    display: none;
+    background-color: var(--m3-surface-variant);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.section-title {
+    color: var(--m3-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--m3-primary);
+    padding-bottom: 0.5rem;
+}
+
+.sub-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--m3-surface);
+    border-radius: 8px;
+}
+
+.syllabus-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.syllabus-table td {
+    padding: 1rem;
+    border: 1px solid var(--m3-outline);
+}
+
+.syllabus-table a {
+    color: var(--m3-primary);
+    text-decoration: none;
+}
+
+.pdf-button {
+    display: inline-block;
+    background-color: var(--m3-primary-container);
+    color: var(--m3-on-primary-container);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pdf-button:hover {
+    background-color: var(--m3-primary);
+    color: var(--m3-on-primary);
+    transform: translateY(-1px);
+}
+
+.stream-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--m3-surface);
+    border-radius: 8px;
+}
+
+.stream-section h3 {
+    color: var(--m3-primary);
+    margin-bottom: 1rem;
+}
+
+.admission-content {
+    background-color: var(--m3-surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.admission-content h3 {
+    color: var(--m3-primary);
+    margin-bottom: 1rem;
+}
+
+.course-outcomes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.course-outcome-link {
+    display: block;
+    padding: 1rem;
+    background-color: var(--m3-secondary-container);
+    color: var(--m3-on-secondary-container);
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.course-outcome-link:hover {
+    background-color: var(--m3-secondary);
+    color: var(--m3-on-secondary);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="programs-container">
+    <h1 class="section-title">Program Courses</h1>
+
+    <ul class="programs-list">
+        <li>
+            <button class="program-button" onclick="showSection('ug')">Undergraduate Programs (UG)</button>
+        </li>
+        <li>
+            <button class="program-button" onclick="showSection('pg')">Postgraduate Programs (PG)</button>
+        </li>
+        <li>
+            <button class="program-button" onclick="showSection('jc')">Junior College</button>
+        </li>
+    </ul>
+
+    <div id="ug" class="section active">
+        <h2 class="section-title">Undergraduate Programs</h2>
+        
+        <div class="admission-content">
+            <h3>Admission Procedure</h3>
+            <p><b>Online Admission Procedure:</b> Applicants must apply through the University's online portal. Our College Code: <b>613</b></p>
+            <p><b>Documents Required:</b></p>
+            <ul>
+                <li>Original Mark sheet of Std. XII with two self-attested copies</li>
+                <li>Leaving Certificate & Passing Certificate</li>
+                <li>Caste certificate (if applicable)</li>
+                <li>Aadhar Card/Address Proof</li>
+            </ul>
+        </div>
+
+        <div class="sub-section">
+            <h3 class="section-title">Syllabus</h3>
+            <table class="syllabus-table">
+                <tr><td>Bachelor of Arts</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Arts.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>B.Sc (Computer Science)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Science in Computer Science.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>B.Sc (Information Technology)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Science in Information Technology.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>B.Com (Management Studies)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Management Studies.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>B.Com</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Commerce.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>B.Com (Banking & Insurance)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Commerce (Banking https://saketcollege.edu.in/Docs/Dept/UG/Bachelor%20of%20Commerce%20in%20Banking%20and%20Insurance.pdf Insurance).pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>B.Com (Accounting and Finance)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Commerce (Accounting and Finance).pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>B.Com (Financial Management)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Commerce in Financial Management.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>B.Com (Investment Management)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/ug/Bachelor of Commerce in Investment Management.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="pg" class="section">
+        <h2 class="section-title">Postgraduate Programs</h2>
+        
+        <div class="sub-section">
+            <h3 class="section-title">Syllabus</h3>
+            <table class="syllabus-table">
+                <tr><td>M.A. Hindi</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/pg/Master of Arts in Hindi.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>M.Sc (Information Technology)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/pg/Master of Science in Information Technology.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+                <tr><td>M.Com (Advanced Accountancy)</td><td><a href="{{ url_for('frontend.serve_docs', filepath='departments/pg/Master of Commerce in Advanced Accountancy.pdf') }}" class="pdf-button">View PDF</a></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="jc" class="section">
+        <h2 class="section-title">Junior College</h2>
+        
+        <div class="admission-content">
+            <h3>Admission Process</h3>
+            <div class="text-center mt-3">
+                <a href="#" class="pdf-button">View PDF</a>
+                <p class="text-muted mt-2"><small>(PDF will be added later)</small></p>
+            </div>
+        </div>
+        
+        <div class="stream-section">
+            <h3>Arts Stream (Marathi Medium)</h3>
+            <ul>
+                <li>Compulsory: English</li>
+                <li>Optional: Marathi/IT</li>
+                <li>Subjects: Economics, Political Science, History, Geography</li>
+            </ul>
+        </div>
+
+        <div class="stream-section">
+            <h3>Science Stream (English Medium)</h3>
+            <ul>
+                <li>Compulsory: English</li>
+                <li>Optional: Marathi/Hindi/IT</li>
+                <li>Subjects: Mathematics, Physics, Chemistry, Biology, Geography</li>
+            </ul>
+        </div>
+        <div class="stream-section">
+            <h3>Bifocal (Computer Science)</h3>
+            <ul>
+                <li>Compulsory: English</li>
+                <li>Subjects: Computer Science I & II, Mathematics, Physics, Chemistry</li>
+            </ul>
+        </div>
+
+        <div class="stream-section">
+            <h3>Commerce Stream (English Medium)</h3>
+            <ul>
+                <li>Compulsory: English</li>
+                <li>Optional: Marathi/Hindi/IT</li>
+                <li>Subjects: Economics, Accountancy, Business Studies, Organiztion Of Commerce And Management, Secretarial Practice, Book Keeping.</li>
+            </ul>
+        </div>
+
+       
+    </div>
+</div>
+
+<script>
+function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Show selected section
+    const selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+    }
+}
+
+// Show UG section by default on page load
+document.addEventListener('DOMContentLoaded', () => {
+    showSection('ug');
+});
+</script>
+{% endblock %}
